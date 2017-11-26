@@ -1,4 +1,4 @@
-**Setup**
+**Chromagram Setup**
 
 Download the zip files from Google Drive, and unzip them in the data directory.
 Link:
