@@ -1,6 +1,8 @@
 **Setup**
 
 Download the zip files from Google Drive, and unzip them in the data directory.
+Link:
+<https://drive.google.com/drive/folders/1Jt3vhMknBoUGLvBTnZqpBuKuUSuM56zq?usp=sharing>
 
 To obtain the chromagram information, import the function `load_chroma_dict()` from the file `src/load_chromagrams.py`. The function returns an array of dictionaries of the all the songs.
 
