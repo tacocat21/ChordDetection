@@ -50,7 +50,7 @@ def load_chroma_dict():
         beat_title, chroma_title = load_chroma_file_from_id(current_id)
         # beat_chromagram, chromagram = load_chroma_array(current_title)
         beat_chromagram, chromagram = load_chroma_array(beat_title, chroma_title)
-        song_dict['chromogram'] = chromagram
+        song_dict['chromagram'] = chromagram
         song_dict['beat_chromagram'] = beat_chromagram
     return video_dict
 
