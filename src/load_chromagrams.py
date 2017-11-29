@@ -1,7 +1,7 @@
 from videos_found import video_dict
 from glob import glob
 import numpy as np
-
+import ipdb
 base_data_dir = '../data/'
 
 """
@@ -44,18 +44,40 @@ of each song. This function should be imported from another file.
 def load_chroma_dict():
     # print('Processing Chroma Dict')
     i = 0
+    result = []
     for song_dict in video_dict:
-        # current_title = song_dict['title']
-        current_id = song_dict['id']
-        beat_title, chroma_title = load_chroma_file_from_id(current_id)
-        # beat_chromagram, chromagram = load_chroma_array(current_title)
-        beat_chromagram, chromagram = load_chroma_array(beat_title, chroma_title)
-        song_dict['chromagram'] = chromagram
-        song_dict['beat_chromagram'] = beat_chromagram
-    return video_dict
+        try:
+            # current_title = song_dict['title']
+            current_id = song_dict['id']
+            beat_title, chroma_title = load_chroma_file_from_id(current_id)
+            # beat_chromagram, chromagram = load_chroma_array(current_title)
+            beat_chromagram, chromagram = load_chroma_array(beat_title, chroma_title)
+            ipdb.set_trace()
+            song_dict['chromagram'] = chromagram
+            song_dict['beat_chromagram'] = beat_chromagram
+            result.append(song_dict)
+        except AssertionError:
+            print("AssertionError occured for {}".format(str(song_dict)))
+            continue
+    return result
+
+def load_chromagram_tensor():
+    result = []
+    for song_dict in video_dict:
+        try:
+            # current_title = song_dict['title']
+            current_id = song_dict['id']
+            beat_title, chroma_title = load_chroma_file_from_id(current_id)
+            # beat_chromagram, chromagram = load_chroma_array(current_title)
+            beat_chromagram, chromagram = load_chroma_array(beat_title, chroma_title)
+            result.append(chromagram)
+        except AssertionError:
+            print("AssertionError occured for {}".format(str(song_dict)))
+            continue
 
 def main():
     print('Running main...')
+    ipdb.set_trace()
     load_chroma_dict()
 
 if __name__ == '__main__':

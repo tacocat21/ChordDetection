@@ -14,3 +14,8 @@ Each dictionary will have the following keys:
   * `chromagram`: The song's chromagram in linear time.
   * `beat_chromagram`: The song's chromagram in beat time.
   * `id`: The song's youtube id.
+
+Sources:
+http://www.mattmcvicar.com/wp-content/uploads/2014/02/thesis.pdf
+https://github.com/tmc323/Chord-Annotations
+

@@ -49,3 +49,6 @@ def train(chord_data, chromagram_data):
     model.startprob_ = initial_distribution(chord_data)
     model.transmat_ = transition_matrix(chord_data)
     return model
+
+if __name__ == "__main__":
+    model = train()
