@@ -1,4 +1,4 @@
-from videos_found import video_dict
+from video_arr import video_arr
 from glob import glob
 import numpy as np
 import ipdb
@@ -44,6 +44,7 @@ of each song. This function should be imported from another file.
 def load_chroma_dict():
     # print('Processing Chroma Dict')
     i = 0
+
     result = []
     for song_dict in video_dict:
         try:
