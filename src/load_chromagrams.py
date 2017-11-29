@@ -1,4 +1,5 @@
-from videos_found import video_dict
+from video_arr import video_arr
+from path_dict import path_dict
 from glob import glob
 import numpy as np
 
@@ -44,7 +45,7 @@ of each song. This function should be imported from another file.
 def load_chroma_dict():
     # print('Processing Chroma Dict')
     i = 0
-    for song_dict in video_dict:
+    for song_dict in video_arr:
         # current_title = song_dict['title']
         current_id = song_dict['id']
         beat_title, chroma_title = load_chroma_file_from_id(current_id)
@@ -52,7 +53,7 @@ def load_chroma_dict():
         beat_chromagram, chromagram = load_chroma_array(beat_title, chroma_title)
         song_dict['chromogram'] = chromagram
         song_dict['beat_chromagram'] = beat_chromagram
-    return video_dict
+    return video_arr
 
 def main():
     print('Running main...')
