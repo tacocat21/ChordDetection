@@ -1,4 +1,5 @@
 from video_arr import video_arr
+from videos_found import video_dict
 from glob import glob
 import numpy as np
 import ipdb
@@ -30,6 +31,7 @@ Loads the linear and beat chromagram from a file.
 """
 def load_chroma_file_from_id(song_id):
     chroma_array = glob(base_data_dir + 'chroma_arrays/*{}*'.format(song_id))
+    chroma_array.sort()
     beat_title = chroma_array[0]
     chroma_title = chroma_array[1]
     assert('beat' in beat_title)
@@ -53,12 +55,12 @@ def load_chroma_dict():
             beat_title, chroma_title = load_chroma_file_from_id(current_id)
             # beat_chromagram, chromagram = load_chroma_array(current_title)
             beat_chromagram, chromagram = load_chroma_array(beat_title, chroma_title)
-            ipdb.set_trace()
             song_dict['chromagram'] = chromagram
             song_dict['beat_chromagram'] = beat_chromagram
             result.append(song_dict)
         except AssertionError:
             print("AssertionError occured for {}".format(str(song_dict)))
+            ipdb.set_trace()
             continue
     return result
 
@@ -78,8 +80,10 @@ def load_chromagram_tensor():
 
 def main():
     print('Running main...')
+
+    res = load_chroma_dict()
     ipdb.set_trace()
-    load_chroma_dict()
+    print(res[0])
 
 if __name__ == '__main__':
     main()
