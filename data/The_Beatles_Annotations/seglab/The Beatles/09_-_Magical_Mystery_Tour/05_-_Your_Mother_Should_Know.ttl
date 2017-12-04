@@ -1,0 +1,149 @@
+@base <#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix : <> .
+@prefix af: <http://purl.org/ontology/af/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix event: <http://purl.org/NET/c4dm/event.owl#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix mo: <http://purl.org/ontology/mo/> .
+@prefix ov: <http://open.vocab.org/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix tl: <http://purl.org/NET/c4dm/timeline.owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<>
+    ov:confidence "0.6" ;
+    ov:versionnumber "1.0" ;
+    dc:created "2009-10-20" ;
+    a foaf:Document .
+
+:maker_e47ef9b93a73
+    a mo:MusicArtist ;
+    foaf:name "The Beatles" .
+
+:record_9ff97f98f087
+    dc:title "Magical Mystery Tour" ;
+    mo:release_type mo:album ;
+    mo:track :track_cf489c2952c4 ;
+    a mo:Record ;
+    foaf:maker :maker_e47ef9b93a73 .
+
+:segment_000001
+    event:time [
+        tl:beginsAt "PT0S"^^xsd:duration ;
+        tl:duration "PT0.416S"^^xsd:duration ;
+        tl:onTimeLine :timeline_f9ea383485d1 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "silence" .
+
+:segment_000002
+    event:time [
+        tl:beginsAt "PT0.416S"^^xsd:duration ;
+        tl:duration "PT4.332S"^^xsd:duration ;
+        tl:onTimeLine :timeline_f9ea383485d1 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "intro" .
+
+:segment_000003
+    event:time [
+        tl:beginsAt "PT4.748S"^^xsd:duration ;
+        tl:duration "PT20.068S"^^xsd:duration ;
+        tl:onTimeLine :timeline_f9ea383485d1 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse" .
+
+:segment_000004
+    event:time [
+        tl:beginsAt "PT24.816S"^^xsd:duration ;
+        tl:duration "PT22.629S"^^xsd:duration ;
+        tl:onTimeLine :timeline_f9ea383485d1 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse" .
+
+:segment_000005
+    event:time [
+        tl:beginsAt "PT47.445S"^^xsd:duration ;
+        tl:duration "PT15.423S"^^xsd:duration ;
+        tl:onTimeLine :timeline_f9ea383485d1 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "bridge" .
+
+:segment_000006
+    event:time [
+        tl:beginsAt "PT1M2.868S"^^xsd:duration ;
+        tl:duration "PT28.528S"^^xsd:duration ;
+        tl:onTimeLine :timeline_f9ea383485d1 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse" .
+
+:segment_000007
+    event:time [
+        tl:beginsAt "PT1M31.396S"^^xsd:duration ;
+        tl:duration "PT13.192S"^^xsd:duration ;
+        tl:onTimeLine :timeline_f9ea383485d1 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "bridge" .
+
+:segment_000008
+    event:time [
+        tl:beginsAt "PT1M44.588S"^^xsd:duration ;
+        tl:duration "PT22.437S"^^xsd:duration ;
+        tl:onTimeLine :timeline_f9ea383485d1 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse" .
+
+:segment_000009
+    event:time [
+        tl:beginsAt "PT2M7.025S"^^xsd:duration ;
+        tl:duration "PT18.55S"^^xsd:duration ;
+        tl:onTimeLine :timeline_f9ea383485d1 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "outro" .
+
+:segment_000010
+    event:time [
+        tl:beginsAt "PT2M25.575S"^^xsd:duration ;
+        tl:duration "PT4.025S"^^xsd:duration ;
+        tl:onTimeLine :timeline_f9ea383485d1 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "silence" .
+
+:timeline_f9ea383485d1
+    a tl:Timeline .
+
+:track_cf489c2952c4
+    dc:title "Your Mother Should Know" ;
+    mo:available_as <file:The%20Beatles/Magical%20Mystery%20Tour/05_-_Your_Mother_Should_Know.wav> ;
+    a mo:Track ;
+    foaf:maker :maker_e47ef9b93a73 .
+
+<file:The%20Beatles/Magical%20Mystery%20Tour/05_-_Your_Mother_Should_Know.wav>
+    mo:encodes [
+        mo:time [
+            tl:onTimeLine :timeline_f9ea383485d1 ;
+            a tl:Interval
+        ] ;
+        a mo:Signal
+    ] ;
+    a mo:AudioFile .
+

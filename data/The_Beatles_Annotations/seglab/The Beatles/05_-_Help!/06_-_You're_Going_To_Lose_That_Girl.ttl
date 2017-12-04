@@ -1,0 +1,149 @@
+@base <#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix : <> .
+@prefix af: <http://purl.org/ontology/af/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix event: <http://purl.org/NET/c4dm/event.owl#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix mo: <http://purl.org/ontology/mo/> .
+@prefix ov: <http://open.vocab.org/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix tl: <http://purl.org/NET/c4dm/timeline.owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<>
+    ov:confidence "0.6" ;
+    ov:versionnumber "1.0" ;
+    dc:created "2009-10-20" ;
+    a foaf:Document .
+
+:maker_8e1ccc6d2eb5
+    a mo:MusicArtist ;
+    foaf:name "The Beatles" .
+
+:record_4f3259e4191f
+    dc:title "Help!" ;
+    mo:release_type mo:album ;
+    mo:track :track_ecfa3f22b3f6 ;
+    a mo:Record ;
+    foaf:maker :maker_8e1ccc6d2eb5 .
+
+:segment_000001
+    event:time [
+        tl:beginsAt "PT0S"^^xsd:duration ;
+        tl:duration "PT0.493S"^^xsd:duration ;
+        tl:onTimeLine :timeline_0e58b093a964 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "silence" .
+
+:segment_000002
+    event:time [
+        tl:beginsAt "PT0.493S"^^xsd:duration ;
+        tl:duration "PT8.342S"^^xsd:duration ;
+        tl:onTimeLine :timeline_0e58b093a964 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "intro" .
+
+:segment_000003
+    event:time [
+        tl:beginsAt "PT8.835S"^^xsd:duration ;
+        tl:duration "PT21.769S"^^xsd:duration ;
+        tl:onTimeLine :timeline_0e58b093a964 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse" .
+
+:segment_000004
+    event:time [
+        tl:beginsAt "PT30.604S"^^xsd:duration ;
+        tl:duration "PT25.429S"^^xsd:duration ;
+        tl:onTimeLine :timeline_0e58b093a964 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse'" .
+
+:segment_000005
+    event:time [
+        tl:beginsAt "PT56.033S"^^xsd:duration ;
+        tl:duration "PT12.675S"^^xsd:duration ;
+        tl:onTimeLine :timeline_0e58b093a964 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "bridge" .
+
+:segment_000006
+    event:time [
+        tl:beginsAt "PT1M8.708S"^^xsd:duration ;
+        tl:duration "PT25.553S"^^xsd:duration ;
+        tl:onTimeLine :timeline_0e58b093a964 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "solo/verse'" .
+
+:segment_000007
+    event:time [
+        tl:beginsAt "PT1M34.261S"^^xsd:duration ;
+        tl:duration "PT12.645S"^^xsd:duration ;
+        tl:onTimeLine :timeline_0e58b093a964 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "bridge" .
+
+:segment_000008
+    event:time [
+        tl:beginsAt "PT1M46.906S"^^xsd:duration ;
+        tl:duration "PT21.953S"^^xsd:duration ;
+        tl:onTimeLine :timeline_0e58b093a964 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse'" .
+
+:segment_000009
+    event:time [
+        tl:beginsAt "PT2M8.859S"^^xsd:duration ;
+        tl:duration "PT7.5S"^^xsd:duration ;
+        tl:onTimeLine :timeline_0e58b093a964 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "outro" .
+
+:segment_000010
+    event:time [
+        tl:beginsAt "PT2M16.359S"^^xsd:duration ;
+        tl:duration "PT4.081S"^^xsd:duration ;
+        tl:onTimeLine :timeline_0e58b093a964 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "silence" .
+
+:timeline_0e58b093a964
+    a tl:Timeline .
+
+:track_ecfa3f22b3f6
+    dc:title "You're Going To Lose That Girl" ;
+    mo:available_as <file:The%20Beatles/Help!/06_-_You're_Going_To_Lose_That_Girl.wav> ;
+    a mo:Track ;
+    foaf:maker :maker_8e1ccc6d2eb5 .
+
+<file:The%20Beatles/Help!/06_-_You're_Going_To_Lose_That_Girl.wav>
+    mo:encodes [
+        mo:time [
+            tl:onTimeLine :timeline_0e58b093a964 ;
+            a tl:Interval
+        ] ;
+        a mo:Signal
+    ] ;
+    a mo:AudioFile .
+

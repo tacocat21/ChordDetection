@@ -1,0 +1,159 @@
+@base <#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix : <> .
+@prefix af: <http://purl.org/ontology/af/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix event: <http://purl.org/NET/c4dm/event.owl#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix mo: <http://purl.org/ontology/mo/> .
+@prefix ov: <http://open.vocab.org/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix tl: <http://purl.org/NET/c4dm/timeline.owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<>
+    ov:confidence "0.6" ;
+    ov:versionnumber "1.0" ;
+    dc:created "2009-10-20" ;
+    a foaf:Document .
+
+:maker_b991c351eb76
+    a mo:MusicArtist ;
+    foaf:name "The Beatles" .
+
+:record_f9cb8eec9aab
+    dc:title "Revolver" ;
+    mo:release_type mo:album ;
+    mo:track :track_16383883eef2 ;
+    a mo:Record ;
+    foaf:maker :maker_b991c351eb76 .
+
+:segment_000001
+    event:time [
+        tl:beginsAt "PT0S"^^xsd:duration ;
+        tl:duration "PT0.418S"^^xsd:duration ;
+        tl:onTimeLine :timeline_e32c8b097a8f ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "silence" .
+
+:segment_000002
+    event:time [
+        tl:beginsAt "PT0.418S"^^xsd:duration ;
+        tl:duration "PT12.109S"^^xsd:duration ;
+        tl:onTimeLine :timeline_e32c8b097a8f ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse" .
+
+:segment_000003
+    event:time [
+        tl:beginsAt "PT12.527S"^^xsd:duration ;
+        tl:duration "PT11.773S"^^xsd:duration ;
+        tl:onTimeLine :timeline_e32c8b097a8f ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse" .
+
+:segment_000004
+    event:time [
+        tl:beginsAt "PT24.3S"^^xsd:duration ;
+        tl:duration "PT14.477S"^^xsd:duration ;
+        tl:onTimeLine :timeline_e32c8b097a8f ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "bridge" .
+
+:segment_000005
+    event:time [
+        tl:beginsAt "PT38.777S"^^xsd:duration ;
+        tl:duration "PT11.993S"^^xsd:duration ;
+        tl:onTimeLine :timeline_e32c8b097a8f ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse" .
+
+:segment_000006
+    event:time [
+        tl:beginsAt "PT50.77S"^^xsd:duration ;
+        tl:duration "PT11.808S"^^xsd:duration ;
+        tl:onTimeLine :timeline_e32c8b097a8f ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse_(instrumental_solo)" .
+
+:segment_000007
+    event:time [
+        tl:beginsAt "PT1M2.578S"^^xsd:duration ;
+        tl:duration "PT14.312S"^^xsd:duration ;
+        tl:onTimeLine :timeline_e32c8b097a8f ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "bridge" .
+
+:segment_000008
+    event:time [
+        tl:beginsAt "PT1M16.89S"^^xsd:duration ;
+        tl:duration "PT11.897S"^^xsd:duration ;
+        tl:onTimeLine :timeline_e32c8b097a8f ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse" .
+
+:segment_000009
+    event:time [
+        tl:beginsAt "PT1M28.787S"^^xsd:duration ;
+        tl:duration "PT11.715S"^^xsd:duration ;
+        tl:onTimeLine :timeline_e32c8b097a8f ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse" .
+
+:segment_000010
+    event:time [
+        tl:beginsAt "PT1M40.502S"^^xsd:duration ;
+        tl:duration "PT16.596S"^^xsd:duration ;
+        tl:onTimeLine :timeline_e32c8b097a8f ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "bridge_with_ending" .
+
+:segment_000011
+    event:time [
+        tl:beginsAt "PT1M57.098S"^^xsd:duration ;
+        tl:duration "PT4.609S"^^xsd:duration ;
+        tl:onTimeLine :timeline_e32c8b097a8f ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "silence" .
+
+:timeline_e32c8b097a8f
+    a tl:Timeline .
+
+:track_16383883eef2
+    dc:title "For No One" ;
+    mo:available_as <file:The%20Beatles/Revolver/10_-_For_No_One.wav> ;
+    a mo:Track ;
+    foaf:maker :maker_b991c351eb76 .
+
+<file:The%20Beatles/Revolver/10_-_For_No_One.wav>
+    mo:encodes [
+        mo:time [
+            tl:onTimeLine :timeline_e32c8b097a8f ;
+            a tl:Interval
+        ] ;
+        a mo:Signal
+    ] ;
+    a mo:AudioFile .
+

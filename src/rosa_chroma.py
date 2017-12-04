@@ -29,7 +29,7 @@ Creates a chromagram for a file
 def chroma(file_name):
     # An 11 kHz sample rate is used because it was suggested in the paper.
     eprint('Processing file: {}'.format(file_name))
-    y, sr = librosa.load(file_name, sr=11000)
+    y, sr = librosa.load(file_name, sr=22050)
 
     # Set the hop length
     hop_length = 512
@@ -39,16 +39,19 @@ def chroma(file_name):
 
     # Beat track on the percussive signal
     tempo, beat_frames = librosa.beat.beat_track(y=y_percussive, sr=sr)
+    beat_t = librosa.frames_to_time(beat_frames, sr=sr)
 
     # Compute chroma features from the harmonic signal
     chromagram = librosa.feature.chroma_cqt(y=y_harmonic, sr=sr)
 
     # Aggregate chroma features between beat events # The median feature is used instead
     beat_chroma = librosa.util.sync(chromagram, beat_frames, aggregate=np.median)
-    chromagram, beat_chroma, target_file, target_image_file = write_chroma_info(file_name, chromagram, beat_chroma)
-    save_chroma_pics(chromagram, beat_chroma, beat_frames, sr, target_file, target_image_file)
 
+    # commented out for now
+    #chromagram, beat_chroma, target_file, target_image_file = write_chroma_info(file_name, chromagram, beat_chroma)
+    save_chroma_pics(chromagram, beat_chroma, beat_frames, beat_t, sr, "Please Please Me", "Please Please Me")
 
+    return chromagram, beat_chroma, beat_frames, beat_t, sr
 """ 
 Writes the chroma and beat arrays
 """
@@ -77,9 +80,8 @@ def write_chroma_info(file_name, chromagram, beat_chroma):
 """
 Saves the chroma pictures
 """
-def save_chroma_pics(chromagram, beat_chroma, beat_frames, sr, target_file, target_image_file):
-    beat_t = librosa.frames_to_time(beat_frames, sr=sr)
-    beat_t = np.insert(beat_t, 0, 0)
+def save_chroma_pics(chromagram, beat_chroma, beat_frames, beat_t, sr, target_file, target_image_file):
+
 
     ax1 = plt.subplot(2, 1, 1)
     librosa.display.specshow(chromagram, y_axis='chroma', x_axis='time')
@@ -91,7 +93,7 @@ def save_chroma_pics(chromagram, beat_chroma, beat_frames, sr, target_file, targ
     # plt.tight_layout()
 
     plt.suptitle(target_file)
-    plt.colorbar()
+    # plt.colorbar()
     plt.savefig(target_image_file)
     eprint('Done Processing: {}'.format(target_file))
     eprint('')
@@ -122,7 +124,7 @@ def rewrite_chroma_images():
 
         chromagram      = np.load()
         beat_chromagram = np.load()
-        write_chroma_info()
+        # write_chroma_info()
             
         
 

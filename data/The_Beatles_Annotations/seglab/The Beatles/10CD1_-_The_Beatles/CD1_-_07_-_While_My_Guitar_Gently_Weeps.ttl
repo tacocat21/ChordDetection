@@ -1,0 +1,139 @@
+@base <#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix : <> .
+@prefix af: <http://purl.org/ontology/af/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix event: <http://purl.org/NET/c4dm/event.owl#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix mo: <http://purl.org/ontology/mo/> .
+@prefix ov: <http://open.vocab.org/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix tl: <http://purl.org/NET/c4dm/timeline.owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<>
+    ov:confidence "0.6" ;
+    ov:versionnumber "1.0" ;
+    dc:created "2009-10-20" ;
+    a foaf:Document .
+
+:maker_315485784bab
+    a mo:MusicArtist ;
+    foaf:name "The Beatles" .
+
+:record_ee0936d84664
+    dc:title "CD1 - The Beatles" ;
+    mo:release_type mo:album ;
+    mo:track :track_04473c428f4a ;
+    a mo:Record ;
+    foaf:maker :maker_315485784bab .
+
+:segment_000001
+    event:time [
+        tl:beginsAt "PT0S"^^xsd:duration ;
+        tl:duration "PT17.012S"^^xsd:duration ;
+        tl:onTimeLine :timeline_7ac0dc93f55c ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "intro" .
+
+:segment_000002
+    event:time [
+        tl:beginsAt "PT17.012S"^^xsd:duration ;
+        tl:duration "PT33.764S"^^xsd:duration ;
+        tl:onTimeLine :timeline_7ac0dc93f55c ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse" .
+
+:segment_000003
+    event:time [
+        tl:beginsAt "PT50.776S"^^xsd:duration ;
+        tl:duration "PT33.73S"^^xsd:duration ;
+        tl:onTimeLine :timeline_7ac0dc93f55c ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "bridge" .
+
+:segment_000004
+    event:time [
+        tl:beginsAt "PT1M24.506S"^^xsd:duration ;
+        tl:duration "PT33.324S"^^xsd:duration ;
+        tl:onTimeLine :timeline_7ac0dc93f55c ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse" .
+
+:segment_000005
+    event:time [
+        tl:beginsAt "PT1M57.83S"^^xsd:duration ;
+        tl:duration "PT32.868S"^^xsd:duration ;
+        tl:onTimeLine :timeline_7ac0dc93f55c ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse_(solo)" .
+
+:segment_000006
+    event:time [
+        tl:beginsAt "PT2M30.698S"^^xsd:duration ;
+        tl:duration "PT33.351S"^^xsd:duration ;
+        tl:onTimeLine :timeline_7ac0dc93f55c ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "bridge" .
+
+:segment_000007
+    event:time [
+        tl:beginsAt "PT3M4.049S"^^xsd:duration ;
+        tl:duration "PT33.226S"^^xsd:duration ;
+        tl:onTimeLine :timeline_7ac0dc93f55c ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse" .
+
+:segment_000008
+    event:time [
+        tl:beginsAt "PT3M37.275S"^^xsd:duration ;
+        tl:duration "PT1M3.351S"^^xsd:duration ;
+        tl:onTimeLine :timeline_7ac0dc93f55c ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "outro" .
+
+:segment_000009
+    event:time [
+        tl:beginsAt "PT4M40.626S"^^xsd:duration ;
+        tl:duration "PT4.667S"^^xsd:duration ;
+        tl:onTimeLine :timeline_7ac0dc93f55c ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "silence" .
+
+:timeline_7ac0dc93f55c
+    a tl:Timeline .
+
+:track_04473c428f4a
+    dc:title "While My Guitar Gently Weeps" ;
+    mo:available_as <file:The%20Beatles/CD1%20-%20The%20Beatles/CD1_-_07_-_While_My_Guitar_Gently_Weeps.wav> ;
+    a mo:Track ;
+    foaf:maker :maker_315485784bab .
+
+<file:The%20Beatles/CD1%20-%20The%20Beatles/CD1_-_07_-_While_My_Guitar_Gently_Weeps.wav>
+    mo:encodes [
+        mo:time [
+            tl:onTimeLine :timeline_7ac0dc93f55c ;
+            a tl:Interval
+        ] ;
+        a mo:Signal
+    ] ;
+    a mo:AudioFile .
+

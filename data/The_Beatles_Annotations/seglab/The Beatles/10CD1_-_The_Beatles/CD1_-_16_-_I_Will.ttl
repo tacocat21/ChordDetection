@@ -1,0 +1,119 @@
+@base <#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix : <> .
+@prefix af: <http://purl.org/ontology/af/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix event: <http://purl.org/NET/c4dm/event.owl#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix mo: <http://purl.org/ontology/mo/> .
+@prefix ov: <http://open.vocab.org/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix tl: <http://purl.org/NET/c4dm/timeline.owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<>
+    ov:confidence "0.6" ;
+    ov:versionnumber "1.0" ;
+    dc:created "2009-10-20" ;
+    a foaf:Document .
+
+:maker_116f2af9782b
+    a mo:MusicArtist ;
+    foaf:name "The Beatles" .
+
+:record_d2d6458c8113
+    dc:title "CD1 - The Beatles" ;
+    mo:release_type mo:album ;
+    mo:track :track_ec32d37b879e ;
+    a mo:Record ;
+    foaf:maker :maker_116f2af9782b .
+
+:segment_000001
+    event:time [
+        tl:beginsAt "PT0S"^^xsd:duration ;
+        tl:duration "PT1.091S"^^xsd:duration ;
+        tl:onTimeLine :timeline_d26d98fc48d0 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "silence" .
+
+:segment_000002
+    event:time [
+        tl:beginsAt "PT1.091S"^^xsd:duration ;
+        tl:duration "PT21.048S"^^xsd:duration ;
+        tl:onTimeLine :timeline_d26d98fc48d0 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse" .
+
+:segment_000003
+    event:time [
+        tl:beginsAt "PT22.139S"^^xsd:duration ;
+        tl:duration "PT18.589S"^^xsd:duration ;
+        tl:onTimeLine :timeline_d26d98fc48d0 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse" .
+
+:segment_000004
+    event:time [
+        tl:beginsAt "PT40.728S"^^xsd:duration ;
+        tl:duration "PT18.611S"^^xsd:duration ;
+        tl:onTimeLine :timeline_d26d98fc48d0 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "bridge" .
+
+:segment_000005
+    event:time [
+        tl:beginsAt "PT59.339S"^^xsd:duration ;
+        tl:duration "PT25.592S"^^xsd:duration ;
+        tl:onTimeLine :timeline_d26d98fc48d0 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse" .
+
+:segment_000006
+    event:time [
+        tl:beginsAt "PT1M24.931S"^^xsd:duration ;
+        tl:duration "PT21.096S"^^xsd:duration ;
+        tl:onTimeLine :timeline_d26d98fc48d0 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "outro" .
+
+:segment_000007
+    event:time [
+        tl:beginsAt "PT1M46.027S"^^xsd:duration ;
+        tl:duration "PT0S"^^xsd:duration ;
+        tl:onTimeLine :timeline_d26d98fc48d0 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "silence" .
+
+:timeline_d26d98fc48d0
+    a tl:Timeline .
+
+:track_ec32d37b879e
+    dc:title "I Will" ;
+    mo:available_as <file:The%20Beatles/CD1%20-%20The%20Beatles/CD1_-_16_-_I_Will.wav> ;
+    a mo:Track ;
+    foaf:maker :maker_116f2af9782b .
+
+<file:The%20Beatles/CD1%20-%20The%20Beatles/CD1_-_16_-_I_Will.wav>
+    mo:encodes [
+        mo:time [
+            tl:onTimeLine :timeline_d26d98fc48d0 ;
+            a tl:Interval
+        ] ;
+        a mo:Signal
+    ] ;
+    a mo:AudioFile .
+

@@ -1,0 +1,119 @@
+@base <#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix : <> .
+@prefix af: <http://purl.org/ontology/af/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix event: <http://purl.org/NET/c4dm/event.owl#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix mo: <http://purl.org/ontology/mo/> .
+@prefix ov: <http://open.vocab.org/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix tl: <http://purl.org/NET/c4dm/timeline.owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<>
+    ov:confidence "0.6" ;
+    ov:versionnumber "1.0" ;
+    dc:created "2009-10-20" ;
+    a foaf:Document .
+
+:maker_d28e8a3237ac
+    a mo:MusicArtist ;
+    foaf:name "The Beatles" .
+
+:record_513554918969
+    dc:title "Abbey Road" ;
+    mo:release_type mo:album ;
+    mo:track :track_081f1f8d0dd5 ;
+    a mo:Record ;
+    foaf:maker :maker_d28e8a3237ac .
+
+:segment_000001
+    event:time [
+        tl:beginsAt "PT0S"^^xsd:duration ;
+        tl:duration "PT8.855S"^^xsd:duration ;
+        tl:onTimeLine :timeline_a8ec80d3c117 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "intro" .
+
+:segment_000002
+    event:time [
+        tl:beginsAt "PT8.855S"^^xsd:duration ;
+        tl:duration "PT20.71S"^^xsd:duration ;
+        tl:onTimeLine :timeline_a8ec80d3c117 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse" .
+
+:segment_000003
+    event:time [
+        tl:beginsAt "PT29.565S"^^xsd:duration ;
+        tl:duration "PT22.194S"^^xsd:duration ;
+        tl:onTimeLine :timeline_a8ec80d3c117 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "bridge" .
+
+:segment_000004
+    event:time [
+        tl:beginsAt "PT51.759S"^^xsd:duration ;
+        tl:duration "PT20.8S"^^xsd:duration ;
+        tl:onTimeLine :timeline_a8ec80d3c117 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse" .
+
+:segment_000005
+    event:time [
+        tl:beginsAt "PT1M12.559S"^^xsd:duration ;
+        tl:duration "PT20.761S"^^xsd:duration ;
+        tl:onTimeLine :timeline_a8ec80d3c117 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse" .
+
+:segment_000006
+    event:time [
+        tl:beginsAt "PT1M33.32S"^^xsd:duration ;
+        tl:duration "PT23.28S"^^xsd:duration ;
+        tl:onTimeLine :timeline_a8ec80d3c117 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "bridge_(with_complete_ending)" .
+
+:segment_000007
+    event:time [
+        tl:beginsAt "PT1M56.6S"^^xsd:duration ;
+        tl:duration "PT1.133S"^^xsd:duration ;
+        tl:onTimeLine :timeline_a8ec80d3c117 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "silence" .
+
+:timeline_a8ec80d3c117
+    a tl:Timeline .
+
+:track_081f1f8d0dd5
+    dc:title "She Came In Through The Bathroom Window" ;
+    mo:available_as <file:The%20Beatles/Abbey%20Road/13_-_She_Came_In_Through_The_Bathroom_Window.wav> ;
+    a mo:Track ;
+    foaf:maker :maker_d28e8a3237ac .
+
+<file:The%20Beatles/Abbey%20Road/13_-_She_Came_In_Through_The_Bathroom_Window.wav>
+    mo:encodes [
+        mo:time [
+            tl:onTimeLine :timeline_a8ec80d3c117 ;
+            a tl:Interval
+        ] ;
+        a mo:Signal
+    ] ;
+    a mo:AudioFile .
+

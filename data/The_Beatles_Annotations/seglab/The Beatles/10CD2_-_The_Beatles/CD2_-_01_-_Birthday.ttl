@@ -1,0 +1,159 @@
+@base <#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix : <> .
+@prefix af: <http://purl.org/ontology/af/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix event: <http://purl.org/NET/c4dm/event.owl#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix mo: <http://purl.org/ontology/mo/> .
+@prefix ov: <http://open.vocab.org/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix tl: <http://purl.org/NET/c4dm/timeline.owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<>
+    ov:confidence "0.6" ;
+    ov:versionnumber "1.0" ;
+    dc:created "2009-10-20" ;
+    a foaf:Document .
+
+:maker_3b048c752b1d
+    a mo:MusicArtist ;
+    foaf:name "The Beatles" .
+
+:record_3136a4d42fff
+    dc:title "CD2 - The Beatles" ;
+    mo:release_type mo:album ;
+    mo:track :track_12b6fdb22387 ;
+    a mo:Record ;
+    foaf:maker :maker_3b048c752b1d .
+
+:segment_000001
+    event:time [
+        tl:beginsAt "PT0S"^^xsd:duration ;
+        tl:duration "PT0.98S"^^xsd:duration ;
+        tl:onTimeLine :timeline_a9402a85faa9 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "silence" .
+
+:segment_000002
+    event:time [
+        tl:beginsAt "PT0.98S"^^xsd:duration ;
+        tl:duration "PT21.311S"^^xsd:duration ;
+        tl:onTimeLine :timeline_a9402a85faa9 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "intro" .
+
+:segment_000003
+    event:time [
+        tl:beginsAt "PT22.291S"^^xsd:duration ;
+        tl:duration "PT20.607S"^^xsd:duration ;
+        tl:onTimeLine :timeline_a9402a85faa9 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse" .
+
+:segment_000004
+    event:time [
+        tl:beginsAt "PT42.898S"^^xsd:duration ;
+        tl:duration "PT27.598S"^^xsd:duration ;
+        tl:onTimeLine :timeline_a9402a85faa9 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "long_connector" .
+
+:segment_000005
+    event:time [
+        tl:beginsAt "PT1M10.496S"^^xsd:duration ;
+        tl:duration "PT17.422S"^^xsd:duration ;
+        tl:onTimeLine :timeline_a9402a85faa9 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "bridge" .
+
+:segment_000006
+    event:time [
+        tl:beginsAt "PT1M27.918S"^^xsd:duration ;
+        tl:duration "PT20.775S"^^xsd:duration ;
+        tl:onTimeLine :timeline_a9402a85faa9 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse_(instrumental)" .
+
+:segment_000007
+    event:time [
+        tl:beginsAt "PT1M48.693S"^^xsd:duration ;
+        tl:duration "PT6.919S"^^xsd:duration ;
+        tl:onTimeLine :timeline_a9402a85faa9 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "short_connector" .
+
+:segment_000008
+    event:time [
+        tl:beginsAt "PT1M55.612S"^^xsd:duration ;
+        tl:duration "PT17.221S"^^xsd:duration ;
+        tl:onTimeLine :timeline_a9402a85faa9 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "bridge" .
+
+:segment_000009
+    event:time [
+        tl:beginsAt "PT2M12.833S"^^xsd:duration ;
+        tl:duration "PT20.604S"^^xsd:duration ;
+        tl:onTimeLine :timeline_a9402a85faa9 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse" .
+
+:segment_000010
+    event:time [
+        tl:beginsAt "PT2M33.437S"^^xsd:duration ;
+        tl:duration "PT9.485S"^^xsd:duration ;
+        tl:onTimeLine :timeline_a9402a85faa9 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "outro" .
+
+:segment_000011
+    event:time [
+        tl:beginsAt "PT2M42.922S"^^xsd:duration ;
+        tl:duration "PT23H59M59.985S"^^xsd:duration ;
+        tl:onTimeLine :timeline_a9402a85faa9 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "silence" .
+
+:timeline_a9402a85faa9
+    a tl:Timeline .
+
+:track_12b6fdb22387
+    dc:title "Birthday" ;
+    mo:available_as <file:The%20Beatles/CD2%20-%20The%20Beatles/CD2_-_01_-_Birthday.wav> ;
+    a mo:Track ;
+    foaf:maker :maker_3b048c752b1d .
+
+<file:The%20Beatles/CD2%20-%20The%20Beatles/CD2_-_01_-_Birthday.wav>
+    mo:encodes [
+        mo:time [
+            tl:onTimeLine :timeline_a9402a85faa9 ;
+            a tl:Interval
+        ] ;
+        a mo:Signal
+    ] ;
+    a mo:AudioFile .
+

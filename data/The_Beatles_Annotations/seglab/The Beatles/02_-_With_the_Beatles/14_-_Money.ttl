@@ -1,0 +1,149 @@
+@base <#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix : <> .
+@prefix af: <http://purl.org/ontology/af/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix event: <http://purl.org/NET/c4dm/event.owl#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix mo: <http://purl.org/ontology/mo/> .
+@prefix ov: <http://open.vocab.org/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix tl: <http://purl.org/NET/c4dm/timeline.owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<>
+    ov:confidence "0.6" ;
+    ov:versionnumber "1.0" ;
+    dc:created "2009-10-20" ;
+    a foaf:Document .
+
+:maker_0b604813611d
+    a mo:MusicArtist ;
+    foaf:name "The Beatles" .
+
+:record_b3d075109b26
+    dc:title "With the Beatles" ;
+    mo:release_type mo:album ;
+    mo:track :track_2474dd01a022 ;
+    a mo:Record ;
+    foaf:maker :maker_0b604813611d .
+
+:segment_000001
+    event:time [
+        tl:beginsAt "PT0S"^^xsd:duration ;
+        tl:duration "PT0.46S"^^xsd:duration ;
+        tl:onTimeLine :timeline_49012b7aebdc ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "silence" .
+
+:segment_000002
+    event:time [
+        tl:beginsAt "PT0.46S"^^xsd:duration ;
+        tl:duration "PT14.567S"^^xsd:duration ;
+        tl:onTimeLine :timeline_49012b7aebdc ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "intro" .
+
+:segment_000003
+    event:time [
+        tl:beginsAt "PT15.027S"^^xsd:duration ;
+        tl:duration "PT22.105S"^^xsd:duration ;
+        tl:onTimeLine :timeline_49012b7aebdc ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse_refrain" .
+
+:segment_000004
+    event:time [
+        tl:beginsAt "PT37.132S"^^xsd:duration ;
+        tl:duration "PT22.292S"^^xsd:duration ;
+        tl:onTimeLine :timeline_49012b7aebdc ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse_refrain" .
+
+:segment_000005
+    event:time [
+        tl:beginsAt "PT59.424S"^^xsd:duration ;
+        tl:duration "PT22.442S"^^xsd:duration ;
+        tl:onTimeLine :timeline_49012b7aebdc ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse_refrain" .
+
+:segment_000006
+    event:time [
+        tl:beginsAt "PT1M21.866S"^^xsd:duration ;
+        tl:duration "PT14.884S"^^xsd:duration ;
+        tl:onTimeLine :timeline_49012b7aebdc ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "break" .
+
+:segment_000007
+    event:time [
+        tl:beginsAt "PT1M36.75S"^^xsd:duration ;
+        tl:duration "PT22.453S"^^xsd:duration ;
+        tl:onTimeLine :timeline_49012b7aebdc ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse_refrain" .
+
+:segment_000008
+    event:time [
+        tl:beginsAt "PT1M59.203S"^^xsd:duration ;
+        tl:duration "PT22.396S"^^xsd:duration ;
+        tl:onTimeLine :timeline_49012b7aebdc ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "refrain" .
+
+:segment_000009
+    event:time [
+        tl:beginsAt "PT2M21.599S"^^xsd:duration ;
+        tl:duration "PT24.455S"^^xsd:duration ;
+        tl:onTimeLine :timeline_49012b7aebdc ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "refrain" .
+
+:segment_000010
+    event:time [
+        tl:beginsAt "PT2M46.054S"^^xsd:duration ;
+        tl:duration "PT1.506S"^^xsd:duration ;
+        tl:onTimeLine :timeline_49012b7aebdc ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "silence" .
+
+:timeline_49012b7aebdc
+    a tl:Timeline .
+
+:track_2474dd01a022
+    dc:title "Money" ;
+    mo:available_as <file:The%20Beatles/With%20the%20Beatles/14_-_Money.wav> ;
+    a mo:Track ;
+    foaf:maker :maker_0b604813611d .
+
+<file:The%20Beatles/With%20the%20Beatles/14_-_Money.wav>
+    mo:encodes [
+        mo:time [
+            tl:onTimeLine :timeline_49012b7aebdc ;
+            a tl:Interval
+        ] ;
+        a mo:Signal
+    ] ;
+    a mo:AudioFile .
+

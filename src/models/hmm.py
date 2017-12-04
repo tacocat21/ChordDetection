@@ -51,4 +51,5 @@ def train(chord_data, chromagram_data):
     return model
 
 if __name__ == "__main__":
-    model = train()
+    #model = train()
+    model = hmm.GaussianHMM(n_components=util.NUM_CHORDS, covariance_type='full')

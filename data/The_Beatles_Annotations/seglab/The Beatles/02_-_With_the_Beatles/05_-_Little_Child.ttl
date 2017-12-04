@@ -1,0 +1,159 @@
+@base <#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix : <> .
+@prefix af: <http://purl.org/ontology/af/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix event: <http://purl.org/NET/c4dm/event.owl#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix mo: <http://purl.org/ontology/mo/> .
+@prefix ov: <http://open.vocab.org/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix tl: <http://purl.org/NET/c4dm/timeline.owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<>
+    ov:confidence "0.6" ;
+    ov:versionnumber "1.0" ;
+    dc:created "2009-10-20" ;
+    a foaf:Document .
+
+:maker_43452836a8b7
+    a mo:MusicArtist ;
+    foaf:name "The Beatles" .
+
+:record_de3acd35da96
+    dc:title "With the Beatles" ;
+    mo:release_type mo:album ;
+    mo:track :track_5e30830426e7 ;
+    a mo:Record ;
+    foaf:maker :maker_43452836a8b7 .
+
+:segment_000001
+    event:time [
+        tl:beginsAt "PT0S"^^xsd:duration ;
+        tl:duration "PT0.498S"^^xsd:duration ;
+        tl:onTimeLine :timeline_23a50e860359 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "silence" .
+
+:segment_000002
+    event:time [
+        tl:beginsAt "PT0.498S"^^xsd:duration ;
+        tl:duration "PT6.109S"^^xsd:duration ;
+        tl:onTimeLine :timeline_23a50e860359 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "intro" .
+
+:segment_000003
+    event:time [
+        tl:beginsAt "PT6.607S"^^xsd:duration ;
+        tl:duration "PT12.806S"^^xsd:duration ;
+        tl:onTimeLine :timeline_23a50e860359 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse" .
+
+:segment_000004
+    event:time [
+        tl:beginsAt "PT19.413S"^^xsd:duration ;
+        tl:duration "PT12.701S"^^xsd:duration ;
+        tl:onTimeLine :timeline_23a50e860359 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse" .
+
+:segment_000005
+    event:time [
+        tl:beginsAt "PT32.114S"^^xsd:duration ;
+        tl:duration "PT9.497S"^^xsd:duration ;
+        tl:onTimeLine :timeline_23a50e860359 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "bridge" .
+
+:segment_000006
+    event:time [
+        tl:beginsAt "PT41.611S"^^xsd:duration ;
+        tl:duration "PT12.585S"^^xsd:duration ;
+        tl:onTimeLine :timeline_23a50e860359 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse" .
+
+:segment_000007
+    event:time [
+        tl:beginsAt "PT54.196S"^^xsd:duration ;
+        tl:duration "PT18.946S"^^xsd:duration ;
+        tl:onTimeLine :timeline_23a50e860359 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "break" .
+
+:segment_000008
+    event:time [
+        tl:beginsAt "PT1M13.142S"^^xsd:duration ;
+        tl:duration "PT9.417S"^^xsd:duration ;
+        tl:onTimeLine :timeline_23a50e860359 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "bridge" .
+
+:segment_000009
+    event:time [
+        tl:beginsAt "PT1M22.559S"^^xsd:duration ;
+        tl:duration "PT12.632S"^^xsd:duration ;
+        tl:onTimeLine :timeline_23a50e860359 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse" .
+
+:segment_000010
+    event:time [
+        tl:beginsAt "PT1M35.191S"^^xsd:duration ;
+        tl:duration "PT9.106S"^^xsd:duration ;
+        tl:onTimeLine :timeline_23a50e860359 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "outro" .
+
+:segment_000011
+    event:time [
+        tl:beginsAt "PT1M44.297S"^^xsd:duration ;
+        tl:duration "PT3.703S"^^xsd:duration ;
+        tl:onTimeLine :timeline_23a50e860359 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "silence" .
+
+:timeline_23a50e860359
+    a tl:Timeline .
+
+:track_5e30830426e7
+    dc:title "Little Child" ;
+    mo:available_as <file:The%20Beatles/With%20the%20Beatles/05_-_Little_Child.wav> ;
+    a mo:Track ;
+    foaf:maker :maker_43452836a8b7 .
+
+<file:The%20Beatles/With%20the%20Beatles/05_-_Little_Child.wav>
+    mo:encodes [
+        mo:time [
+            tl:onTimeLine :timeline_23a50e860359 ;
+            a tl:Interval
+        ] ;
+        a mo:Signal
+    ] ;
+    a mo:AudioFile .
+

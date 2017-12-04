@@ -1,0 +1,149 @@
+@base <#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix : <> .
+@prefix af: <http://purl.org/ontology/af/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix event: <http://purl.org/NET/c4dm/event.owl#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix mo: <http://purl.org/ontology/mo/> .
+@prefix ov: <http://open.vocab.org/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix tl: <http://purl.org/NET/c4dm/timeline.owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<>
+    ov:confidence "0.6" ;
+    ov:versionnumber "1.0" ;
+    dc:created "2009-10-20" ;
+    a foaf:Document .
+
+:maker_0e1d051b80f6
+    a mo:MusicArtist ;
+    foaf:name "The Beatles" .
+
+:record_d55473d4b9c7
+    dc:title "Revolver" ;
+    mo:release_type mo:album ;
+    mo:track :track_7a8b2c1aaafe ;
+    a mo:Record ;
+    foaf:maker :maker_0e1d051b80f6 .
+
+:segment_000001
+    event:time [
+        tl:beginsAt "PT0S"^^xsd:duration ;
+        tl:duration "PT0.98S"^^xsd:duration ;
+        tl:onTimeLine :timeline_1ecbe41a55a5 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "silence" .
+
+:segment_000002
+    event:time [
+        tl:beginsAt "PT0.98S"^^xsd:duration ;
+        tl:duration "PT17.729S"^^xsd:duration ;
+        tl:onTimeLine :timeline_1ecbe41a55a5 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse" .
+
+:segment_000003
+    event:time [
+        tl:beginsAt "PT18.709S"^^xsd:duration ;
+        tl:duration "PT17.279S"^^xsd:duration ;
+        tl:onTimeLine :timeline_1ecbe41a55a5 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse" .
+
+:segment_000004
+    event:time [
+        tl:beginsAt "PT35.988S"^^xsd:duration ;
+        tl:duration "PT17.186S"^^xsd:duration ;
+        tl:onTimeLine :timeline_1ecbe41a55a5 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "refrain" .
+
+:segment_000005
+    event:time [
+        tl:beginsAt "PT53.174S"^^xsd:duration ;
+        tl:duration "PT17.344S"^^xsd:duration ;
+        tl:onTimeLine :timeline_1ecbe41a55a5 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse" .
+
+:segment_000006
+    event:time [
+        tl:beginsAt "PT1M10.518S"^^xsd:duration ;
+        tl:duration "PT17.149S"^^xsd:duration ;
+        tl:onTimeLine :timeline_1ecbe41a55a5 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "refrain" .
+
+:segment_000007
+    event:time [
+        tl:beginsAt "PT1M27.667S"^^xsd:duration ;
+        tl:duration "PT17.682S"^^xsd:duration ;
+        tl:onTimeLine :timeline_1ecbe41a55a5 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse_(instrumental)" .
+
+:segment_000008
+    event:time [
+        tl:beginsAt "PT1M45.349S"^^xsd:duration ;
+        tl:duration "PT17.247S"^^xsd:duration ;
+        tl:onTimeLine :timeline_1ecbe41a55a5 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse" .
+
+:segment_000009
+    event:time [
+        tl:beginsAt "PT2M2.596S"^^xsd:duration ;
+        tl:duration "PT32.543S"^^xsd:duration ;
+        tl:onTimeLine :timeline_1ecbe41a55a5 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "refrian_with_ending" .
+
+:segment_000010
+    event:time [
+        tl:beginsAt "PT2M35.139S"^^xsd:duration ;
+        tl:duration "PT5.261S"^^xsd:duration ;
+        tl:onTimeLine :timeline_1ecbe41a55a5 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "silence" .
+
+:timeline_1ecbe41a55a5
+    a tl:Timeline .
+
+:track_7a8b2c1aaafe
+    dc:title "Yellow Submarine" ;
+    mo:available_as <file:The%20Beatles/Revolver/06_-_Yellow_Submarine.wav> ;
+    a mo:Track ;
+    foaf:maker :maker_0e1d051b80f6 .
+
+<file:The%20Beatles/Revolver/06_-_Yellow_Submarine.wav>
+    mo:encodes [
+        mo:time [
+            tl:onTimeLine :timeline_1ecbe41a55a5 ;
+            a tl:Interval
+        ] ;
+        a mo:Signal
+    ] ;
+    a mo:AudioFile .
+

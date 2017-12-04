@@ -1,0 +1,149 @@
+@base <#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix : <> .
+@prefix af: <http://purl.org/ontology/af/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix event: <http://purl.org/NET/c4dm/event.owl#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix mo: <http://purl.org/ontology/mo/> .
+@prefix ov: <http://open.vocab.org/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix tl: <http://purl.org/NET/c4dm/timeline.owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<>
+    ov:confidence "0.6" ;
+    ov:versionnumber "1.0" ;
+    dc:created "2009-10-20" ;
+    a foaf:Document .
+
+:maker_f56e1083a307
+    a mo:MusicArtist ;
+    foaf:name "The Beatles" .
+
+:record_217f53f473e3
+    dc:title "Beatles for Sale" ;
+    mo:release_type mo:album ;
+    mo:track :track_64c1af9ac894 ;
+    a mo:Record ;
+    foaf:maker :maker_f56e1083a307 .
+
+:segment_000001
+    event:time [
+        tl:beginsAt "PT0S"^^xsd:duration ;
+        tl:duration "PT0.389S"^^xsd:duration ;
+        tl:onTimeLine :timeline_a13f775da6c5 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "silence" .
+
+:segment_000002
+    event:time [
+        tl:beginsAt "PT0.389S"^^xsd:duration ;
+        tl:duration "PT7.683S"^^xsd:duration ;
+        tl:onTimeLine :timeline_a13f775da6c5 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "intro" .
+
+:segment_000003
+    event:time [
+        tl:beginsAt "PT8.072S"^^xsd:duration ;
+        tl:duration "PT21.714S"^^xsd:duration ;
+        tl:onTimeLine :timeline_a13f775da6c5 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse" .
+
+:segment_000004
+    event:time [
+        tl:beginsAt "PT29.786S"^^xsd:duration ;
+        tl:duration "PT21.759S"^^xsd:duration ;
+        tl:onTimeLine :timeline_a13f775da6c5 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse" .
+
+:segment_000005
+    event:time [
+        tl:beginsAt "PT51.545S"^^xsd:duration ;
+        tl:duration "PT21.9S"^^xsd:duration ;
+        tl:onTimeLine :timeline_a13f775da6c5 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse_(solo)" .
+
+:segment_000006
+    event:time [
+        tl:beginsAt "PT1M13.445S"^^xsd:duration ;
+        tl:duration "PT21.922S"^^xsd:duration ;
+        tl:onTimeLine :timeline_a13f775da6c5 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse" .
+
+:segment_000007
+    event:time [
+        tl:beginsAt "PT1M35.367S"^^xsd:duration ;
+        tl:duration "PT22.046S"^^xsd:duration ;
+        tl:onTimeLine :timeline_a13f775da6c5 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse" .
+
+:segment_000008
+    event:time [
+        tl:beginsAt "PT1M57.413S"^^xsd:duration ;
+        tl:duration "PT21.934S"^^xsd:duration ;
+        tl:onTimeLine :timeline_a13f775da6c5 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse" .
+
+:segment_000009
+    event:time [
+        tl:beginsAt "PT2M19.347S"^^xsd:duration ;
+        tl:duration "PT6.8S"^^xsd:duration ;
+        tl:onTimeLine :timeline_a13f775da6c5 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse_(fade_out)" .
+
+:segment_000010
+    event:time [
+        tl:beginsAt "PT2M26.147S"^^xsd:duration ;
+        tl:duration "PT7.32S"^^xsd:duration ;
+        tl:onTimeLine :timeline_a13f775da6c5 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "silence" .
+
+:timeline_a13f775da6c5
+    a tl:Timeline .
+
+:track_64c1af9ac894
+    dc:title "Kansas City- Hey, Hey, Hey, Hey" ;
+    mo:available_as <file:The%20Beatles/Beatles%20for%20Sale/07_-_Kansas_City-_Hey,_Hey,_Hey,_Hey.wav> ;
+    a mo:Track ;
+    foaf:maker :maker_f56e1083a307 .
+
+<file:The%20Beatles/Beatles%20for%20Sale/07_-_Kansas_City-_Hey,_Hey,_Hey,_Hey.wav>
+    mo:encodes [
+        mo:time [
+            tl:onTimeLine :timeline_a13f775da6c5 ;
+            a tl:Interval
+        ] ;
+        a mo:Signal
+    ] ;
+    a mo:AudioFile .
+

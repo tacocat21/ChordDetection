@@ -1,0 +1,3631 @@
+@base <#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix : <> .
+@prefix af: <http://purl.org/ontology/af/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix event: <http://purl.org/NET/c4dm/event.owl#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix mo: <http://purl.org/ontology/mo/> .
+@prefix ov: <http://open.vocab.org/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix tl: <http://purl.org/NET/c4dm/timeline.owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<>
+    ov:confidence "0.8" ;
+    ov:versionnumber "1.0" ;
+    dc:created "2009-10-20" ;
+    a foaf:Document .
+
+:beat_000001
+    event:time [
+        tl:at "PT0.302S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000002
+    event:time [
+        tl:at "PT0.789S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000003
+    event:time [
+        tl:at "PT1.277S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000004
+    event:time [
+        tl:at "PT1.788S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000005
+    event:time [
+        tl:at "PT2.31S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000006
+    event:time [
+        tl:at "PT2.775S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000007
+    event:time [
+        tl:at "PT3.274S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000008
+    event:time [
+        tl:at "PT3.773S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000009
+    event:time [
+        tl:at "PT4.272S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000010
+    event:time [
+        tl:at "PT4.76S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000011
+    event:time [
+        tl:at "PT5.259S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000012
+    event:time [
+        tl:at "PT5.735S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000013
+    event:time [
+        tl:at "PT6.223S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000014
+    event:time [
+        tl:at "PT6.676S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000015
+    event:time [
+        tl:at "PT7.21S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000016
+    event:time [
+        tl:at "PT7.697S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000017
+    event:time [
+        tl:at "PT8.185S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000018
+    event:time [
+        tl:at "PT8.638S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000019
+    event:time [
+        tl:at "PT9.114S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000020
+    event:time [
+        tl:at "PT9.59S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000021
+    event:time [
+        tl:at "PT10.031S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000022
+    event:time [
+        tl:at "PT10.495S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000023
+    event:time [
+        tl:at "PT10.96S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000024
+    event:time [
+        tl:at "PT11.424S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000025
+    event:time [
+        tl:at "PT11.877S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000026
+    event:time [
+        tl:at "PT12.341S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000027
+    event:time [
+        tl:at "PT12.806S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000028
+    event:time [
+        tl:at "PT13.27S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000029
+    event:time [
+        tl:at "PT13.769S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000030
+    event:time [
+        tl:at "PT14.269S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000031
+    event:time [
+        tl:at "PT14.71S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000032
+    event:time [
+        tl:at "PT15.174S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000033
+    event:time [
+        tl:at "PT15.65S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000034
+    event:time [
+        tl:at "PT16.115S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000035
+    event:time [
+        tl:at "PT16.579S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000036
+    event:time [
+        tl:at "PT17.032S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000037
+    event:time [
+        tl:at "PT17.485S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000038
+    event:time [
+        tl:at "PT17.949S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000039
+    event:time [
+        tl:at "PT18.402S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000040
+    event:time [
+        tl:at "PT18.878S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000041
+    event:time [
+        tl:at "PT19.342S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000042
+    event:time [
+        tl:at "PT19.795S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000043
+    event:time [
+        tl:at "PT20.236S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000044
+    event:time [
+        tl:at "PT20.689S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000045
+    event:time [
+        tl:at "PT21.13S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000046
+    event:time [
+        tl:at "PT21.595S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000047
+    event:time [
+        tl:at "PT22.071S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000048
+    event:time [
+        tl:at "PT22.523S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000049
+    event:time [
+        tl:at "PT22.999S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000050
+    event:time [
+        tl:at "PT23.499S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000051
+    event:time [
+        tl:at "PT23.975S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000052
+    event:time [
+        tl:at "PT24.451S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000053
+    event:time [
+        tl:at "PT24.927S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000054
+    event:time [
+        tl:at "PT25.379S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000055
+    event:time [
+        tl:at "PT25.832S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000056
+    event:time [
+        tl:at "PT26.273S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000057
+    event:time [
+        tl:at "PT26.715S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000058
+    event:time [
+        tl:at "PT27.156S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000059
+    event:time [
+        tl:at "PT27.609S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000060
+    event:time [
+        tl:at "PT28.061S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000061
+    event:time [
+        tl:at "PT28.502S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000062
+    event:time [
+        tl:at "PT28.932S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000063
+    event:time [
+        tl:at "PT29.373S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000064
+    event:time [
+        tl:at "PT29.814S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000065
+    event:time [
+        tl:at "PT30.256S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000066
+    event:time [
+        tl:at "PT30.685S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000067
+    event:time [
+        tl:at "PT31.126S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000068
+    event:time [
+        tl:at "PT31.579S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000069
+    event:time [
+        tl:at "PT32.02S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000070
+    event:time [
+        tl:at "PT32.473S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000071
+    event:time [
+        tl:at "PT32.903S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000072
+    event:time [
+        tl:at "PT33.344S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000073
+    event:time [
+        tl:at "PT33.797S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000074
+    event:time [
+        tl:at "PT34.238S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000075
+    event:time [
+        tl:at "PT34.679S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000076
+    event:time [
+        tl:at "PT35.12S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000077
+    event:time [
+        tl:at "PT35.561S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000078
+    event:time [
+        tl:at "PT36.003S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000079
+    event:time [
+        tl:at "PT36.432S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000080
+    event:time [
+        tl:at "PT36.873S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000081
+    event:time [
+        tl:at "PT37.303S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000082
+    event:time [
+        tl:at "PT37.756S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000083
+    event:time [
+        tl:at "PT38.185S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000084
+    event:time [
+        tl:at "PT38.615S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000085
+    event:time [
+        tl:at "PT39.033S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000086
+    event:time [
+        tl:at "PT39.462S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000087
+    event:time [
+        tl:at "PT39.892S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000088
+    event:time [
+        tl:at "PT40.321S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000089
+    event:time [
+        tl:at "PT40.763S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000090
+    event:time [
+        tl:at "PT41.181S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000091
+    event:time [
+        tl:at "PT41.587S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000092
+    event:time [
+        tl:at "PT41.993S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000093
+    event:time [
+        tl:at "PT42.423S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000094
+    event:time [
+        tl:at "PT42.852S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000095
+    event:time [
+        tl:at "PT43.27S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000096
+    event:time [
+        tl:at "PT43.688S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000097
+    event:time [
+        tl:at "PT44.106S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000098
+    event:time [
+        tl:at "PT44.536S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000099
+    event:time [
+        tl:at "PT44.941S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000100
+    event:time [
+        tl:at "PT45.361S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000101
+    event:time [
+        tl:at "PT45.769S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000102
+    event:time [
+        tl:at "PT46.17S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000103
+    event:time [
+        tl:at "PT46.547S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000104
+    event:time [
+        tl:at "PT46.954S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000105
+    event:time [
+        tl:at "PT47.358S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000106
+    event:time [
+        tl:at "PT47.766S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000107
+    event:time [
+        tl:at "PT48.501S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000108
+    event:time [
+        tl:at "PT49.18S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000109
+    event:time [
+        tl:at "PT49.876S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "4" .
+
+:beat_000110
+    event:time [
+        tl:at "PT50.573S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000111
+    event:time [
+        tl:at "PT51.223S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000112
+    event:time [
+        tl:at "PT51.885S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000113
+    event:time [
+        tl:at "PT52.535S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "4" .
+
+:beat_000114
+    event:time [
+        tl:at "PT53.174S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000115
+    event:time [
+        tl:at "PT53.824S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000116
+    event:time [
+        tl:at "PT54.474S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000117
+    event:time [
+        tl:at "PT55.124S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "4" .
+
+:beat_000118
+    event:time [
+        tl:at "PT55.774S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000119
+    event:time [
+        tl:at "PT56.413S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000120
+    event:time [
+        tl:at "PT57.051S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000121
+    event:time [
+        tl:at "PT57.69S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "4" .
+
+:beat_000122
+    event:time [
+        tl:at "PT58.317S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000123
+    event:time [
+        tl:at "PT58.955S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000124
+    event:time [
+        tl:at "PT59.582S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000125
+    event:time [
+        tl:at "PT1M0.209S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "4" .
+
+:beat_000126
+    event:time [
+        tl:at "PT1M0.859S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000127
+    event:time [
+        tl:at "PT1M1.486S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000128
+    event:time [
+        tl:at "PT1M2.113S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000129
+    event:time [
+        tl:at "PT1M2.74S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "4" .
+
+:beat_000130
+    event:time [
+        tl:at "PT1M3.379S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000131
+    event:time [
+        tl:at "PT1M4.017S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000132
+    event:time [
+        tl:at "PT1M4.644S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000133
+    event:time [
+        tl:at "PT1M5.283S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "4" .
+
+:beat_000134
+    event:time [
+        tl:at "PT1M5.921S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000135
+    event:time [
+        tl:at "PT1M6.56S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000136
+    event:time [
+        tl:at "PT1M7.199S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000137
+    event:time [
+        tl:at "PT1M7.837S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "4" .
+
+:beat_000138
+    event:time [
+        tl:at "PT1M8.557S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000139
+    event:time [
+        tl:at "PT1M8.975S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000140
+    event:time [
+        tl:at "PT1M9.416S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000141
+    event:time [
+        tl:at "PT1M9.88S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000142
+    event:time [
+        tl:at "PT1M10.345S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000143
+    event:time [
+        tl:at "PT1M10.798S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000144
+    event:time [
+        tl:at "PT1M11.262S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000145
+    event:time [
+        tl:at "PT1M11.738S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000146
+    event:time [
+        tl:at "PT1M12.202S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000147
+    event:time [
+        tl:at "PT1M12.667S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000148
+    event:time [
+        tl:at "PT1M13.12S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000149
+    event:time [
+        tl:at "PT1M13.572S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000150
+    event:time [
+        tl:at "PT1M14.025S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000151
+    event:time [
+        tl:at "PT1M14.443S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000152
+    event:time [
+        tl:at "PT1M14.861S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000153
+    event:time [
+        tl:at "PT1M15.279S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000154
+    event:time [
+        tl:at "PT1M15.732S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000155
+    event:time [
+        tl:at "PT1M16.173S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000156
+    event:time [
+        tl:at "PT1M16.626S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000157
+    event:time [
+        tl:at "PT1M17.055S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000158
+    event:time [
+        tl:at "PT1M17.485S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000159
+    event:time [
+        tl:at "PT1M17.891S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000160
+    event:time [
+        tl:at "PT1M18.344S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000161
+    event:time [
+        tl:at "PT1M18.797S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000162
+    event:time [
+        tl:at "PT1M19.226S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000163
+    event:time [
+        tl:at "PT1M19.656S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000164
+    event:time [
+        tl:at "PT1M20.086S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000165
+    event:time [
+        tl:at "PT1M20.538S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000166
+    event:time [
+        tl:at "PT1M20.98S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000167
+    event:time [
+        tl:at "PT1M21.421S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000168
+    event:time [
+        tl:at "PT1M21.874S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000169
+    event:time [
+        tl:at "PT1M22.326S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000170
+    event:time [
+        tl:at "PT1M22.756S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000171
+    event:time [
+        tl:at "PT1M23.185S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000172
+    event:time [
+        tl:at "PT1M23.661S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000173
+    event:time [
+        tl:at "PT1M24.103S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000174
+    event:time [
+        tl:at "PT1M24.544S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000175
+    event:time [
+        tl:at "PT1M24.985S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000176
+    event:time [
+        tl:at "PT1M25.438S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000177
+    event:time [
+        tl:at "PT1M25.879S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000178
+    event:time [
+        tl:at "PT1M26.332S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000179
+    event:time [
+        tl:at "PT1M26.773S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000180
+    event:time [
+        tl:at "PT1M27.214S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000181
+    event:time [
+        tl:at "PT1M27.644S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000182
+    event:time [
+        tl:at "PT1M28.085S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000183
+    event:time [
+        tl:at "PT1M28.503S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000184
+    event:time [
+        tl:at "PT1M28.932S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000185
+    event:time [
+        tl:at "PT1M29.362S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000186
+    event:time [
+        tl:at "PT1M29.792S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000187
+    event:time [
+        tl:at "PT1M30.221S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000188
+    event:time [
+        tl:at "PT1M30.639S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000189
+    event:time [
+        tl:at "PT1M31.069S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000190
+    event:time [
+        tl:at "PT1M31.51S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000191
+    event:time [
+        tl:at "PT1M31.951S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000192
+    event:time [
+        tl:at "PT1M32.392S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000193
+    event:time [
+        tl:at "PT1M32.822S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000194
+    event:time [
+        tl:at "PT1M33.251S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000195
+    event:time [
+        tl:at "PT1M33.681S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000196
+    event:time [
+        tl:at "PT1M34.099S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000197
+    event:time [
+        tl:at "PT1M34.517S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000198
+    event:time [
+        tl:at "PT1M34.923S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000199
+    event:time [
+        tl:at "PT1M35.353S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000200
+    event:time [
+        tl:at "PT1M35.771S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000201
+    event:time [
+        tl:at "PT1M36.189S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000202
+    event:time [
+        tl:at "PT1M36.607S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000203
+    event:time [
+        tl:at "PT1M37.025S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000204
+    event:time [
+        tl:at "PT1M37.431S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000205
+    event:time [
+        tl:at "PT1M37.849S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000206
+    event:time [
+        tl:at "PT1M38.278S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000207
+    event:time [
+        tl:at "PT1M38.696S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000208
+    event:time [
+        tl:at "PT1M39.103S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000209
+    event:time [
+        tl:at "PT1M39.509S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000210
+    event:time [
+        tl:at "PT1M39.915S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000211
+    event:time [
+        tl:at "PT1M40.31S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000212
+    event:time [
+        tl:at "PT1M40.717S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000213
+    event:time [
+        tl:at "PT1M41.111S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000214
+    event:time [
+        tl:at "PT1M41.506S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000215
+    event:time [
+        tl:at "PT1M41.912S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000216
+    event:time [
+        tl:at "PT1M42.319S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000217
+    event:time [
+        tl:at "PT1M42.737S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000218
+    event:time [
+        tl:at "PT1M43.143S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000219
+    event:time [
+        tl:at "PT1M43.549S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000220
+    event:time [
+        tl:at "PT1M43.944S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000221
+    event:time [
+        tl:at "PT1M44.35S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000222
+    event:time [
+        tl:at "PT1M44.757S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000223
+    event:time [
+        tl:at "PT1M45.175S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000224
+    event:time [
+        tl:at "PT1M45.57S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000225
+    event:time [
+        tl:at "PT1M45.949S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000226
+    event:time [
+        tl:at "PT1M46.396S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000227
+    event:time [
+        tl:at "PT1M46.801S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000228
+    event:time [
+        tl:at "PT1M47.178S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000229
+    event:time [
+        tl:at "PT1M47.602S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000230
+    event:time [
+        tl:at "PT1M47.962S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000231
+    event:time [
+        tl:at "PT1M48.377S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000232
+    event:time [
+        tl:at "PT1M49.134S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000233
+    event:time [
+        tl:at "PT1M49.789S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000234
+    event:time [
+        tl:at "PT1M50.425S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "4" .
+
+:beat_000235
+    event:time [
+        tl:at "PT1M51.096S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000236
+    event:time [
+        tl:at "PT1M51.746S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000237
+    event:time [
+        tl:at "PT1M52.396S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000238
+    event:time [
+        tl:at "PT1M53.046S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "4" .
+
+:beat_000239
+    event:time [
+        tl:at "PT1M53.697S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000240
+    event:time [
+        tl:at "PT1M54.335S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000241
+    event:time [
+        tl:at "PT1M54.962S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000242
+    event:time [
+        tl:at "PT1M55.612S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "4" .
+
+:beat_000243
+    event:time [
+        tl:at "PT1M56.274S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000244
+    event:time [
+        tl:at "PT1M56.901S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000245
+    event:time [
+        tl:at "PT1M57.551S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000246
+    event:time [
+        tl:at "PT1M58.178S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "4" .
+
+:beat_000247
+    event:time [
+        tl:at "PT1M58.828S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000248
+    event:time [
+        tl:at "PT1M59.467S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000249
+    event:time [
+        tl:at "PT2M0.105S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000250
+    event:time [
+        tl:at "PT2M0.744S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "4" .
+
+:beat_000251
+    event:time [
+        tl:at "PT2M1.382S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000252
+    event:time [
+        tl:at "PT2M2.009S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000253
+    event:time [
+        tl:at "PT2M2.636S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000254
+    event:time [
+        tl:at "PT2M3.263S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "4" .
+
+:beat_000255
+    event:time [
+        tl:at "PT2M3.902S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000256
+    event:time [
+        tl:at "PT2M4.529S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000257
+    event:time [
+        tl:at "PT2M5.156S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000258
+    event:time [
+        tl:at "PT2M5.782S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "4" .
+
+:beat_000259
+    event:time [
+        tl:at "PT2M6.421S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000260
+    event:time [
+        tl:at "PT2M7.06S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000261
+    event:time [
+        tl:at "PT2M7.71S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000262
+    event:time [
+        tl:at "PT2M8.36S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "4" .
+
+:beat_000263
+    event:time [
+        tl:at "PT2M9.022S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000264
+    event:time [
+        tl:at "PT2M9.501S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000265
+    event:time [
+        tl:at "PT2M10.03S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000266
+    event:time [
+        tl:at "PT2M10.468S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000267
+    event:time [
+        tl:at "PT2M10.902S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000268
+    event:time [
+        tl:at "PT2M11.34S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000269
+    event:time [
+        tl:at "PT2M11.763S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000270
+    event:time [
+        tl:at "PT2M12.21S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000271
+    event:time [
+        tl:at "PT2M12.637S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000272
+    event:time [
+        tl:at "PT2M13.061S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000273
+    event:time [
+        tl:at "PT2M13.497S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000274
+    event:time [
+        tl:at "PT2M13.936S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000275
+    event:time [
+        tl:at "PT2M14.356S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000276
+    event:time [
+        tl:at "PT2M14.808S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000277
+    event:time [
+        tl:at "PT2M15.29S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000278
+    event:time [
+        tl:at "PT2M15.745S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000279
+    event:time [
+        tl:at "PT2M16.18S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000280
+    event:time [
+        tl:at "PT2M16.638S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000281
+    event:time [
+        tl:at "PT2M17.125S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000282
+    event:time [
+        tl:at "PT2M17.555S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000283
+    event:time [
+        tl:at "PT2M18.008S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000284
+    event:time [
+        tl:at "PT2M18.426S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000285
+    event:time [
+        tl:at "PT2M18.867S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000286
+    event:time [
+        tl:at "PT2M19.297S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000287
+    event:time [
+        tl:at "PT2M19.726S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000288
+    event:time [
+        tl:at "PT2M20.144S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000289
+    event:time [
+        tl:at "PT2M20.574S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000290
+    event:time [
+        tl:at "PT2M21.026S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000291
+    event:time [
+        tl:at "PT2M21.468S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000292
+    event:time [
+        tl:at "PT2M21.897S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000293
+    event:time [
+        tl:at "PT2M22.327S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000294
+    event:time [
+        tl:at "PT2M22.756S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000295
+    event:time [
+        tl:at "PT2M23.186S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000296
+    event:time [
+        tl:at "PT2M23.627S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000297
+    event:time [
+        tl:at "PT2M24.057S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000298
+    event:time [
+        tl:at "PT2M24.498S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000299
+    event:time [
+        tl:at "PT2M24.951S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000300
+    event:time [
+        tl:at "PT2M25.403S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000301
+    event:time [
+        tl:at "PT2M25.833S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000302
+    event:time [
+        tl:at "PT2M26.274S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000303
+    event:time [
+        tl:at "PT2M26.692S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000304
+    event:time [
+        tl:at "PT2M27.122S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000305
+    event:time [
+        tl:at "PT2M27.586S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000306
+    event:time [
+        tl:at "PT2M28.007S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000307
+    event:time [
+        tl:at "PT2M28.447S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000308
+    event:time [
+        tl:at "PT2M28.881S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000309
+    event:time [
+        tl:at "PT2M29.326S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000310
+    event:time [
+        tl:at "PT2M29.753S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000311
+    event:time [
+        tl:at "PT2M30.184S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000312
+    event:time [
+        tl:at "PT2M30.629S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000313
+    event:time [
+        tl:at "PT2M31.044S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000314
+    event:time [
+        tl:at "PT2M31.466S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000315
+    event:time [
+        tl:at "PT2M32.079S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000316
+    event:time [
+        tl:at "PT2M32.694S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000317
+    event:time [
+        tl:at "PT2M33.321S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "4" .
+
+:beat_000318
+    event:time [
+        tl:at "PT2M33.983S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000319
+    event:time [
+        tl:at "PT2M34.61S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000320
+    event:time [
+        tl:at "PT2M35.237S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000321
+    event:time [
+        tl:at "PT2M35.864S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "4" .
+
+:beat_000322
+    event:time [
+        tl:at "PT2M36.491S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000323
+    event:time [
+        tl:at "PT2M37.118S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000324
+    event:time [
+        tl:at "PT2M37.733S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000325
+    event:time [
+        tl:at "PT2M38.36S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "4" .
+
+:beat_000326
+    event:time [
+        tl:at "PT2M38.987S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000327
+    event:time [
+        tl:at "PT2M39.602S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000328
+    event:time [
+        tl:at "PT2M40.229S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000329
+    event:time [
+        tl:at "PT2M40.856S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "4" .
+
+:beat_000330
+    event:time [
+        tl:at "PT2M41.472S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000331
+    event:time [
+        tl:at "PT2M42.075S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000332
+    event:time [
+        tl:at "PT2M42.679S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000333
+    event:time [
+        tl:at "PT2M43.283S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "4" .
+
+:beat_000334
+    event:time [
+        tl:at "PT2M43.898S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000335
+    event:time [
+        tl:at "PT2M44.513S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000336
+    event:time [
+        tl:at "PT2M45.14S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000337
+    event:time [
+        tl:at "PT2M45.756S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "4" .
+
+:beat_000338
+    event:time [
+        tl:at "PT2M46.371S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000339
+    event:time [
+        tl:at "PT2M46.986S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000340
+    event:time [
+        tl:at "PT2M47.59S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000341
+    event:time [
+        tl:at "PT2M48.194S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "4" .
+
+:beat_000342
+    event:time [
+        tl:at "PT2M48.797S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000343
+    event:time [
+        tl:at "PT2M49.39S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000344
+    event:time [
+        tl:at "PT2M50.005S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000345
+    event:time [
+        tl:at "PT2M50.632S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "4" .
+
+:beat_000346
+    event:time [
+        tl:at "PT2M51.259S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000347
+    event:time [
+        tl:at "PT2M51.886S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000348
+    event:time [
+        tl:at "PT2M52.478S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000349
+    event:time [
+        tl:at "PT2M53.116S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "4" .
+
+:beat_000350
+    event:time [
+        tl:at "PT2M53.743S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000351
+    event:time [
+        tl:at "PT2M54.37S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000352
+    event:time [
+        tl:at "PT2M54.986S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000353
+    event:time [
+        tl:at "PT2M55.601S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "4" .
+
+:beat_000354
+    event:time [
+        tl:at "PT2M56.205S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000355
+    event:time [
+        tl:at "PT2M56.808S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000356
+    event:time [
+        tl:at "PT2M57.412S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000357
+    event:time [
+        tl:at "PT2M58.016S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "4" .
+
+:beat_000358
+    event:time [
+        tl:at "PT2M58.631S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000359
+    event:time [
+        tl:at "PT2M59.246S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000360
+    event:time [
+        tl:at "PT2M59.862S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000361
+    event:time [
+        tl:at "PT3M0.489S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "4" .
+
+:beat_000362
+    event:time [
+        tl:at "PT3M1.092S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000363
+    event:time [
+        tl:at "PT3M1.708S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000364
+    event:time [
+        tl:at "PT3M2.323S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000365
+    event:time [
+        tl:at "PT3M2.927S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "4" .
+
+:beat_000366
+    event:time [
+        tl:at "PT3M3.554S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000367
+    event:time [
+        tl:at "PT3M4.181S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000368
+    event:time [
+        tl:at "PT3M4.796S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000369
+    event:time [
+        tl:at "PT3M5.411S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "4" .
+
+:beat_000370
+    event:time [
+        tl:at "PT3M6.027S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000371
+    event:time [
+        tl:at "PT3M6.642S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000372
+    event:time [
+        tl:at "PT3M7.246S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000373
+    event:time [
+        tl:at "PT3M7.849S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "4" .
+
+:beat_000374
+    event:time [
+        tl:at "PT3M8.465S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000375
+    event:time [
+        tl:at "PT3M9.08S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000376
+    event:time [
+        tl:at "PT3M9.695S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000377
+    event:time [
+        tl:at "PT3M10.311S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "4" .
+
+:beat_000378
+    event:time [
+        tl:at "PT3M10.926S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000379
+    event:time [
+        tl:at "PT3M11.553S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000380
+    event:time [
+        tl:at "PT3M12.18S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000381
+    event:time [
+        tl:at "PT3M12.784S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "4" .
+
+:beat_000382
+    event:time [
+        tl:at "PT3M13.399S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000383
+    event:time [
+        tl:at "PT3M14.014S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000384
+    event:time [
+        tl:at "PT3M14.63S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000385
+    event:time [
+        tl:at "PT3M15.245S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "4" .
+
+:beat_000386
+    event:time [
+        tl:at "PT3M15.849S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000387
+    event:time [
+        tl:at "PT3M16.464S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000388
+    event:time [
+        tl:at "PT3M17.068S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000389
+    event:time [
+        tl:at "PT3M17.671S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "4" .
+
+:beat_000390
+    event:time [
+        tl:at "PT3M18.287S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000391
+    event:time [
+        tl:at "PT3M18.902S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000392
+    event:time [
+        tl:at "PT3M19.506S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000393
+    event:time [
+        tl:at "PT3M20.11S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "4" .
+
+:beat_000394
+    event:time [
+        tl:at "PT3M20.725S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:beat_000395
+    event:time [
+        tl:at "PT3M21.329S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "2" .
+
+:beat_000396
+    event:time [
+        tl:at "PT3M21.944S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "3" .
+
+:beat_000397
+    event:time [
+        tl:at "PT3M22.559S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "4" .
+
+:beat_000398
+    event:time [
+        tl:at "PT3M23.186S"^^xsd:duration ;
+        tl:onTimeLine :timeline_29f4fe8782cb ;
+        a tl:Instant
+    ] ;
+    a af:Beat ;
+    rdfs:label "1" .
+
+:maker_cce7c51adf58
+    a mo:MusicArtist ;
+    foaf:name "The Beatles" .
+
+:record_f18ab2b282e5
+    dc:title "Sgt. Pepper's Lonely Hearts Club Band" ;
+    mo:release_type mo:album ;
+    mo:track :track_ff804c6e2384 ;
+    a mo:Record ;
+    foaf:maker :maker_cce7c51adf58 .
+
+:timeline_29f4fe8782cb
+    a tl:Timeline .
+
+:track_ff804c6e2384
+    dc:title "Lucy In The Sky With Diamonds" ;
+    mo:available_as <file:The%20Beatles/Sgt.%20Pepper's%20Lonely%20Hearts%20Club%20Band/03_-_Lucy_In_The_Sky_With_Diamonds.wav> ;
+    a mo:Track ;
+    foaf:maker :maker_cce7c51adf58 .
+
+<file:The%20Beatles/Sgt.%20Pepper's%20Lonely%20Hearts%20Club%20Band/03_-_Lucy_In_The_Sky_With_Diamonds.wav>
+    mo:encodes [
+        mo:time [
+            tl:onTimeLine :timeline_29f4fe8782cb ;
+            a tl:Interval
+        ] ;
+        a mo:Signal
+    ] ;
+    a mo:AudioFile .
+

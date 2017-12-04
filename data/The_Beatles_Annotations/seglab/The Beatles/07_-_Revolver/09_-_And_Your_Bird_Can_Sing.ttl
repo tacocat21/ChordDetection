@@ -1,0 +1,159 @@
+@base <#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix : <> .
+@prefix af: <http://purl.org/ontology/af/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix event: <http://purl.org/NET/c4dm/event.owl#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix mo: <http://purl.org/ontology/mo/> .
+@prefix ov: <http://open.vocab.org/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix tl: <http://purl.org/NET/c4dm/timeline.owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<>
+    ov:confidence "0.6" ;
+    ov:versionnumber "1.0" ;
+    dc:created "2009-10-20" ;
+    a foaf:Document .
+
+:maker_2b3145791eab
+    a mo:MusicArtist ;
+    foaf:name "The Beatles" .
+
+:record_93e335f82faa
+    dc:title "Revolver" ;
+    mo:release_type mo:album ;
+    mo:track :track_5a4097afd173 ;
+    a mo:Record ;
+    foaf:maker :maker_2b3145791eab .
+
+:segment_000001
+    event:time [
+        tl:beginsAt "PT0S"^^xsd:duration ;
+        tl:duration "PT0.453S"^^xsd:duration ;
+        tl:onTimeLine :timeline_95f9a40a2369 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "silence" .
+
+:segment_000002
+    event:time [
+        tl:beginsAt "PT0.453S"^^xsd:duration ;
+        tl:duration "PT7.256S"^^xsd:duration ;
+        tl:onTimeLine :timeline_95f9a40a2369 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "intro" .
+
+:segment_000003
+    event:time [
+        tl:beginsAt "PT7.709S"^^xsd:duration ;
+        tl:duration "PT14.536S"^^xsd:duration ;
+        tl:onTimeLine :timeline_95f9a40a2369 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse" .
+
+:segment_000004
+    event:time [
+        tl:beginsAt "PT22.245S"^^xsd:duration ;
+        tl:duration "PT14.396S"^^xsd:duration ;
+        tl:onTimeLine :timeline_95f9a40a2369 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse" .
+
+:segment_000005
+    event:time [
+        tl:beginsAt "PT36.641S"^^xsd:duration ;
+        tl:duration "PT14.513S"^^xsd:duration ;
+        tl:onTimeLine :timeline_95f9a40a2369 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "bridge" .
+
+:segment_000006
+    event:time [
+        tl:beginsAt "PT51.154S"^^xsd:duration ;
+        tl:duration "PT14.413S"^^xsd:duration ;
+        tl:onTimeLine :timeline_95f9a40a2369 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse_(guitar_solo)" .
+
+:segment_000007
+    event:time [
+        tl:beginsAt "PT1M5.567S"^^xsd:duration ;
+        tl:duration "PT14.531S"^^xsd:duration ;
+        tl:onTimeLine :timeline_95f9a40a2369 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "bridge" .
+
+:segment_000008
+    event:time [
+        tl:beginsAt "PT1M20.098S"^^xsd:duration ;
+        tl:duration "PT14.4S"^^xsd:duration ;
+        tl:onTimeLine :timeline_95f9a40a2369 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse" .
+
+:segment_000009
+    event:time [
+        tl:beginsAt "PT1M34.498S"^^xsd:duration ;
+        tl:duration "PT14.416S"^^xsd:duration ;
+        tl:onTimeLine :timeline_95f9a40a2369 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse_(guitar_solo)" .
+
+:segment_000010
+    event:time [
+        tl:beginsAt "PT1M48.914S"^^xsd:duration ;
+        tl:duration "PT9.051S"^^xsd:duration ;
+        tl:onTimeLine :timeline_95f9a40a2369 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "outro" .
+
+:segment_000011
+    event:time [
+        tl:beginsAt "PT1M57.965S"^^xsd:duration ;
+        tl:duration "PT3.768S"^^xsd:duration ;
+        tl:onTimeLine :timeline_95f9a40a2369 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "silence" .
+
+:timeline_95f9a40a2369
+    a tl:Timeline .
+
+:track_5a4097afd173
+    dc:title "And Your Bird Can Sing" ;
+    mo:available_as <file:The%20Beatles/Revolver/09_-_And_Your_Bird_Can_Sing.wav> ;
+    a mo:Track ;
+    foaf:maker :maker_2b3145791eab .
+
+<file:The%20Beatles/Revolver/09_-_And_Your_Bird_Can_Sing.wav>
+    mo:encodes [
+        mo:time [
+            tl:onTimeLine :timeline_95f9a40a2369 ;
+            a tl:Interval
+        ] ;
+        a mo:Signal
+    ] ;
+    a mo:AudioFile .
+

@@ -1,0 +1,149 @@
+@base <#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix : <> .
+@prefix af: <http://purl.org/ontology/af/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix event: <http://purl.org/NET/c4dm/event.owl#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix mo: <http://purl.org/ontology/mo/> .
+@prefix ov: <http://open.vocab.org/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix tl: <http://purl.org/NET/c4dm/timeline.owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<>
+    ov:confidence "0.6" ;
+    ov:versionnumber "1.0" ;
+    dc:created "2009-10-20" ;
+    a foaf:Document .
+
+:maker_87db18d0b40d
+    a mo:MusicArtist ;
+    foaf:name "The Beatles" .
+
+:record_9963379e7171
+    dc:title "Rubber Soul" ;
+    mo:release_type mo:album ;
+    mo:track :track_bdb7bc63358b ;
+    a mo:Record ;
+    foaf:maker :maker_87db18d0b40d .
+
+:segment_000001
+    event:time [
+        tl:beginsAt "PT0S"^^xsd:duration ;
+        tl:duration "PT0.473S"^^xsd:duration ;
+        tl:onTimeLine :timeline_6cddba22b42e ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "silence" .
+
+:segment_000002
+    event:time [
+        tl:beginsAt "PT0.473S"^^xsd:duration ;
+        tl:duration "PT4.009S"^^xsd:duration ;
+        tl:onTimeLine :timeline_6cddba22b42e ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "intro" .
+
+:segment_000003
+    event:time [
+        tl:beginsAt "PT4.482S"^^xsd:duration ;
+        tl:duration "PT36.469S"^^xsd:duration ;
+        tl:onTimeLine :timeline_6cddba22b42e ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse" .
+
+:segment_000004
+    event:time [
+        tl:beginsAt "PT40.951S"^^xsd:duration ;
+        tl:duration "PT36.961S"^^xsd:duration ;
+        tl:onTimeLine :timeline_6cddba22b42e ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse" .
+
+:segment_000005
+    event:time [
+        tl:beginsAt "PT1M17.912S"^^xsd:duration ;
+        tl:duration "PT16.619S"^^xsd:duration ;
+        tl:onTimeLine :timeline_6cddba22b42e ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "bridge" .
+
+:segment_000006
+    event:time [
+        tl:beginsAt "PT1M34.531S"^^xsd:duration ;
+        tl:duration "PT37.634S"^^xsd:duration ;
+        tl:onTimeLine :timeline_6cddba22b42e ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse" .
+
+:segment_000007
+    event:time [
+        tl:beginsAt "PT2M12.165S"^^xsd:duration ;
+        tl:duration "PT16.765S"^^xsd:duration ;
+        tl:onTimeLine :timeline_6cddba22b42e ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "bridge" .
+
+:segment_000008
+    event:time [
+        tl:beginsAt "PT2M28.93S"^^xsd:duration ;
+        tl:duration "PT37.923S"^^xsd:duration ;
+        tl:onTimeLine :timeline_6cddba22b42e ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse" .
+
+:segment_000009
+    event:time [
+        tl:beginsAt "PT3M6.853S"^^xsd:duration ;
+        tl:duration "PT9.167S"^^xsd:duration ;
+        tl:onTimeLine :timeline_6cddba22b42e ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "outro_(fade-out)" .
+
+:segment_000010
+    event:time [
+        tl:beginsAt "PT3M16.02S"^^xsd:duration ;
+        tl:duration "PT6.58S"^^xsd:duration ;
+        tl:onTimeLine :timeline_6cddba22b42e ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "silence" .
+
+:timeline_6cddba22b42e
+    a tl:Timeline .
+
+:track_bdb7bc63358b
+    dc:title "You Won't See Me" ;
+    mo:available_as <file:The%20Beatles/Rubber%20Soul/03_-_You_Won't_See_Me.wav> ;
+    a mo:Track ;
+    foaf:maker :maker_87db18d0b40d .
+
+<file:The%20Beatles/Rubber%20Soul/03_-_You_Won't_See_Me.wav>
+    mo:encodes [
+        mo:time [
+            tl:onTimeLine :timeline_6cddba22b42e ;
+            a tl:Interval
+        ] ;
+        a mo:Signal
+    ] ;
+    a mo:AudioFile .
+

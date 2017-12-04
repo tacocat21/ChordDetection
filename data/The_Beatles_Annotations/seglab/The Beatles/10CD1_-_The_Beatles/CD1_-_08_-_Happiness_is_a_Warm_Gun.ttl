@@ -1,0 +1,99 @@
+@base <#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix : <> .
+@prefix af: <http://purl.org/ontology/af/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix event: <http://purl.org/NET/c4dm/event.owl#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix mo: <http://purl.org/ontology/mo/> .
+@prefix ov: <http://open.vocab.org/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix tl: <http://purl.org/NET/c4dm/timeline.owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<>
+    ov:confidence "0.6" ;
+    ov:versionnumber "1.0" ;
+    dc:created "2009-10-20" ;
+    a foaf:Document .
+
+:maker_243b051b3d23
+    a mo:MusicArtist ;
+    foaf:name "The Beatles" .
+
+:record_88ad63924a67
+    dc:title "CD1 - The Beatles" ;
+    mo:release_type mo:album ;
+    mo:track :track_cf76739d9e21 ;
+    a mo:Record ;
+    foaf:maker :maker_243b051b3d23 .
+
+:segment_000001
+    event:time [
+        tl:beginsAt "PT0S"^^xsd:duration ;
+        tl:duration "PT44.62S"^^xsd:duration ;
+        tl:onTimeLine :timeline_a0dbb7e79fab ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "part_1" .
+
+:segment_000002
+    event:time [
+        tl:beginsAt "PT44.62S"^^xsd:duration ;
+        tl:duration "PT28.523S"^^xsd:duration ;
+        tl:onTimeLine :timeline_a0dbb7e79fab ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "part_2" .
+
+:segment_000003
+    event:time [
+        tl:beginsAt "PT1M13.143S"^^xsd:duration ;
+        tl:duration "PT21.355S"^^xsd:duration ;
+        tl:onTimeLine :timeline_a0dbb7e79fab ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "part_3" .
+
+:segment_000004
+    event:time [
+        tl:beginsAt "PT1M34.498S"^^xsd:duration ;
+        tl:duration "PT1M7.135S"^^xsd:duration ;
+        tl:onTimeLine :timeline_a0dbb7e79fab ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "part_4" .
+
+:segment_000005
+    event:time [
+        tl:beginsAt "PT2M41.633S"^^xsd:duration ;
+        tl:duration "PT1.834S"^^xsd:duration ;
+        tl:onTimeLine :timeline_a0dbb7e79fab ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "silence" .
+
+:timeline_a0dbb7e79fab
+    a tl:Timeline .
+
+:track_cf76739d9e21
+    dc:title "Happiness is a Warm Gun" ;
+    mo:available_as <file:The%20Beatles/CD1%20-%20The%20Beatles/CD1_-_08_-_Happiness_is_a_Warm_Gun.wav> ;
+    a mo:Track ;
+    foaf:maker :maker_243b051b3d23 .
+
+<file:The%20Beatles/CD1%20-%20The%20Beatles/CD1_-_08_-_Happiness_is_a_Warm_Gun.wav>
+    mo:encodes [
+        mo:time [
+            tl:onTimeLine :timeline_a0dbb7e79fab ;
+            a tl:Interval
+        ] ;
+        a mo:Signal
+    ] ;
+    a mo:AudioFile .
+

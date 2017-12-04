@@ -1,0 +1,159 @@
+@base <#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix : <> .
+@prefix af: <http://purl.org/ontology/af/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix event: <http://purl.org/NET/c4dm/event.owl#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix mo: <http://purl.org/ontology/mo/> .
+@prefix ov: <http://open.vocab.org/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix tl: <http://purl.org/NET/c4dm/timeline.owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<>
+    ov:confidence "0.6" ;
+    ov:versionnumber "1.0" ;
+    dc:created "2009-10-20" ;
+    a foaf:Document .
+
+:maker_634be7c9869e
+    a mo:MusicArtist ;
+    foaf:name "The Beatles" .
+
+:record_b5267e194e72
+    dc:title "With the Beatles" ;
+    mo:release_type mo:album ;
+    mo:track :track_0f28a697a0d8 ;
+    a mo:Record ;
+    foaf:maker :maker_634be7c9869e .
+
+:segment_000001
+    event:time [
+        tl:beginsAt "PT0S"^^xsd:duration ;
+        tl:duration "PT0.44S"^^xsd:duration ;
+        tl:onTimeLine :timeline_78a7ae95f661 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "silence" .
+
+:segment_000002
+    event:time [
+        tl:beginsAt "PT0.44S"^^xsd:duration ;
+        tl:duration "PT17.525S"^^xsd:duration ;
+        tl:onTimeLine :timeline_78a7ae95f661 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "intro" .
+
+:segment_000003
+    event:time [
+        tl:beginsAt "PT17.965S"^^xsd:duration ;
+        tl:duration "PT17.659S"^^xsd:duration ;
+        tl:onTimeLine :timeline_78a7ae95f661 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse_refrain" .
+
+:segment_000004
+    event:time [
+        tl:beginsAt "PT35.624S"^^xsd:duration ;
+        tl:duration "PT18.03S"^^xsd:duration ;
+        tl:onTimeLine :timeline_78a7ae95f661 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse_refrain" .
+
+:segment_000005
+    event:time [
+        tl:beginsAt "PT53.654S"^^xsd:duration ;
+        tl:duration "PT18.054S"^^xsd:duration ;
+        tl:onTimeLine :timeline_78a7ae95f661 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse_refrain" .
+
+:segment_000006
+    event:time [
+        tl:beginsAt "PT1M11.708S"^^xsd:duration ;
+        tl:duration "PT17.484S"^^xsd:duration ;
+        tl:onTimeLine :timeline_78a7ae95f661 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "bridge" .
+
+:segment_000007
+    event:time [
+        tl:beginsAt "PT1M29.192S"^^xsd:duration ;
+        tl:duration "PT17.601S"^^xsd:duration ;
+        tl:onTimeLine :timeline_78a7ae95f661 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "guitar_solo" .
+
+:segment_000008
+    event:time [
+        tl:beginsAt "PT1M46.793S"^^xsd:duration ;
+        tl:duration "PT18.007S"^^xsd:duration ;
+        tl:onTimeLine :timeline_78a7ae95f661 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse_refrain" .
+
+:segment_000009
+    event:time [
+        tl:beginsAt "PT2M4.8S"^^xsd:duration ;
+        tl:duration "PT18.089S"^^xsd:duration ;
+        tl:onTimeLine :timeline_78a7ae95f661 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse_refrain" .
+
+:segment_000010
+    event:time [
+        tl:beginsAt "PT2M22.889S"^^xsd:duration ;
+        tl:duration "PT20.536S"^^xsd:duration ;
+        tl:onTimeLine :timeline_78a7ae95f661 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "refrain" .
+
+:segment_000011
+    event:time [
+        tl:beginsAt "PT2M43.425S"^^xsd:duration ;
+        tl:duration "PT4.202S"^^xsd:duration ;
+        tl:onTimeLine :timeline_78a7ae95f661 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "silence" .
+
+:timeline_78a7ae95f661
+    a tl:Timeline .
+
+:track_0f28a697a0d8
+    dc:title "Roll Over Beethoven" ;
+    mo:available_as <file:The%20Beatles/With%20the%20Beatles/08_-_Roll_Over_Beethoven.wav> ;
+    a mo:Track ;
+    foaf:maker :maker_634be7c9869e .
+
+<file:The%20Beatles/With%20the%20Beatles/08_-_Roll_Over_Beethoven.wav>
+    mo:encodes [
+        mo:time [
+            tl:onTimeLine :timeline_78a7ae95f661 ;
+            a tl:Interval
+        ] ;
+        a mo:Signal
+    ] ;
+    a mo:AudioFile .
+

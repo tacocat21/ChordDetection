@@ -1,0 +1,159 @@
+@base <#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix : <> .
+@prefix af: <http://purl.org/ontology/af/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix event: <http://purl.org/NET/c4dm/event.owl#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix mo: <http://purl.org/ontology/mo/> .
+@prefix ov: <http://open.vocab.org/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix tl: <http://purl.org/NET/c4dm/timeline.owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<>
+    ov:confidence "0.6" ;
+    ov:versionnumber "1.0" ;
+    dc:created "2009-10-20" ;
+    a foaf:Document .
+
+:maker_4d54b10467cb
+    a mo:MusicArtist ;
+    foaf:name "The Beatles" .
+
+:record_118c63f5ed8d
+    dc:title "Rubber Soul" ;
+    mo:release_type mo:album ;
+    mo:track :track_bc84e54841be ;
+    a mo:Record ;
+    foaf:maker :maker_4d54b10467cb .
+
+:segment_000001
+    event:time [
+        tl:beginsAt "PT0S"^^xsd:duration ;
+        tl:duration "PT0.416S"^^xsd:duration ;
+        tl:onTimeLine :timeline_62471e5beb1d ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "silence" .
+
+:segment_000002
+    event:time [
+        tl:beginsAt "PT0.416S"^^xsd:duration ;
+        tl:duration "PT9.2S"^^xsd:duration ;
+        tl:onTimeLine :timeline_62471e5beb1d ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "intro" .
+
+:segment_000003
+    event:time [
+        tl:beginsAt "PT9.616S"^^xsd:duration ;
+        tl:duration "PT18.686S"^^xsd:duration ;
+        tl:onTimeLine :timeline_62471e5beb1d ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse" .
+
+:segment_000004
+    event:time [
+        tl:beginsAt "PT28.302S"^^xsd:duration ;
+        tl:duration "PT18.417S"^^xsd:duration ;
+        tl:onTimeLine :timeline_62471e5beb1d ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "bridge" .
+
+:segment_000005
+    event:time [
+        tl:beginsAt "PT46.719S"^^xsd:duration ;
+        tl:duration "PT4.719S"^^xsd:duration ;
+        tl:onTimeLine :timeline_62471e5beb1d ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "half-intro" .
+
+:segment_000006
+    event:time [
+        tl:beginsAt "PT51.438S"^^xsd:duration ;
+        tl:duration "PT18.768S"^^xsd:duration ;
+        tl:onTimeLine :timeline_62471e5beb1d ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse" .
+
+:segment_000007
+    event:time [
+        tl:beginsAt "PT1M10.206S"^^xsd:duration ;
+        tl:duration "PT18.494S"^^xsd:duration ;
+        tl:onTimeLine :timeline_62471e5beb1d ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "bridge" .
+
+:segment_000008
+    event:time [
+        tl:beginsAt "PT1M28.7S"^^xsd:duration ;
+        tl:duration "PT18.553S"^^xsd:duration ;
+        tl:onTimeLine :timeline_62471e5beb1d ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse_(instrumental)" .
+
+:segment_000009
+    event:time [
+        tl:beginsAt "PT1M47.253S"^^xsd:duration ;
+        tl:duration "PT18.406S"^^xsd:duration ;
+        tl:onTimeLine :timeline_62471e5beb1d ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "bridge" .
+
+:segment_000010
+    event:time [
+        tl:beginsAt "PT2M5.659S"^^xsd:duration ;
+        tl:duration "PT18.056S"^^xsd:duration ;
+        tl:onTimeLine :timeline_62471e5beb1d ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "outro" .
+
+:segment_000011
+    event:time [
+        tl:beginsAt "PT2M23.715S"^^xsd:duration ;
+        tl:duration "PT4.258S"^^xsd:duration ;
+        tl:onTimeLine :timeline_62471e5beb1d ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "silence" .
+
+:timeline_62471e5beb1d
+    a tl:Timeline .
+
+:track_bc84e54841be
+    dc:title "In My Life" ;
+    mo:available_as <file:The%20Beatles/Rubber%20Soul/11_-_In_My_Life.wav> ;
+    a mo:Track ;
+    foaf:maker :maker_4d54b10467cb .
+
+<file:The%20Beatles/Rubber%20Soul/11_-_In_My_Life.wav>
+    mo:encodes [
+        mo:time [
+            tl:onTimeLine :timeline_62471e5beb1d ;
+            a tl:Interval
+        ] ;
+        a mo:Signal
+    ] ;
+    a mo:AudioFile .
+

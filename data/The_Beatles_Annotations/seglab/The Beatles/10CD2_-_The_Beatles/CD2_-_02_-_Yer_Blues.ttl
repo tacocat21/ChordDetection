@@ -1,0 +1,149 @@
+@base <#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix : <> .
+@prefix af: <http://purl.org/ontology/af/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix event: <http://purl.org/NET/c4dm/event.owl#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix mo: <http://purl.org/ontology/mo/> .
+@prefix ov: <http://open.vocab.org/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix tl: <http://purl.org/NET/c4dm/timeline.owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<>
+    ov:confidence "0.6" ;
+    ov:versionnumber "1.0" ;
+    dc:created "2009-10-20" ;
+    a foaf:Document .
+
+:maker_e92ab2686d8f
+    a mo:MusicArtist ;
+    foaf:name "The Beatles" .
+
+:record_91b68f6d3a26
+    dc:title "CD2 - The Beatles" ;
+    mo:release_type mo:album ;
+    mo:track :track_710c6ec00ce8 ;
+    a mo:Record ;
+    foaf:maker :maker_e92ab2686d8f .
+
+:segment_000001
+    event:time [
+        tl:beginsAt "PT0S"^^xsd:duration ;
+        tl:duration "PT3.376S"^^xsd:duration ;
+        tl:onTimeLine :timeline_39a146e5738b ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "silence" .
+
+:segment_000002
+    event:time [
+        tl:beginsAt "PT3.376S"^^xsd:duration ;
+        tl:duration "PT28.929S"^^xsd:duration ;
+        tl:onTimeLine :timeline_39a146e5738b ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse_a" .
+
+:segment_000003
+    event:time [
+        tl:beginsAt "PT32.305S"^^xsd:duration ;
+        tl:duration "PT29.328S"^^xsd:duration ;
+        tl:onTimeLine :timeline_39a146e5738b ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse_a" .
+
+:segment_000004
+    event:time [
+        tl:beginsAt "PT1M1.633S"^^xsd:duration ;
+        tl:duration "PT29.241S"^^xsd:duration ;
+        tl:onTimeLine :timeline_39a146e5738b ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse_b" .
+
+:segment_000005
+    event:time [
+        tl:beginsAt "PT1M30.874S"^^xsd:duration ;
+        tl:duration "PT29.22S"^^xsd:duration ;
+        tl:onTimeLine :timeline_39a146e5738b ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse_b_" .
+
+:segment_000006
+    event:time [
+        tl:beginsAt "PT2M0.094S"^^xsd:duration ;
+        tl:duration "PT27.859S"^^xsd:duration ;
+        tl:onTimeLine :timeline_39a146e5738b ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse_b" .
+
+:segment_000007
+    event:time [
+        tl:beginsAt "PT2M27.953S"^^xsd:duration ;
+        tl:duration "PT26.463S"^^xsd:duration ;
+        tl:onTimeLine :timeline_39a146e5738b ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse_c_(guitar_solo)" .
+
+:segment_000008
+    event:time [
+        tl:beginsAt "PT2M54.416S"^^xsd:duration ;
+        tl:duration "PT23.662S"^^xsd:duration ;
+        tl:onTimeLine :timeline_39a146e5738b ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse_c_(guitar_solo)" .
+
+:segment_000009
+    event:time [
+        tl:beginsAt "PT3M18.078S"^^xsd:duration ;
+        tl:duration "PT39.515S"^^xsd:duration ;
+        tl:onTimeLine :timeline_39a146e5738b ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "outro_verse_a" .
+
+:segment_000010
+    event:time [
+        tl:beginsAt "PT3M57.593S"^^xsd:duration ;
+        tl:duration "PT3.5S"^^xsd:duration ;
+        tl:onTimeLine :timeline_39a146e5738b ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "silence" .
+
+:timeline_39a146e5738b
+    a tl:Timeline .
+
+:track_710c6ec00ce8
+    dc:title "Yer Blues" ;
+    mo:available_as <file:The%20Beatles/CD2%20-%20The%20Beatles/CD2_-_02_-_Yer_Blues.wav> ;
+    a mo:Track ;
+    foaf:maker :maker_e92ab2686d8f .
+
+<file:The%20Beatles/CD2%20-%20The%20Beatles/CD2_-_02_-_Yer_Blues.wav>
+    mo:encodes [
+        mo:time [
+            tl:onTimeLine :timeline_39a146e5738b ;
+            a tl:Interval
+        ] ;
+        a mo:Signal
+    ] ;
+    a mo:AudioFile .
+

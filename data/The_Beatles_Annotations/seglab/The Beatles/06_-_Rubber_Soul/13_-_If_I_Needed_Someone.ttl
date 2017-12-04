@@ -1,0 +1,169 @@
+@base <#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix : <> .
+@prefix af: <http://purl.org/ontology/af/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix event: <http://purl.org/NET/c4dm/event.owl#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix mo: <http://purl.org/ontology/mo/> .
+@prefix ov: <http://open.vocab.org/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix tl: <http://purl.org/NET/c4dm/timeline.owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<>
+    ov:confidence "0.6" ;
+    ov:versionnumber "1.0" ;
+    dc:created "2009-10-20" ;
+    a foaf:Document .
+
+:maker_b6f809eb96ea
+    a mo:MusicArtist ;
+    foaf:name "The Beatles" .
+
+:record_47ca091872d6
+    dc:title "Rubber Soul" ;
+    mo:release_type mo:album ;
+    mo:track :track_d2cf8a9f8117 ;
+    a mo:Record ;
+    foaf:maker :maker_b6f809eb96ea .
+
+:segment_000001
+    event:time [
+        tl:beginsAt "PT0S"^^xsd:duration ;
+        tl:duration "PT0.429S"^^xsd:duration ;
+        tl:onTimeLine :timeline_8be6bcc6cf84 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "silence" .
+
+:segment_000002
+    event:time [
+        tl:beginsAt "PT0.429S"^^xsd:duration ;
+        tl:duration "PT7.36S"^^xsd:duration ;
+        tl:onTimeLine :timeline_8be6bcc6cf84 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "intro" .
+
+:segment_000003
+    event:time [
+        tl:beginsAt "PT7.789S"^^xsd:duration ;
+        tl:duration "PT14.883S"^^xsd:duration ;
+        tl:onTimeLine :timeline_8be6bcc6cf84 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse" .
+
+:segment_000004
+    event:time [
+        tl:beginsAt "PT22.672S"^^xsd:duration ;
+        tl:duration "PT14.793S"^^xsd:duration ;
+        tl:onTimeLine :timeline_8be6bcc6cf84 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse" .
+
+:segment_000005
+    event:time [
+        tl:beginsAt "PT37.465S"^^xsd:duration ;
+        tl:duration "PT14.911S"^^xsd:duration ;
+        tl:onTimeLine :timeline_8be6bcc6cf84 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "bridge" .
+
+:segment_000006
+    event:time [
+        tl:beginsAt "PT52.376S"^^xsd:duration ;
+        tl:duration "PT15.097S"^^xsd:duration ;
+        tl:onTimeLine :timeline_8be6bcc6cf84 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse" .
+
+:segment_000007
+    event:time [
+        tl:beginsAt "PT1M7.473S"^^xsd:duration ;
+        tl:duration "PT15.069S"^^xsd:duration ;
+        tl:onTimeLine :timeline_8be6bcc6cf84 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse_(instrumental)" .
+
+:segment_000008
+    event:time [
+        tl:beginsAt "PT1M22.542S"^^xsd:duration ;
+        tl:duration "PT15.086S"^^xsd:duration ;
+        tl:onTimeLine :timeline_8be6bcc6cf84 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse" .
+
+:segment_000009
+    event:time [
+        tl:beginsAt "PT1M37.628S"^^xsd:duration ;
+        tl:duration "PT15.285S"^^xsd:duration ;
+        tl:onTimeLine :timeline_8be6bcc6cf84 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "bridge" .
+
+:segment_000010
+    event:time [
+        tl:beginsAt "PT1M52.913S"^^xsd:duration ;
+        tl:duration "PT15.348S"^^xsd:duration ;
+        tl:onTimeLine :timeline_8be6bcc6cf84 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse" .
+
+:segment_000011
+    event:time [
+        tl:beginsAt "PT2M8.261S"^^xsd:duration ;
+        tl:duration "PT11.716S"^^xsd:duration ;
+        tl:onTimeLine :timeline_8be6bcc6cf84 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "outro" .
+
+:segment_000012
+    event:time [
+        tl:beginsAt "PT2M19.977S"^^xsd:duration ;
+        tl:duration "PT3.863S"^^xsd:duration ;
+        tl:onTimeLine :timeline_8be6bcc6cf84 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "silence" .
+
+:timeline_8be6bcc6cf84
+    a tl:Timeline .
+
+:track_d2cf8a9f8117
+    dc:title "If I Needed Someone" ;
+    mo:available_as <file:The%20Beatles/Rubber%20Soul/13_-_If_I_Needed_Someone.wav> ;
+    a mo:Track ;
+    foaf:maker :maker_b6f809eb96ea .
+
+<file:The%20Beatles/Rubber%20Soul/13_-_If_I_Needed_Someone.wav>
+    mo:encodes [
+        mo:time [
+            tl:onTimeLine :timeline_8be6bcc6cf84 ;
+            a tl:Interval
+        ] ;
+        a mo:Signal
+    ] ;
+    a mo:AudioFile .
+

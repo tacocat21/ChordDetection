@@ -1,0 +1,169 @@
+@base <#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix : <> .
+@prefix af: <http://purl.org/ontology/af/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix event: <http://purl.org/NET/c4dm/event.owl#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix mo: <http://purl.org/ontology/mo/> .
+@prefix ov: <http://open.vocab.org/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix tl: <http://purl.org/NET/c4dm/timeline.owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<>
+    ov:confidence "0.6" ;
+    ov:versionnumber "1.0" ;
+    dc:created "2009-10-20" ;
+    a foaf:Document .
+
+:maker_a81628708bdb
+    a mo:MusicArtist ;
+    foaf:name "The Beatles" .
+
+:record_274d95abbd27
+    dc:title "Magical Mystery Tour" ;
+    mo:release_type mo:album ;
+    mo:track :track_e43ea2b3da13 ;
+    a mo:Record ;
+    foaf:maker :maker_a81628708bdb .
+
+:segment_000001
+    event:time [
+        tl:beginsAt "PT0S"^^xsd:duration ;
+        tl:duration "PT0.42S"^^xsd:duration ;
+        tl:onTimeLine :timeline_5e695b786e0e ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "silence" .
+
+:segment_000002
+    event:time [
+        tl:beginsAt "PT0.42S"^^xsd:duration ;
+        tl:duration "PT3.588S"^^xsd:duration ;
+        tl:onTimeLine :timeline_5e695b786e0e ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "intro" .
+
+:segment_000003
+    event:time [
+        tl:beginsAt "PT4.008S"^^xsd:duration ;
+        tl:duration "PT23.69S"^^xsd:duration ;
+        tl:onTimeLine :timeline_5e695b786e0e ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse" .
+
+:segment_000004
+    event:time [
+        tl:beginsAt "PT27.698S"^^xsd:duration ;
+        tl:duration "PT16.678S"^^xsd:duration ;
+        tl:onTimeLine :timeline_5e695b786e0e ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "refrain" .
+
+:segment_000005
+    event:time [
+        tl:beginsAt "PT44.376S"^^xsd:duration ;
+        tl:duration "PT23.167S"^^xsd:duration ;
+        tl:onTimeLine :timeline_5e695b786e0e ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse" .
+
+:segment_000006
+    event:time [
+        tl:beginsAt "PT1M7.543S"^^xsd:duration ;
+        tl:duration "PT16.397S"^^xsd:duration ;
+        tl:onTimeLine :timeline_5e695b786e0e ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "refrain" .
+
+:segment_000007
+    event:time [
+        tl:beginsAt "PT1M23.94S"^^xsd:duration ;
+        tl:duration "PT23.276S"^^xsd:duration ;
+        tl:onTimeLine :timeline_5e695b786e0e ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse_(instrumental)" .
+
+:segment_000008
+    event:time [
+        tl:beginsAt "PT1M47.216S"^^xsd:duration ;
+        tl:duration "PT16.535S"^^xsd:duration ;
+        tl:onTimeLine :timeline_5e695b786e0e ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "refrain" .
+
+:segment_000009
+    event:time [
+        tl:beginsAt "PT2M3.751S"^^xsd:duration ;
+        tl:duration "PT23.139S"^^xsd:duration ;
+        tl:onTimeLine :timeline_5e695b786e0e ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse_(instrumental)" .
+
+:segment_000010
+    event:time [
+        tl:beginsAt "PT2M26.89S"^^xsd:duration ;
+        tl:duration "PT13.028S"^^xsd:duration ;
+        tl:onTimeLine :timeline_5e695b786e0e ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "refrain" .
+
+:segment_000011
+    event:time [
+        tl:beginsAt "PT2M39.918S"^^xsd:duration ;
+        tl:duration "PT16.191S"^^xsd:duration ;
+        tl:onTimeLine :timeline_5e695b786e0e ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "outro" .
+
+:segment_000012
+    event:time [
+        tl:beginsAt "PT2M56.109S"^^xsd:duration ;
+        tl:duration "PT4.064S"^^xsd:duration ;
+        tl:onTimeLine :timeline_5e695b786e0e ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "silence" .
+
+:timeline_5e695b786e0e
+    a tl:Timeline .
+
+:track_e43ea2b3da13
+    dc:title "The Fool On The Hill" ;
+    mo:available_as <file:The%20Beatles/Magical%20Mystery%20Tour/02_-_The_Fool_On_The_Hill.wav> ;
+    a mo:Track ;
+    foaf:maker :maker_a81628708bdb .
+
+<file:The%20Beatles/Magical%20Mystery%20Tour/02_-_The_Fool_On_The_Hill.wav>
+    mo:encodes [
+        mo:time [
+            tl:onTimeLine :timeline_5e695b786e0e ;
+            a tl:Interval
+        ] ;
+        a mo:Signal
+    ] ;
+    a mo:AudioFile .
+
