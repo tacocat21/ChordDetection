@@ -26,10 +26,10 @@ def print_data(data):
 """ 
 Creates a chromagram for a file
 """
-def chroma(file_name):
+def chroma(file_name, file_sr=22050):
     # An 11 kHz sample rate is used because it was suggested in the paper.
     eprint('Processing file: {}'.format(file_name))
-    y, sr = librosa.load(file_name, sr=22050)
+    y, sr = librosa.load(file_name, sr=file_sr)
 
     # Set the hop length
     hop_length = 512
@@ -47,9 +47,9 @@ def chroma(file_name):
     # Aggregate chroma features between beat events # The median feature is used instead
     beat_chroma = librosa.util.sync(chromagram, beat_frames, aggregate=np.median)
 
-    # commented out for now
-    #chromagram, beat_chroma, target_file, target_image_file = write_chroma_info(file_name, chromagram, beat_chroma)
-    save_chroma_pics(chromagram, beat_chroma, beat_frames, beat_t, sr, "Please Please Me", "Please Please Me")
+    # commented out,
+    # chromagram, beat_chroma, target_file, target_image_file = write_chroma_info(file_name, chromagram, beat_chroma)
+    # save_chroma_pics(chromagram, beat_chroma, beat_frames, beat_t, sr, "Please Please Me", "Please Please Me")
 
     return chromagram, beat_chroma, beat_frames, beat_t, sr
 """ 

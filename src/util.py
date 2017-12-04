@@ -1,9 +1,14 @@
 import random
+import os
 CHORDS = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B', 'N'] # N is for no chord
 CHORD_IDX = {}
 for idx, chord in enumerate(CHORDS):
     CHORD_IDX[chord] = idx
 NUM_CHORDS = len(CHORDS)
+SRC_DIR = os.path.dirname(os.path.realpath(__file__))
+BEATLES_DIR = os.path.join(SRC_DIR, '..', 'data', 'The_Beatles_Annotations')
+BEATLES_CHORD = os.path.join(BEATLES_DIR, 'chordlab', 'The_Beatles')
+BEATLES_SONG = os.path.join(BEATLES_DIR, 'song')
 
 def split_data(input_data, test_ratio):
     """
