@@ -1,0 +1,159 @@
+@base <#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix : <> .
+@prefix af: <http://purl.org/ontology/af/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix event: <http://purl.org/NET/c4dm/event.owl#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix mo: <http://purl.org/ontology/mo/> .
+@prefix ov: <http://open.vocab.org/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix tl: <http://purl.org/NET/c4dm/timeline.owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<>
+    ov:confidence "0.6" ;
+    ov:versionnumber "1.0" ;
+    dc:created "2009-10-20" ;
+    a foaf:Document .
+
+:maker_e3eacf640317
+    a mo:MusicArtist ;
+    foaf:name "The Beatles" .
+
+:record_928429c0672d
+    dc:title "Sgt. Pepper's Lonely Hearts Club Band" ;
+    mo:release_type mo:album ;
+    mo:track :track_22e5a76d43b4 ;
+    a mo:Record ;
+    foaf:maker :maker_e3eacf640317 .
+
+:segment_000001
+    event:time [
+        tl:beginsAt "PT0S"^^xsd:duration ;
+        tl:duration "PT0.32S"^^xsd:duration ;
+        tl:onTimeLine :timeline_99d5b3b51541 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "silence" .
+
+:segment_000002
+    event:time [
+        tl:beginsAt "PT0.32S"^^xsd:duration ;
+        tl:duration "PT21.85S"^^xsd:duration ;
+        tl:onTimeLine :timeline_99d5b3b51541 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "intro" .
+
+:segment_000003
+    event:time [
+        tl:beginsAt "PT22.17S"^^xsd:duration ;
+        tl:duration "PT11.029S"^^xsd:duration ;
+        tl:onTimeLine :timeline_99d5b3b51541 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse" .
+
+:segment_000004
+    event:time [
+        tl:beginsAt "PT33.199S"^^xsd:duration ;
+        tl:duration "PT19.261S"^^xsd:duration ;
+        tl:onTimeLine :timeline_99d5b3b51541 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "bridge" .
+
+:segment_000005
+    event:time [
+        tl:beginsAt "PT52.46S"^^xsd:duration ;
+        tl:duration "PT19.296S"^^xsd:duration ;
+        tl:onTimeLine :timeline_99d5b3b51541 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse" .
+
+:segment_000006
+    event:time [
+        tl:beginsAt "PT1M11.756S"^^xsd:duration ;
+        tl:duration "PT10.983S"^^xsd:duration ;
+        tl:onTimeLine :timeline_99d5b3b51541 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse_piano" .
+
+:segment_000007
+    event:time [
+        tl:beginsAt "PT1M22.739S"^^xsd:duration ;
+        tl:duration "PT19.087S"^^xsd:duration ;
+        tl:onTimeLine :timeline_99d5b3b51541 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "bridge" .
+
+:segment_000008
+    event:time [
+        tl:beginsAt "PT1M41.826S"^^xsd:duration ;
+        tl:duration "PT8.243S"^^xsd:duration ;
+        tl:onTimeLine :timeline_99d5b3b51541 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse" .
+
+:segment_000009
+    event:time [
+        tl:beginsAt "PT1M50.069S"^^xsd:duration ;
+        tl:duration "PT21.676S"^^xsd:duration ;
+        tl:onTimeLine :timeline_99d5b3b51541 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "outro_a" .
+
+:segment_000010
+    event:time [
+        tl:beginsAt "PT2M11.745S"^^xsd:duration ;
+        tl:duration "PT29.614S"^^xsd:duration ;
+        tl:onTimeLine :timeline_99d5b3b51541 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "outro_b" .
+
+:segment_000011
+    event:time [
+        tl:beginsAt "PT2M41.359S"^^xsd:duration ;
+        tl:duration "PT0.734S"^^xsd:duration ;
+        tl:onTimeLine :timeline_99d5b3b51541 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "silence" .
+
+:timeline_99d5b3b51541
+    a tl:Timeline .
+
+:track_22e5a76d43b4
+    dc:title "Lovely Rita" ;
+    mo:available_as <file:The%20Beatles/Sgt.%20Pepper's%20Lonely%20Hearts%20Club%20Band/10_-_Lovely_Rita.wav> ;
+    a mo:Track ;
+    foaf:maker :maker_e3eacf640317 .
+
+<file:The%20Beatles/Sgt.%20Pepper's%20Lonely%20Hearts%20Club%20Band/10_-_Lovely_Rita.wav>
+    mo:encodes [
+        mo:time [
+            tl:onTimeLine :timeline_99d5b3b51541 ;
+            a tl:Interval
+        ] ;
+        a mo:Signal
+    ] ;
+    a mo:AudioFile .
+

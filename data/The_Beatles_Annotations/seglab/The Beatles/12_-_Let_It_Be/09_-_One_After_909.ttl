@@ -1,0 +1,159 @@
+@base <#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix : <> .
+@prefix af: <http://purl.org/ontology/af/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix event: <http://purl.org/NET/c4dm/event.owl#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix mo: <http://purl.org/ontology/mo/> .
+@prefix ov: <http://open.vocab.org/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix tl: <http://purl.org/NET/c4dm/timeline.owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<>
+    ov:confidence "0.6" ;
+    ov:versionnumber "1.0" ;
+    dc:created "2009-10-20" ;
+    a foaf:Document .
+
+:maker_da3af95d6368
+    a mo:MusicArtist ;
+    foaf:name "The Beatles" .
+
+:record_cd8dc67b6d3f
+    dc:title "Let It Be" ;
+    mo:release_type mo:album ;
+    mo:track :track_94e8b6747478 ;
+    a mo:Record ;
+    foaf:maker :maker_da3af95d6368 .
+
+:segment_000001
+    event:time [
+        tl:beginsAt "PT0S"^^xsd:duration ;
+        tl:duration "PT0.35S"^^xsd:duration ;
+        tl:onTimeLine :timeline_b2b856973287 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "silence" .
+
+:segment_000002
+    event:time [
+        tl:beginsAt "PT0.35S"^^xsd:duration ;
+        tl:duration "PT8.819S"^^xsd:duration ;
+        tl:onTimeLine :timeline_b2b856973287 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "intro" .
+
+:segment_000003
+    event:time [
+        tl:beginsAt "PT9.169S"^^xsd:duration ;
+        tl:duration "PT20.897S"^^xsd:duration ;
+        tl:onTimeLine :timeline_b2b856973287 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse" .
+
+:segment_000004
+    event:time [
+        tl:beginsAt "PT30.066S"^^xsd:duration ;
+        tl:duration "PT21.099S"^^xsd:duration ;
+        tl:onTimeLine :timeline_b2b856973287 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse" .
+
+:segment_000005
+    event:time [
+        tl:beginsAt "PT51.165S"^^xsd:duration ;
+        tl:duration "PT21.124S"^^xsd:duration ;
+        tl:onTimeLine :timeline_b2b856973287 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "bridge" .
+
+:segment_000006
+    event:time [
+        tl:beginsAt "PT1M12.289S"^^xsd:duration ;
+        tl:duration "PT20.883S"^^xsd:duration ;
+        tl:onTimeLine :timeline_b2b856973287 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse_" .
+
+:segment_000007
+    event:time [
+        tl:beginsAt "PT1M33.172S"^^xsd:duration ;
+        tl:duration "PT20.967S"^^xsd:duration ;
+        tl:onTimeLine :timeline_b2b856973287 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse_(guitar_solo)" .
+
+:segment_000008
+    event:time [
+        tl:beginsAt "PT1M54.139S"^^xsd:duration ;
+        tl:duration "PT21.22S"^^xsd:duration ;
+        tl:onTimeLine :timeline_b2b856973287 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "bridge" .
+
+:segment_000009
+    event:time [
+        tl:beginsAt "PT2M15.359S"^^xsd:duration ;
+        tl:duration "PT18.538S"^^xsd:duration ;
+        tl:onTimeLine :timeline_b2b856973287 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse" .
+
+:segment_000010
+    event:time [
+        tl:beginsAt "PT2M33.897S"^^xsd:duration ;
+        tl:duration "PT16.638S"^^xsd:duration ;
+        tl:onTimeLine :timeline_b2b856973287 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "outro" .
+
+:segment_000011
+    event:time [
+        tl:beginsAt "PT2M50.535S"^^xsd:duration ;
+        tl:duration "PT4.972S"^^xsd:duration ;
+        tl:onTimeLine :timeline_b2b856973287 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "silence" .
+
+:timeline_b2b856973287
+    a tl:Timeline .
+
+:track_94e8b6747478
+    dc:title "One After 909" ;
+    mo:available_as <file:The%20Beatles/Let%20It%20Be/09_-_One_After_909.wav> ;
+    a mo:Track ;
+    foaf:maker :maker_da3af95d6368 .
+
+<file:The%20Beatles/Let%20It%20Be/09_-_One_After_909.wav>
+    mo:encodes [
+        mo:time [
+            tl:onTimeLine :timeline_b2b856973287 ;
+            a tl:Interval
+        ] ;
+        a mo:Signal
+    ] ;
+    a mo:AudioFile .
+

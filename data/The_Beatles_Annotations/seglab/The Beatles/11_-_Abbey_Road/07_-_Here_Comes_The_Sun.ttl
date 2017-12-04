@@ -1,0 +1,169 @@
+@base <#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix : <> .
+@prefix af: <http://purl.org/ontology/af/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix event: <http://purl.org/NET/c4dm/event.owl#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix mo: <http://purl.org/ontology/mo/> .
+@prefix ov: <http://open.vocab.org/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix tl: <http://purl.org/NET/c4dm/timeline.owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<>
+    ov:confidence "0.6" ;
+    ov:versionnumber "1.0" ;
+    dc:created "2009-10-20" ;
+    a foaf:Document .
+
+:maker_064a7bc67cd5
+    a mo:MusicArtist ;
+    foaf:name "The Beatles" .
+
+:record_32ddacf74fac
+    dc:title "Abbey Road" ;
+    mo:release_type mo:album ;
+    mo:track :track_9eddec44b9e9 ;
+    a mo:Record ;
+    foaf:maker :maker_064a7bc67cd5 .
+
+:segment_000001
+    event:time [
+        tl:beginsAt "PT0S"^^xsd:duration ;
+        tl:duration "PT0.35S"^^xsd:duration ;
+        tl:onTimeLine :timeline_e7bbb005873f ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "silence" .
+
+:segment_000002
+    event:time [
+        tl:beginsAt "PT0.35S"^^xsd:duration ;
+        tl:duration "PT14.354S"^^xsd:duration ;
+        tl:onTimeLine :timeline_e7bbb005873f ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "intro" .
+
+:segment_000003
+    event:time [
+        tl:beginsAt "PT14.704S"^^xsd:duration ;
+        tl:duration "PT12.79S"^^xsd:duration ;
+        tl:onTimeLine :timeline_e7bbb005873f ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "refrain" .
+
+:segment_000004
+    event:time [
+        tl:beginsAt "PT27.494S"^^xsd:duration ;
+        tl:duration "PT14.874S"^^xsd:duration ;
+        tl:onTimeLine :timeline_e7bbb005873f ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse" .
+
+:segment_000005
+    event:time [
+        tl:beginsAt "PT42.368S"^^xsd:duration ;
+        tl:duration "PT16.81S"^^xsd:duration ;
+        tl:onTimeLine :timeline_e7bbb005873f ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "refrain" .
+
+:segment_000006
+    event:time [
+        tl:beginsAt "PT59.178S"^^xsd:duration ;
+        tl:duration "PT14.989S"^^xsd:duration ;
+        tl:onTimeLine :timeline_e7bbb005873f ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse" .
+
+:segment_000007
+    event:time [
+        tl:beginsAt "PT1M14.167S"^^xsd:duration ;
+        tl:duration "PT16.79S"^^xsd:duration ;
+        tl:onTimeLine :timeline_e7bbb005873f ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "refrain" .
+
+:segment_000008
+    event:time [
+        tl:beginsAt "PT1M30.957S"^^xsd:duration ;
+        tl:duration "PT40.701S"^^xsd:duration ;
+        tl:onTimeLine :timeline_e7bbb005873f ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "bridge_(instrumental)" .
+
+:segment_000009
+    event:time [
+        tl:beginsAt "PT2M11.658S"^^xsd:duration ;
+        tl:duration "PT14.944S"^^xsd:duration ;
+        tl:onTimeLine :timeline_e7bbb005873f ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse" .
+
+:segment_000010
+    event:time [
+        tl:beginsAt "PT2M26.602S"^^xsd:duration ;
+        tl:duration "PT13.081S"^^xsd:duration ;
+        tl:onTimeLine :timeline_e7bbb005873f ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "refrain" .
+
+:segment_000011
+    event:time [
+        tl:beginsAt "PT2M39.683S"^^xsd:duration ;
+        tl:duration "PT24.315S"^^xsd:duration ;
+        tl:onTimeLine :timeline_e7bbb005873f ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "outro" .
+
+:segment_000012
+    event:time [
+        tl:beginsAt "PT3M3.998S"^^xsd:duration ;
+        tl:duration "PT1.562S"^^xsd:duration ;
+        tl:onTimeLine :timeline_e7bbb005873f ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "new_point" .
+
+:timeline_e7bbb005873f
+    a tl:Timeline .
+
+:track_9eddec44b9e9
+    dc:title "Here Comes The Sun" ;
+    mo:available_as <file:The%20Beatles/Abbey%20Road/07_-_Here_Comes_The_Sun.wav> ;
+    a mo:Track ;
+    foaf:maker :maker_064a7bc67cd5 .
+
+<file:The%20Beatles/Abbey%20Road/07_-_Here_Comes_The_Sun.wav>
+    mo:encodes [
+        mo:time [
+            tl:onTimeLine :timeline_e7bbb005873f ;
+            a tl:Interval
+        ] ;
+        a mo:Signal
+    ] ;
+    a mo:AudioFile .
+

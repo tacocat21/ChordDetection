@@ -1,0 +1,149 @@
+@base <#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix : <> .
+@prefix af: <http://purl.org/ontology/af/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix event: <http://purl.org/NET/c4dm/event.owl#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix mo: <http://purl.org/ontology/mo/> .
+@prefix ov: <http://open.vocab.org/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix tl: <http://purl.org/NET/c4dm/timeline.owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<>
+    ov:confidence "0.6" ;
+    ov:versionnumber "1.0" ;
+    dc:created "2009-10-20" ;
+    a foaf:Document .
+
+:maker_992df77a3005
+    a mo:MusicArtist ;
+    foaf:name "The Beatles" .
+
+:record_7669c6edbb03
+    dc:title "A Hard Day's Night" ;
+    mo:release_type mo:album ;
+    mo:track :track_1cd0aed290a7 ;
+    a mo:Record ;
+    foaf:maker :maker_992df77a3005 .
+
+:segment_000001
+    event:time [
+        tl:beginsAt "PT0S"^^xsd:duration ;
+        tl:duration "PT0.384S"^^xsd:duration ;
+        tl:onTimeLine :timeline_4a2b2ffe4a46 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "silence" .
+
+:segment_000002
+    event:time [
+        tl:beginsAt "PT0.384S"^^xsd:duration ;
+        tl:duration "PT8.86S"^^xsd:duration ;
+        tl:onTimeLine :timeline_4a2b2ffe4a46 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "intro" .
+
+:segment_000003
+    event:time [
+        tl:beginsAt "PT9.244S"^^xsd:duration ;
+        tl:duration "PT20.652S"^^xsd:duration ;
+        tl:onTimeLine :timeline_4a2b2ffe4a46 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse" .
+
+:segment_000004
+    event:time [
+        tl:beginsAt "PT29.896S"^^xsd:duration ;
+        tl:duration "PT20.953S"^^xsd:duration ;
+        tl:onTimeLine :timeline_4a2b2ffe4a46 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse" .
+
+:segment_000005
+    event:time [
+        tl:beginsAt "PT50.849S"^^xsd:duration ;
+        tl:duration "PT16.841S"^^xsd:duration ;
+        tl:onTimeLine :timeline_4a2b2ffe4a46 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "bridge" .
+
+:segment_000006
+    event:time [
+        tl:beginsAt "PT1M7.69S"^^xsd:duration ;
+        tl:duration "PT21.11S"^^xsd:duration ;
+        tl:onTimeLine :timeline_4a2b2ffe4a46 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse" .
+
+:segment_000007
+    event:time [
+        tl:beginsAt "PT1M28.8S"^^xsd:duration ;
+        tl:duration "PT21.265S"^^xsd:duration ;
+        tl:onTimeLine :timeline_4a2b2ffe4a46 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse_(instrumental)" .
+
+:segment_000008
+    event:time [
+        tl:beginsAt "PT1M50.065S"^^xsd:duration ;
+        tl:duration "PT21.241S"^^xsd:duration ;
+        tl:onTimeLine :timeline_4a2b2ffe4a46 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse" .
+
+:segment_000009
+    event:time [
+        tl:beginsAt "PT2M11.306S"^^xsd:duration ;
+        tl:duration "PT15.862S"^^xsd:duration ;
+        tl:onTimeLine :timeline_4a2b2ffe4a46 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "outro" .
+
+:segment_000010
+    event:time [
+        tl:beginsAt "PT2M27.168S"^^xsd:duration ;
+        tl:duration "PT3.885S"^^xsd:duration ;
+        tl:onTimeLine :timeline_4a2b2ffe4a46 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "silence" .
+
+:timeline_4a2b2ffe4a46
+    a tl:Timeline .
+
+:track_1cd0aed290a7
+    dc:title "And I Love Her" ;
+    mo:available_as <file:The%20Beatles/A%20Hard%20Day's%20Night/05_-_And_I_Love_Her.wav> ;
+    a mo:Track ;
+    foaf:maker :maker_992df77a3005 .
+
+<file:The%20Beatles/A%20Hard%20Day's%20Night/05_-_And_I_Love_Her.wav>
+    mo:encodes [
+        mo:time [
+            tl:onTimeLine :timeline_4a2b2ffe4a46 ;
+            a tl:Interval
+        ] ;
+        a mo:Signal
+    ] ;
+    a mo:AudioFile .
+

@@ -1,0 +1,159 @@
+@base <#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix : <> .
+@prefix af: <http://purl.org/ontology/af/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix event: <http://purl.org/NET/c4dm/event.owl#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix mo: <http://purl.org/ontology/mo/> .
+@prefix ov: <http://open.vocab.org/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix tl: <http://purl.org/NET/c4dm/timeline.owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<>
+    ov:confidence "0.6" ;
+    ov:versionnumber "1.0" ;
+    dc:created "2009-10-20" ;
+    a foaf:Document .
+
+:maker_2109950c55c0
+    a mo:MusicArtist ;
+    foaf:name "The Beatles" .
+
+:record_7508c480c8cb
+    dc:title "Please Please Me" ;
+    mo:release_type mo:album ;
+    mo:track :track_8fed4975625f ;
+    a mo:Record ;
+    foaf:maker :maker_2109950c55c0 .
+
+:segment_000001
+    event:time [
+        tl:beginsAt "PT0S"^^xsd:duration ;
+        tl:duration "PT0.708S"^^xsd:duration ;
+        tl:onTimeLine :timeline_2e63dc1859d6 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "silence" .
+
+:segment_000002
+    event:time [
+        tl:beginsAt "PT0.708S"^^xsd:duration ;
+        tl:duration "PT8.962S"^^xsd:duration ;
+        tl:onTimeLine :timeline_2e63dc1859d6 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "intro" .
+
+:segment_000003
+    event:time [
+        tl:beginsAt "PT9.67S"^^xsd:duration ;
+        tl:duration "PT19.741S"^^xsd:duration ;
+        tl:onTimeLine :timeline_2e63dc1859d6 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse" .
+
+:segment_000004
+    event:time [
+        tl:beginsAt "PT29.411S"^^xsd:duration ;
+        tl:duration "PT6.626S"^^xsd:duration ;
+        tl:onTimeLine :timeline_2e63dc1859d6 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "chorus" .
+
+:segment_000005
+    event:time [
+        tl:beginsAt "PT36.037S"^^xsd:duration ;
+        tl:duration "PT21.674S"^^xsd:duration ;
+        tl:onTimeLine :timeline_2e63dc1859d6 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse" .
+
+:segment_000006
+    event:time [
+        tl:beginsAt "PT57.711S"^^xsd:duration ;
+        tl:duration "PT34.255S"^^xsd:duration ;
+        tl:onTimeLine :timeline_2e63dc1859d6 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "bridge" .
+
+:segment_000007
+    event:time [
+        tl:beginsAt "PT1M31.966S"^^xsd:duration ;
+        tl:duration "PT17.597S"^^xsd:duration ;
+        tl:onTimeLine :timeline_2e63dc1859d6 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse" .
+
+:segment_000008
+    event:time [
+        tl:beginsAt "PT1M49.563S"^^xsd:duration ;
+        tl:duration "PT34.638S"^^xsd:duration ;
+        tl:onTimeLine :timeline_2e63dc1859d6 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "bridge" .
+
+:segment_000009
+    event:time [
+        tl:beginsAt "PT2M24.201S"^^xsd:duration ;
+        tl:duration "PT15.309S"^^xsd:duration ;
+        tl:onTimeLine :timeline_2e63dc1859d6 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse" .
+
+:segment_000010
+    event:time [
+        tl:beginsAt "PT2M39.51S"^^xsd:duration ;
+        tl:duration "PT14.05S"^^xsd:duration ;
+        tl:onTimeLine :timeline_2e63dc1859d6 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "chorus" .
+
+:segment_000011
+    event:time [
+        tl:beginsAt "PT2M53.56S"^^xsd:duration ;
+        tl:duration "PT4.013S"^^xsd:duration ;
+        tl:onTimeLine :timeline_2e63dc1859d6 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "silence" .
+
+:timeline_2e63dc1859d6
+    a tl:Timeline .
+
+:track_8fed4975625f
+    dc:title "Anna (Go To Him)" ;
+    mo:available_as <file:The%20Beatles/Please%20Please%20Me/03_-_Anna_(Go_To_Him).wav> ;
+    a mo:Track ;
+    foaf:maker :maker_2109950c55c0 .
+
+<file:The%20Beatles/Please%20Please%20Me/03_-_Anna_(Go_To_Him).wav>
+    mo:encodes [
+        mo:time [
+            tl:onTimeLine :timeline_2e63dc1859d6 ;
+            a tl:Interval
+        ] ;
+        a mo:Signal
+    ] ;
+    a mo:AudioFile .
+

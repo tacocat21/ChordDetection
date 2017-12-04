@@ -1,0 +1,159 @@
+@base <#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix : <> .
+@prefix af: <http://purl.org/ontology/af/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix event: <http://purl.org/NET/c4dm/event.owl#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix mo: <http://purl.org/ontology/mo/> .
+@prefix ov: <http://open.vocab.org/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix tl: <http://purl.org/NET/c4dm/timeline.owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<>
+    ov:confidence "0.6" ;
+    ov:versionnumber "1.0" ;
+    dc:created "2009-10-20" ;
+    a foaf:Document .
+
+:maker_dcc707c6f0b1
+    a mo:MusicArtist ;
+    foaf:name "The Beatles" .
+
+:record_d382d9b45558
+    dc:title "Beatles for Sale" ;
+    mo:release_type mo:album ;
+    mo:track :track_6f661dca648c ;
+    a mo:Record ;
+    foaf:maker :maker_dcc707c6f0b1 .
+
+:segment_000001
+    event:time [
+        tl:beginsAt "PT0S"^^xsd:duration ;
+        tl:duration "PT0.398S"^^xsd:duration ;
+        tl:onTimeLine :timeline_cadd5adc0f7e ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "silence" .
+
+:segment_000002
+    event:time [
+        tl:beginsAt "PT0.398S"^^xsd:duration ;
+        tl:duration "PT10.018S"^^xsd:duration ;
+        tl:onTimeLine :timeline_cadd5adc0f7e ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "intro" .
+
+:segment_000003
+    event:time [
+        tl:beginsAt "PT10.416S"^^xsd:duration ;
+        tl:duration "PT19.782S"^^xsd:duration ;
+        tl:onTimeLine :timeline_cadd5adc0f7e ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse" .
+
+:segment_000004
+    event:time [
+        tl:beginsAt "PT30.198S"^^xsd:duration ;
+        tl:duration "PT19.859S"^^xsd:duration ;
+        tl:onTimeLine :timeline_cadd5adc0f7e ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse" .
+
+:segment_000005
+    event:time [
+        tl:beginsAt "PT50.057S"^^xsd:duration ;
+        tl:duration "PT15.029S"^^xsd:duration ;
+        tl:onTimeLine :timeline_cadd5adc0f7e ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "bridge" .
+
+:segment_000006
+    event:time [
+        tl:beginsAt "PT1M5.086S"^^xsd:duration ;
+        tl:duration "PT20.098S"^^xsd:duration ;
+        tl:onTimeLine :timeline_cadd5adc0f7e ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse" .
+
+:segment_000007
+    event:time [
+        tl:beginsAt "PT1M25.184S"^^xsd:duration ;
+        tl:duration "PT20.281S"^^xsd:duration ;
+        tl:onTimeLine :timeline_cadd5adc0f7e ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse_(guitar_solo)" .
+
+:segment_000008
+    event:time [
+        tl:beginsAt "PT1M45.465S"^^xsd:duration ;
+        tl:duration "PT15.139S"^^xsd:duration ;
+        tl:onTimeLine :timeline_cadd5adc0f7e ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse" .
+
+:segment_000009
+    event:time [
+        tl:beginsAt "PT2M0.604S"^^xsd:duration ;
+        tl:duration "PT20.203S"^^xsd:duration ;
+        tl:onTimeLine :timeline_cadd5adc0f7e ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "bridge" .
+
+:segment_000010
+    event:time [
+        tl:beginsAt "PT2M20.807S"^^xsd:duration ;
+        tl:duration "PT10.693S"^^xsd:duration ;
+        tl:onTimeLine :timeline_cadd5adc0f7e ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "outro" .
+
+:segment_000011
+    event:time [
+        tl:beginsAt "PT2M31.5S"^^xsd:duration ;
+        tl:duration "PT4.673S"^^xsd:duration ;
+        tl:onTimeLine :timeline_cadd5adc0f7e ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "silence" .
+
+:timeline_cadd5adc0f7e
+    a tl:Timeline .
+
+:track_6f661dca648c
+    dc:title "I Don't Want to Spoil the Party" ;
+    mo:available_as <file:The%20Beatles/Beatles%20for%20Sale/12_-_I_Don't_Want_to_Spoil_the_Party.wav> ;
+    a mo:Track ;
+    foaf:maker :maker_dcc707c6f0b1 .
+
+<file:The%20Beatles/Beatles%20for%20Sale/12_-_I_Don't_Want_to_Spoil_the_Party.wav>
+    mo:encodes [
+        mo:time [
+            tl:onTimeLine :timeline_cadd5adc0f7e ;
+            a tl:Interval
+        ] ;
+        a mo:Signal
+    ] ;
+    a mo:AudioFile .
+

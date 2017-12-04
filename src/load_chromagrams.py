@@ -2,7 +2,6 @@ from video_arr import video_arr
 from videos_found import video_dict
 from glob import glob
 import numpy as np
-import ipdb
 base_data_dir = '../data/'
 
 """
@@ -60,7 +59,6 @@ def load_chroma_dict():
             result.append(song_dict)
         except AssertionError:
             print("AssertionError occured for {}".format(str(song_dict)))
-            ipdb.set_trace()
             continue
     return result
 
@@ -82,7 +80,7 @@ def main():
     print('Running main...')
 
     res = load_chroma_dict()
-    ipdb.set_trace()
+    #ipdb.set_trace()
     print(res[0])
 
 if __name__ == '__main__':

@@ -1,0 +1,199 @@
+@base <#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix : <> .
+@prefix af: <http://purl.org/ontology/af/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix event: <http://purl.org/NET/c4dm/event.owl#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix mo: <http://purl.org/ontology/mo/> .
+@prefix ov: <http://open.vocab.org/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix tl: <http://purl.org/NET/c4dm/timeline.owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<>
+    ov:confidence "0.6" ;
+    ov:versionnumber "1.0" ;
+    dc:created "2009-10-20" ;
+    a foaf:Document .
+
+:maker_78108baf0a45
+    a mo:MusicArtist ;
+    foaf:name "The Beatles" .
+
+:record_9b24b591e043
+    dc:title "Magical Mystery Tour" ;
+    mo:release_type mo:album ;
+    mo:track :track_08293dbad7ca ;
+    a mo:Record ;
+    foaf:maker :maker_78108baf0a45 .
+
+:segment_000001
+    event:time [
+        tl:beginsAt "PT0S"^^xsd:duration ;
+        tl:duration "PT0.394S"^^xsd:duration ;
+        tl:onTimeLine :timeline_0cd01df6653b ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "silence" .
+
+:segment_000002
+    event:time [
+        tl:beginsAt "PT0.394S"^^xsd:duration ;
+        tl:duration "PT21.386S"^^xsd:duration ;
+        tl:onTimeLine :timeline_0cd01df6653b ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "intro" .
+
+:segment_000003
+    event:time [
+        tl:beginsAt "PT21.78S"^^xsd:duration ;
+        tl:duration "PT17.137S"^^xsd:duration ;
+        tl:onTimeLine :timeline_0cd01df6653b ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "first_verse" .
+
+:segment_000004
+    event:time [
+        tl:beginsAt "PT38.917S"^^xsd:duration ;
+        tl:duration "PT16.993S"^^xsd:duration ;
+        tl:onTimeLine :timeline_0cd01df6653b ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "second_verse" .
+
+:segment_000005
+    event:time [
+        tl:beginsAt "PT55.91S"^^xsd:duration ;
+        tl:duration "PT8.508S"^^xsd:duration ;
+        tl:onTimeLine :timeline_0cd01df6653b ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "refrain" .
+
+:segment_000006
+    event:time [
+        tl:beginsAt "PT1M4.418S"^^xsd:duration ;
+        tl:duration "PT31.125S"^^xsd:duration ;
+        tl:onTimeLine :timeline_0cd01df6653b ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "first_verse_variant" .
+
+:segment_000007
+    event:time [
+        tl:beginsAt "PT1M35.543S"^^xsd:duration ;
+        tl:duration "PT16.757S"^^xsd:duration ;
+        tl:onTimeLine :timeline_0cd01df6653b ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "second_verse" .
+
+:segment_000008
+    event:time [
+        tl:beginsAt "PT1M52.3S"^^xsd:duration ;
+        tl:duration "PT8.345S"^^xsd:duration ;
+        tl:onTimeLine :timeline_0cd01df6653b ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "refrain" .
+
+:segment_000009
+    event:time [
+        tl:beginsAt "PT2M0.645S"^^xsd:duration ;
+        tl:duration "PT24.971S"^^xsd:duration ;
+        tl:onTimeLine :timeline_0cd01df6653b ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "intro_redux" .
+
+:segment_000010
+    event:time [
+        tl:beginsAt "PT2M25.616S"^^xsd:duration ;
+        tl:duration "PT10.886S"^^xsd:duration ;
+        tl:onTimeLine :timeline_0cd01df6653b ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "refrain" .
+
+:segment_000011
+    event:time [
+        tl:beginsAt "PT2M36.502S"^^xsd:duration ;
+        tl:duration "PT16.765S"^^xsd:duration ;
+        tl:onTimeLine :timeline_0cd01df6653b ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "first_verse" .
+
+:segment_000012
+    event:time [
+        tl:beginsAt "PT2M53.267S"^^xsd:duration ;
+        tl:duration "PT16.349S"^^xsd:duration ;
+        tl:onTimeLine :timeline_0cd01df6653b ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "second_verse" .
+
+:segment_000013
+    event:time [
+        tl:beginsAt "PT3M9.616S"^^xsd:duration ;
+        tl:duration "PT8.009S"^^xsd:duration ;
+        tl:onTimeLine :timeline_0cd01df6653b ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "refrain" .
+
+:segment_000014
+    event:time [
+        tl:beginsAt "PT3M17.625S"^^xsd:duration ;
+        tl:duration "PT1M15.658S"^^xsd:duration ;
+        tl:onTimeLine :timeline_0cd01df6653b ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "outro" .
+
+:segment_000015
+    event:time [
+        tl:beginsAt "PT4M33.283S"^^xsd:duration ;
+        tl:duration "PT3.784S"^^xsd:duration ;
+        tl:onTimeLine :timeline_0cd01df6653b ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "silence" .
+
+:timeline_0cd01df6653b
+    a tl:Timeline .
+
+:track_08293dbad7ca
+    dc:title "I Am The Walrus" ;
+    mo:available_as <file:The%20Beatles/Magical%20Mystery%20Tour/06_-_I_Am_The_Walrus.wav> ;
+    a mo:Track ;
+    foaf:maker :maker_78108baf0a45 .
+
+<file:The%20Beatles/Magical%20Mystery%20Tour/06_-_I_Am_The_Walrus.wav>
+    mo:encodes [
+        mo:time [
+            tl:onTimeLine :timeline_0cd01df6653b ;
+            a tl:Interval
+        ] ;
+        a mo:Signal
+    ] ;
+    a mo:AudioFile .
+

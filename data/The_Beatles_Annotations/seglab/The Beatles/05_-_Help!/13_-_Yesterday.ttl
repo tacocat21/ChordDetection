@@ -1,0 +1,149 @@
+@base <#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix : <> .
+@prefix af: <http://purl.org/ontology/af/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix event: <http://purl.org/NET/c4dm/event.owl#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix mo: <http://purl.org/ontology/mo/> .
+@prefix ov: <http://open.vocab.org/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix tl: <http://purl.org/NET/c4dm/timeline.owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<>
+    ov:confidence "0.6" ;
+    ov:versionnumber "1.0" ;
+    dc:created "2009-10-20" ;
+    a foaf:Document .
+
+:maker_b6e08524d03b
+    a mo:MusicArtist ;
+    foaf:name "The Beatles" .
+
+:record_f20185cfd7e8
+    dc:title "Help!" ;
+    mo:release_type mo:album ;
+    mo:track :track_5ab9a10e34bd ;
+    a mo:Record ;
+    foaf:maker :maker_b6e08524d03b .
+
+:segment_000001
+    event:time [
+        tl:beginsAt "PT0S"^^xsd:duration ;
+        tl:duration "PT0.461S"^^xsd:duration ;
+        tl:onTimeLine :timeline_baaf1ab09bcf ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "silence" .
+
+:segment_000002
+    event:time [
+        tl:beginsAt "PT0.461S"^^xsd:duration ;
+        tl:duration "PT4.972S"^^xsd:duration ;
+        tl:onTimeLine :timeline_baaf1ab09bcf ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "intro" .
+
+:segment_000003
+    event:time [
+        tl:beginsAt "PT5.433S"^^xsd:duration ;
+        tl:duration "PT17.236S"^^xsd:duration ;
+        tl:onTimeLine :timeline_baaf1ab09bcf ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse" .
+
+:segment_000004
+    event:time [
+        tl:beginsAt "PT22.669S"^^xsd:duration ;
+        tl:duration "PT17.224S"^^xsd:duration ;
+        tl:onTimeLine :timeline_baaf1ab09bcf ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse" .
+
+:segment_000005
+    event:time [
+        tl:beginsAt "PT39.893S"^^xsd:duration ;
+        tl:duration "PT19.81S"^^xsd:duration ;
+        tl:onTimeLine :timeline_baaf1ab09bcf ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "bridge" .
+
+:segment_000006
+    event:time [
+        tl:beginsAt "PT59.703S"^^xsd:duration ;
+        tl:duration "PT17.668S"^^xsd:duration ;
+        tl:onTimeLine :timeline_baaf1ab09bcf ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse" .
+
+:segment_000007
+    event:time [
+        tl:beginsAt "PT1M17.371S"^^xsd:duration ;
+        tl:duration "PT19.947S"^^xsd:duration ;
+        tl:onTimeLine :timeline_baaf1ab09bcf ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "bridge" .
+
+:segment_000008
+    event:time [
+        tl:beginsAt "PT1M37.318S"^^xsd:duration ;
+        tl:duration "PT17.596S"^^xsd:duration ;
+        tl:onTimeLine :timeline_baaf1ab09bcf ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse" .
+
+:segment_000009
+    event:time [
+        tl:beginsAt "PT1M54.914S"^^xsd:duration ;
+        tl:duration "PT7.939S"^^xsd:duration ;
+        tl:onTimeLine :timeline_baaf1ab09bcf ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "outro" .
+
+:segment_000010
+    event:time [
+        tl:beginsAt "PT2M2.853S"^^xsd:duration ;
+        tl:duration "PT4.574S"^^xsd:duration ;
+        tl:onTimeLine :timeline_baaf1ab09bcf ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "silence" .
+
+:timeline_baaf1ab09bcf
+    a tl:Timeline .
+
+:track_5ab9a10e34bd
+    dc:title "Yesterday" ;
+    mo:available_as <file:The%20Beatles/Help!/13_-_Yesterday.wav> ;
+    a mo:Track ;
+    foaf:maker :maker_b6e08524d03b .
+
+<file:The%20Beatles/Help!/13_-_Yesterday.wav>
+    mo:encodes [
+        mo:time [
+            tl:onTimeLine :timeline_baaf1ab09bcf ;
+            a tl:Interval
+        ] ;
+        a mo:Signal
+    ] ;
+    a mo:AudioFile .
+

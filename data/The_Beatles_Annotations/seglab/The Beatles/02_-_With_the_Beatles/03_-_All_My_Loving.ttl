@@ -1,0 +1,139 @@
+@base <#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix : <> .
+@prefix af: <http://purl.org/ontology/af/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix event: <http://purl.org/NET/c4dm/event.owl#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix mo: <http://purl.org/ontology/mo/> .
+@prefix ov: <http://open.vocab.org/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix tl: <http://purl.org/NET/c4dm/timeline.owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<>
+    ov:confidence "0.6" ;
+    ov:versionnumber "1.0" ;
+    dc:created "2009-10-20" ;
+    a foaf:Document .
+
+:maker_977c18f9c499
+    a mo:MusicArtist ;
+    foaf:name "The Beatles" .
+
+:record_beb4b89c2282
+    dc:title "With the Beatles" ;
+    mo:release_type mo:album ;
+    mo:track :track_25c57dc669e1 ;
+    a mo:Record ;
+    foaf:maker :maker_977c18f9c499 .
+
+:segment_000001
+    event:time [
+        tl:beginsAt "PT0S"^^xsd:duration ;
+        tl:duration "PT0.479S"^^xsd:duration ;
+        tl:onTimeLine :timeline_3f209727785b ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "silence" .
+
+:segment_000002
+    event:time [
+        tl:beginsAt "PT0.479S"^^xsd:duration ;
+        tl:duration "PT25.297S"^^xsd:duration ;
+        tl:onTimeLine :timeline_3f209727785b ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse" .
+
+:segment_000003
+    event:time [
+        tl:beginsAt "PT25.776S"^^xsd:duration ;
+        tl:duration "PT24.706S"^^xsd:duration ;
+        tl:onTimeLine :timeline_3f209727785b ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse" .
+
+:segment_000004
+    event:time [
+        tl:beginsAt "PT50.482S"^^xsd:duration ;
+        tl:duration "PT12.306S"^^xsd:duration ;
+        tl:onTimeLine :timeline_3f209727785b ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "refrain" .
+
+:segment_000005
+    event:time [
+        tl:beginsAt "PT1M2.788S"^^xsd:duration ;
+        tl:duration "PT12.319S"^^xsd:duration ;
+        tl:onTimeLine :timeline_3f209727785b ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "bridge" .
+
+:segment_000006
+    event:time [
+        tl:beginsAt "PT1M15.107S"^^xsd:duration ;
+        tl:duration "PT24.706S"^^xsd:duration ;
+        tl:onTimeLine :timeline_3f209727785b ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse" .
+
+:segment_000007
+    event:time [
+        tl:beginsAt "PT1M39.813S"^^xsd:duration ;
+        tl:duration "PT12.434S"^^xsd:duration ;
+        tl:onTimeLine :timeline_3f209727785b ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "refrain" .
+
+:segment_000008
+    event:time [
+        tl:beginsAt "PT1M52.247S"^^xsd:duration ;
+        tl:duration "PT13.591S"^^xsd:duration ;
+        tl:onTimeLine :timeline_3f209727785b ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "outro" .
+
+:segment_000009
+    event:time [
+        tl:beginsAt "PT2M5.838S"^^xsd:duration ;
+        tl:duration "PT3.722S"^^xsd:duration ;
+        tl:onTimeLine :timeline_3f209727785b ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "silence" .
+
+:timeline_3f209727785b
+    a tl:Timeline .
+
+:track_25c57dc669e1
+    dc:title "All My Loving" ;
+    mo:available_as <file:The%20Beatles/With%20the%20Beatles/03_-_All_My_Loving.wav> ;
+    a mo:Track ;
+    foaf:maker :maker_977c18f9c499 .
+
+<file:The%20Beatles/With%20the%20Beatles/03_-_All_My_Loving.wav>
+    mo:encodes [
+        mo:time [
+            tl:onTimeLine :timeline_3f209727785b ;
+            a tl:Interval
+        ] ;
+        a mo:Signal
+    ] ;
+    a mo:AudioFile .
+

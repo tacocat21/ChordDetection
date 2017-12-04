@@ -1,0 +1,159 @@
+@base <#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix : <> .
+@prefix af: <http://purl.org/ontology/af/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix event: <http://purl.org/NET/c4dm/event.owl#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix mo: <http://purl.org/ontology/mo/> .
+@prefix ov: <http://open.vocab.org/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix tl: <http://purl.org/NET/c4dm/timeline.owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<>
+    ov:confidence "0.6" ;
+    ov:versionnumber "1.0" ;
+    dc:created "2009-10-20" ;
+    a foaf:Document .
+
+:maker_05e6216889cd
+    a mo:MusicArtist ;
+    foaf:name "The Beatles" .
+
+:record_c5c4e1b40ea0
+    dc:title "CD2 - The Beatles" ;
+    mo:release_type mo:album ;
+    mo:track :track_b1956deed3c2 ;
+    a mo:Record ;
+    foaf:maker :maker_05e6216889cd .
+
+:segment_000001
+    event:time [
+        tl:beginsAt "PT0S"^^xsd:duration ;
+        tl:duration "PT17.992S"^^xsd:duration ;
+        tl:onTimeLine :timeline_5750ba8457b3 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "intro" .
+
+:segment_000002
+    event:time [
+        tl:beginsAt "PT17.992S"^^xsd:duration ;
+        tl:duration "PT22.898S"^^xsd:duration ;
+        tl:onTimeLine :timeline_5750ba8457b3 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse" .
+
+:segment_000003
+    event:time [
+        tl:beginsAt "PT40.89S"^^xsd:duration ;
+        tl:duration "PT17.037S"^^xsd:duration ;
+        tl:onTimeLine :timeline_5750ba8457b3 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "refrain" .
+
+:segment_000004
+    event:time [
+        tl:beginsAt "PT57.927S"^^xsd:duration ;
+        tl:duration "PT20.127S"^^xsd:duration ;
+        tl:onTimeLine :timeline_5750ba8457b3 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse" .
+
+:segment_000005
+    event:time [
+        tl:beginsAt "PT1M18.054S"^^xsd:duration ;
+        tl:duration "PT17.064S"^^xsd:duration ;
+        tl:onTimeLine :timeline_5750ba8457b3 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "refrain" .
+
+:segment_000006
+    event:time [
+        tl:beginsAt "PT1M35.118S"^^xsd:duration ;
+        tl:duration "PT11.578S"^^xsd:duration ;
+        tl:onTimeLine :timeline_5750ba8457b3 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "refrain_(instrumental)" .
+
+:segment_000007
+    event:time [
+        tl:beginsAt "PT1M46.696S"^^xsd:duration ;
+        tl:duration "PT14.398S"^^xsd:duration ;
+        tl:onTimeLine :timeline_5750ba8457b3 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "intro" .
+
+:segment_000008
+    event:time [
+        tl:beginsAt "PT2M1.094S"^^xsd:duration ;
+        tl:duration "PT20.243S"^^xsd:duration ;
+        tl:onTimeLine :timeline_5750ba8457b3 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse" .
+
+:segment_000009
+    event:time [
+        tl:beginsAt "PT2M21.337S"^^xsd:duration ;
+        tl:duration "PT11.57S"^^xsd:duration ;
+        tl:onTimeLine :timeline_5750ba8457b3 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "refrain" .
+
+:segment_000010
+    event:time [
+        tl:beginsAt "PT2M32.907S"^^xsd:duration ;
+        tl:duration "PT1M56.324S"^^xsd:duration ;
+        tl:onTimeLine :timeline_5750ba8457b3 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "outro" .
+
+:segment_000011
+    event:time [
+        tl:beginsAt "PT4M29.231S"^^xsd:duration ;
+        tl:duration "PT0.436S"^^xsd:duration ;
+        tl:onTimeLine :timeline_5750ba8457b3 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "silence" .
+
+:timeline_5750ba8457b3
+    a tl:Timeline .
+
+:track_b1956deed3c2
+    dc:title "Helter Skelter" ;
+    mo:available_as <file:The%20Beatles/CD2%20-%20The%20Beatles/CD2_-_06_-_Helter_Skelter.wav> ;
+    a mo:Track ;
+    foaf:maker :maker_05e6216889cd .
+
+<file:The%20Beatles/CD2%20-%20The%20Beatles/CD2_-_06_-_Helter_Skelter.wav>
+    mo:encodes [
+        mo:time [
+            tl:onTimeLine :timeline_5750ba8457b3 ;
+            a tl:Interval
+        ] ;
+        a mo:Signal
+    ] ;
+    a mo:AudioFile .
+

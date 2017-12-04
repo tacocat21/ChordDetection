@@ -1,0 +1,139 @@
+@base <#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix : <> .
+@prefix af: <http://purl.org/ontology/af/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix event: <http://purl.org/NET/c4dm/event.owl#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix mo: <http://purl.org/ontology/mo/> .
+@prefix ov: <http://open.vocab.org/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix tl: <http://purl.org/NET/c4dm/timeline.owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<>
+    ov:confidence "0.6" ;
+    ov:versionnumber "1.0" ;
+    dc:created "2009-10-20" ;
+    a foaf:Document .
+
+:maker_d3cac2134073
+    a mo:MusicArtist ;
+    foaf:name "The Beatles" .
+
+:record_383eb5a3c010
+    dc:title "CD2 - The Beatles" ;
+    mo:release_type mo:album ;
+    mo:track :track_0d39067f8331 ;
+    a mo:Record ;
+    foaf:maker :maker_d3cac2134073 .
+
+:segment_000001
+    event:time [
+        tl:beginsAt "PT0S"^^xsd:duration ;
+        tl:duration "PT8.359S"^^xsd:duration ;
+        tl:onTimeLine :timeline_d1592837f20f ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "intro" .
+
+:segment_000002
+    event:time [
+        tl:beginsAt "PT8.359S"^^xsd:duration ;
+        tl:duration "PT12.036S"^^xsd:duration ;
+        tl:onTimeLine :timeline_d1592837f20f ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse" .
+
+:segment_000003
+    event:time [
+        tl:beginsAt "PT20.395S"^^xsd:duration ;
+        tl:duration "PT19.706S"^^xsd:duration ;
+        tl:onTimeLine :timeline_d1592837f20f ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "refrain" .
+
+:segment_000004
+    event:time [
+        tl:beginsAt "PT40.101S"^^xsd:duration ;
+        tl:duration "PT20.079S"^^xsd:duration ;
+        tl:onTimeLine :timeline_d1592837f20f ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse" .
+
+:segment_000005
+    event:time [
+        tl:beginsAt "PT1M0.18S"^^xsd:duration ;
+        tl:duration "PT19.743S"^^xsd:duration ;
+        tl:onTimeLine :timeline_d1592837f20f ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "refrain" .
+
+:segment_000006
+    event:time [
+        tl:beginsAt "PT1M19.923S"^^xsd:duration ;
+        tl:duration "PT20.155S"^^xsd:duration ;
+        tl:onTimeLine :timeline_d1592837f20f ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse" .
+
+:segment_000007
+    event:time [
+        tl:beginsAt "PT1M40.078S"^^xsd:duration ;
+        tl:duration "PT19.661S"^^xsd:duration ;
+        tl:onTimeLine :timeline_d1592837f20f ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "refrain" .
+
+:segment_000008
+    event:time [
+        tl:beginsAt "PT1M59.739S"^^xsd:duration ;
+        tl:duration "PT25.061S"^^xsd:duration ;
+        tl:onTimeLine :timeline_d1592837f20f ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "outro" .
+
+:segment_000009
+    event:time [
+        tl:beginsAt "PT2M24.8S"^^xsd:duration ;
+        tl:duration "PT0S"^^xsd:duration ;
+        tl:onTimeLine :timeline_d1592837f20f ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "silence" .
+
+:timeline_d1592837f20f
+    a tl:Timeline .
+
+:track_0d39067f8331
+    dc:title "Everybody's Got Something To Hide Except Me and My Monkey" ;
+    mo:available_as <file:The%20Beatles/CD2%20-%20The%20Beatles/CD2_-_04_-_Everybody's_Got_Something_To_Hide_Except_Me_and_My_Monkey.wav> ;
+    a mo:Track ;
+    foaf:maker :maker_d3cac2134073 .
+
+<file:The%20Beatles/CD2%20-%20The%20Beatles/CD2_-_04_-_Everybody's_Got_Something_To_Hide_Except_Me_and_My_Monkey.wav>
+    mo:encodes [
+        mo:time [
+            tl:onTimeLine :timeline_d1592837f20f ;
+            a tl:Interval
+        ] ;
+        a mo:Signal
+    ] ;
+    a mo:AudioFile .
+

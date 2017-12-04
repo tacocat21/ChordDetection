@@ -1,0 +1,89 @@
+@base <#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix : <> .
+@prefix af: <http://purl.org/ontology/af/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix event: <http://purl.org/NET/c4dm/event.owl#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix mo: <http://purl.org/ontology/mo/> .
+@prefix ov: <http://open.vocab.org/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix tl: <http://purl.org/NET/c4dm/timeline.owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<>
+    ov:confidence "0.6" ;
+    ov:versionnumber "1.0" ;
+    dc:created "2009-10-20" ;
+    a foaf:Document .
+
+:maker_63119a96e232
+    a mo:MusicArtist ;
+    foaf:name "The Beatles" .
+
+:record_38ec2d09a75e
+    dc:title "Abbey Road" ;
+    mo:release_type mo:album ;
+    mo:track :track_d47d56deddba ;
+    a mo:Record ;
+    foaf:maker :maker_63119a96e232 .
+
+:segment_000001
+    event:time [
+        tl:beginsAt "PT0S"^^xsd:duration ;
+        tl:duration "PT34.752S"^^xsd:duration ;
+        tl:onTimeLine :timeline_57fbb0273900 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "part_1_" .
+
+:segment_000002
+    event:time [
+        tl:beginsAt "PT34.752S"^^xsd:duration ;
+        tl:duration "PT54.262S"^^xsd:duration ;
+        tl:onTimeLine :timeline_57fbb0273900 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "part_2" .
+
+:segment_000003
+    event:time [
+        tl:beginsAt "PT1M29.014S"^^xsd:duration ;
+        tl:duration "PT34.484S"^^xsd:duration ;
+        tl:onTimeLine :timeline_57fbb0273900 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "part_3_(with_complete_ending)" .
+
+:segment_000004
+    event:time [
+        tl:beginsAt "PT2M3.498S"^^xsd:duration ;
+        tl:duration "PT16.329S"^^xsd:duration ;
+        tl:onTimeLine :timeline_57fbb0273900 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "silence" .
+
+:timeline_57fbb0273900
+    a tl:Timeline .
+
+:track_d47d56deddba
+    dc:title "The End" ;
+    mo:available_as <file:The%20Beatles/Abbey%20Road/16_-_The_End.wav> ;
+    a mo:Track ;
+    foaf:maker :maker_63119a96e232 .
+
+<file:The%20Beatles/Abbey%20Road/16_-_The_End.wav>
+    mo:encodes [
+        mo:time [
+            tl:onTimeLine :timeline_57fbb0273900 ;
+            a tl:Interval
+        ] ;
+        a mo:Signal
+    ] ;
+    a mo:AudioFile .
+

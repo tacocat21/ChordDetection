@@ -1,0 +1,129 @@
+@base <#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix : <> .
+@prefix af: <http://purl.org/ontology/af/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix event: <http://purl.org/NET/c4dm/event.owl#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix mo: <http://purl.org/ontology/mo/> .
+@prefix ov: <http://open.vocab.org/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix tl: <http://purl.org/NET/c4dm/timeline.owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<>
+    ov:confidence "0.6" ;
+    ov:versionnumber "1.0" ;
+    dc:created "2009-10-20" ;
+    a foaf:Document .
+
+:maker_d62529e44542
+    a mo:MusicArtist ;
+    foaf:name "The Beatles" .
+
+:record_90169007769c
+    dc:title "Let It Be" ;
+    mo:release_type mo:album ;
+    mo:track :track_21500b4a9c94 ;
+    a mo:Record ;
+    foaf:maker :maker_d62529e44542 .
+
+:segment_000001
+    event:time [
+        tl:beginsAt "PT0S"^^xsd:duration ;
+        tl:duration "PT0.375S"^^xsd:duration ;
+        tl:onTimeLine :timeline_01f34574caee ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "silence" .
+
+:segment_000002
+    event:time [
+        tl:beginsAt "PT0.375S"^^xsd:duration ;
+        tl:duration "PT6.368S"^^xsd:duration ;
+        tl:onTimeLine :timeline_01f34574caee ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "intro" .
+
+:segment_000003
+    event:time [
+        tl:beginsAt "PT6.743S"^^xsd:duration ;
+        tl:duration "PT32.305S"^^xsd:duration ;
+        tl:onTimeLine :timeline_01f34574caee ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse" .
+
+:segment_000004
+    event:time [
+        tl:beginsAt "PT39.048S"^^xsd:duration ;
+        tl:duration "PT18.522S"^^xsd:duration ;
+        tl:onTimeLine :timeline_01f34574caee ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "refrain" .
+
+:segment_000005
+    event:time [
+        tl:beginsAt "PT57.57S"^^xsd:duration ;
+        tl:duration "PT31.45S"^^xsd:duration ;
+        tl:onTimeLine :timeline_01f34574caee ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse" .
+
+:segment_000006
+    event:time [
+        tl:beginsAt "PT1M29.02S"^^xsd:duration ;
+        tl:duration "PT18.491S"^^xsd:duration ;
+        tl:onTimeLine :timeline_01f34574caee ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "refrain" .
+
+:segment_000007
+    event:time [
+        tl:beginsAt "PT1M47.511S"^^xsd:duration ;
+        tl:duration "PT36.838S"^^xsd:duration ;
+        tl:onTimeLine :timeline_01f34574caee ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse_(with_complete_ending)" .
+
+:segment_000008
+    event:time [
+        tl:beginsAt "PT2M24.349S"^^xsd:duration ;
+        tl:duration "PT1.384S"^^xsd:duration ;
+        tl:onTimeLine :timeline_01f34574caee ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "silence" .
+
+:timeline_01f34574caee
+    a tl:Timeline .
+
+:track_21500b4a9c94
+    dc:title "I Me Mine" ;
+    mo:available_as <file:The%20Beatles/Let%20It%20Be/04_-_I_Me_Mine.wav> ;
+    a mo:Track ;
+    foaf:maker :maker_d62529e44542 .
+
+<file:The%20Beatles/Let%20It%20Be/04_-_I_Me_Mine.wav>
+    mo:encodes [
+        mo:time [
+            tl:onTimeLine :timeline_01f34574caee ;
+            a tl:Interval
+        ] ;
+        a mo:Signal
+    ] ;
+    a mo:AudioFile .
+

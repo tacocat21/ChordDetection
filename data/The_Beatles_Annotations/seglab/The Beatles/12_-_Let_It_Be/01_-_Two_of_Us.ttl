@@ -1,0 +1,159 @@
+@base <#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix : <> .
+@prefix af: <http://purl.org/ontology/af/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix event: <http://purl.org/NET/c4dm/event.owl#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix mo: <http://purl.org/ontology/mo/> .
+@prefix ov: <http://open.vocab.org/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix tl: <http://purl.org/NET/c4dm/timeline.owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<>
+    ov:confidence "0.6" ;
+    ov:versionnumber "1.0" ;
+    dc:created "2009-10-20" ;
+    a foaf:Document .
+
+:maker_5f2c3d76472d
+    a mo:MusicArtist ;
+    foaf:name "The Beatles" .
+
+:record_0a19399b679a
+    dc:title "Let It Be" ;
+    mo:release_type mo:album ;
+    mo:track :track_83e1144dd532 ;
+    a mo:Record ;
+    foaf:maker :maker_5f2c3d76472d .
+
+:segment_000001
+    event:time [
+        tl:beginsAt "PT0S"^^xsd:duration ;
+        tl:duration "PT0.995S"^^xsd:duration ;
+        tl:onTimeLine :timeline_f6f7950ff9fd ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "silence" .
+
+:segment_000002
+    event:time [
+        tl:beginsAt "PT0.995S"^^xsd:duration ;
+        tl:duration "PT17.861S"^^xsd:duration ;
+        tl:onTimeLine :timeline_f6f7950ff9fd ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "intro" .
+
+:segment_000003
+    event:time [
+        tl:beginsAt "PT18.856S"^^xsd:duration ;
+        tl:duration "PT30.817S"^^xsd:duration ;
+        tl:onTimeLine :timeline_f6f7950ff9fd ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse" .
+
+:segment_000004
+    event:time [
+        tl:beginsAt "PT49.673S"^^xsd:duration ;
+        tl:duration "PT8.723S"^^xsd:duration ;
+        tl:onTimeLine :timeline_f6f7950ff9fd ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "(intro)" .
+
+:segment_000005
+    event:time [
+        tl:beginsAt "PT58.396S"^^xsd:duration ;
+        tl:duration "PT30.977S"^^xsd:duration ;
+        tl:onTimeLine :timeline_f6f7950ff9fd ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse" .
+
+:segment_000006
+    event:time [
+        tl:beginsAt "PT1M29.373S"^^xsd:duration ;
+        tl:duration "PT15.25S"^^xsd:duration ;
+        tl:onTimeLine :timeline_f6f7950ff9fd ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "bridge" .
+
+:segment_000007
+    event:time [
+        tl:beginsAt "PT1M44.623S"^^xsd:duration ;
+        tl:duration "PT31.388S"^^xsd:duration ;
+        tl:onTimeLine :timeline_f6f7950ff9fd ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse" .
+
+:segment_000008
+    event:time [
+        tl:beginsAt "PT2M16.011S"^^xsd:duration ;
+        tl:duration "PT15.488S"^^xsd:duration ;
+        tl:onTimeLine :timeline_f6f7950ff9fd ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "bridge" .
+
+:segment_000009
+    event:time [
+        tl:beginsAt "PT2M31.499S"^^xsd:duration ;
+        tl:duration "PT31.772S"^^xsd:duration ;
+        tl:onTimeLine :timeline_f6f7950ff9fd ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse" .
+
+:segment_000010
+    event:time [
+        tl:beginsAt "PT3M3.271S"^^xsd:duration ;
+        tl:duration "PT30.228S"^^xsd:duration ;
+        tl:onTimeLine :timeline_f6f7950ff9fd ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "outro" .
+
+:segment_000011
+    event:time [
+        tl:beginsAt "PT3M33.499S"^^xsd:duration ;
+        tl:duration "PT3.168S"^^xsd:duration ;
+        tl:onTimeLine :timeline_f6f7950ff9fd ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "silence" .
+
+:timeline_f6f7950ff9fd
+    a tl:Timeline .
+
+:track_83e1144dd532
+    dc:title "Two of Us" ;
+    mo:available_as <file:The%20Beatles/Let%20It%20Be/01_-_Two_of_Us.wav> ;
+    a mo:Track ;
+    foaf:maker :maker_5f2c3d76472d .
+
+<file:The%20Beatles/Let%20It%20Be/01_-_Two_of_Us.wav>
+    mo:encodes [
+        mo:time [
+            tl:onTimeLine :timeline_f6f7950ff9fd ;
+            a tl:Interval
+        ] ;
+        a mo:Signal
+    ] ;
+    a mo:AudioFile .
+

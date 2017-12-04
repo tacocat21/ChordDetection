@@ -1,0 +1,189 @@
+@base <#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix : <> .
+@prefix af: <http://purl.org/ontology/af/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix event: <http://purl.org/NET/c4dm/event.owl#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix mo: <http://purl.org/ontology/mo/> .
+@prefix ov: <http://open.vocab.org/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix tl: <http://purl.org/NET/c4dm/timeline.owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<>
+    ov:confidence "0.6" ;
+    ov:versionnumber "1.0" ;
+    dc:created "2009-10-20" ;
+    a foaf:Document .
+
+:maker_6857841363c2
+    a mo:MusicArtist ;
+    foaf:name "The Beatles" .
+
+:record_4dc0e1bcd770
+    dc:title "CD1 - The Beatles" ;
+    mo:release_type mo:album ;
+    mo:track :track_9686954c4280 ;
+    a mo:Record ;
+    foaf:maker :maker_6857841363c2 .
+
+:segment_000001
+    event:time [
+        tl:beginsAt "PT0S"^^xsd:duration ;
+        tl:duration "PT3.044S"^^xsd:duration ;
+        tl:onTimeLine :timeline_1f9b0357b00a ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "silence" .
+
+:segment_000002
+    event:time [
+        tl:beginsAt "PT3.044S"^^xsd:duration ;
+        tl:duration "PT13.664S"^^xsd:duration ;
+        tl:onTimeLine :timeline_1f9b0357b00a ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "intro" .
+
+:segment_000003
+    event:time [
+        tl:beginsAt "PT16.708S"^^xsd:duration ;
+        tl:duration "PT13.373S"^^xsd:duration ;
+        tl:onTimeLine :timeline_1f9b0357b00a ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse" .
+
+:segment_000004
+    event:time [
+        tl:beginsAt "PT30.081S"^^xsd:duration ;
+        tl:duration "PT10.078S"^^xsd:duration ;
+        tl:onTimeLine :timeline_1f9b0357b00a ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "refrain" .
+
+:segment_000005
+    event:time [
+        tl:beginsAt "PT40.159S"^^xsd:duration ;
+        tl:duration "PT13.552S"^^xsd:duration ;
+        tl:onTimeLine :timeline_1f9b0357b00a ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse" .
+
+:segment_000006
+    event:time [
+        tl:beginsAt "PT53.711S"^^xsd:duration ;
+        tl:duration "PT12.472S"^^xsd:duration ;
+        tl:onTimeLine :timeline_1f9b0357b00a ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "refrain" .
+
+:segment_000007
+    event:time [
+        tl:beginsAt "PT1M6.183S"^^xsd:duration ;
+        tl:duration "PT16.878S"^^xsd:duration ;
+        tl:onTimeLine :timeline_1f9b0357b00a ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "bridge" .
+
+:segment_000008
+    event:time [
+        tl:beginsAt "PT1M23.061S"^^xsd:duration ;
+        tl:duration "PT13.429S"^^xsd:duration ;
+        tl:onTimeLine :timeline_1f9b0357b00a ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse_(guitar_solo)" .
+
+:segment_000009
+    event:time [
+        tl:beginsAt "PT1M36.49S"^^xsd:duration ;
+        tl:duration "PT10.09S"^^xsd:duration ;
+        tl:onTimeLine :timeline_1f9b0357b00a ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "refrain" .
+
+:segment_000010
+    event:time [
+        tl:beginsAt "PT1M46.58S"^^xsd:duration ;
+        tl:duration "PT17.008S"^^xsd:duration ;
+        tl:onTimeLine :timeline_1f9b0357b00a ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "bridge" .
+
+:segment_000011
+    event:time [
+        tl:beginsAt "PT2M3.588S"^^xsd:duration ;
+        tl:duration "PT13.595S"^^xsd:duration ;
+        tl:onTimeLine :timeline_1f9b0357b00a ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse" .
+
+:segment_000012
+    event:time [
+        tl:beginsAt "PT2M17.183S"^^xsd:duration ;
+        tl:duration "PT10.148S"^^xsd:duration ;
+        tl:onTimeLine :timeline_1f9b0357b00a ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "refrain" .
+
+:segment_000013
+    event:time [
+        tl:beginsAt "PT2M27.331S"^^xsd:duration ;
+        tl:duration "PT15.99S"^^xsd:duration ;
+        tl:onTimeLine :timeline_1f9b0357b00a ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "outro" .
+
+:segment_000014
+    event:time [
+        tl:beginsAt "PT2M43.321S"^^xsd:duration ;
+        tl:duration "PT23H59M59.986S"^^xsd:duration ;
+        tl:onTimeLine :timeline_1f9b0357b00a ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "silence" .
+
+:timeline_1f9b0357b00a
+    a tl:Timeline .
+
+:track_9686954c4280
+    dc:title "Back in the USSR" ;
+    mo:available_as <file:The%20Beatles/CD1%20-%20The%20Beatles/CD1_-_01_-_Back_in_the_USSR.wav> ;
+    a mo:Track ;
+    foaf:maker :maker_6857841363c2 .
+
+<file:The%20Beatles/CD1%20-%20The%20Beatles/CD1_-_01_-_Back_in_the_USSR.wav>
+    mo:encodes [
+        mo:time [
+            tl:onTimeLine :timeline_1f9b0357b00a ;
+            a tl:Interval
+        ] ;
+        a mo:Signal
+    ] ;
+    a mo:AudioFile .
+

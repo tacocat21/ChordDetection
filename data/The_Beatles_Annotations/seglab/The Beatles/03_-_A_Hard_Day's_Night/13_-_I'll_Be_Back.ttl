@@ -1,0 +1,169 @@
+@base <#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix : <> .
+@prefix af: <http://purl.org/ontology/af/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix event: <http://purl.org/NET/c4dm/event.owl#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix mo: <http://purl.org/ontology/mo/> .
+@prefix ov: <http://open.vocab.org/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix tl: <http://purl.org/NET/c4dm/timeline.owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<>
+    ov:confidence "0.6" ;
+    ov:versionnumber "1.0" ;
+    dc:created "2009-10-20" ;
+    a foaf:Document .
+
+:maker_156e378be80e
+    a mo:MusicArtist ;
+    foaf:name "The Beatles" .
+
+:record_97768b53ac81
+    dc:title "A Hard Day's Night" ;
+    mo:release_type mo:album ;
+    mo:track :track_610b9cb56499 ;
+    a mo:Record ;
+    foaf:maker :maker_156e378be80e .
+
+:segment_000001
+    event:time [
+        tl:beginsAt "PT0S"^^xsd:duration ;
+        tl:duration "PT0S"^^xsd:duration ;
+        tl:onTimeLine :timeline_ed00995cf5bb ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "silence" .
+
+:segment_000002
+    event:time [
+        tl:beginsAt "PT0S"^^xsd:duration ;
+        tl:duration "PT0.429S"^^xsd:duration ;
+        tl:onTimeLine :timeline_ed00995cf5bb ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "bridge" .
+
+:segment_000003
+    event:time [
+        tl:beginsAt "PT0.429S"^^xsd:duration ;
+        tl:duration "PT4.749S"^^xsd:duration ;
+        tl:onTimeLine :timeline_ed00995cf5bb ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "intro" .
+
+:segment_000004
+    event:time [
+        tl:beginsAt "PT5.178S"^^xsd:duration ;
+        tl:duration "PT22.779S"^^xsd:duration ;
+        tl:onTimeLine :timeline_ed00995cf5bb ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse" .
+
+:segment_000005
+    event:time [
+        tl:beginsAt "PT27.957S"^^xsd:duration ;
+        tl:duration "PT12.434S"^^xsd:duration ;
+        tl:onTimeLine :timeline_ed00995cf5bb ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "bridge-1" .
+
+:segment_000006
+    event:time [
+        tl:beginsAt "PT40.391S"^^xsd:duration ;
+        tl:duration "PT23.106S"^^xsd:duration ;
+        tl:onTimeLine :timeline_ed00995cf5bb ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse" .
+
+:segment_000007
+    event:time [
+        tl:beginsAt "PT1M3.497S"^^xsd:duration ;
+        tl:duration "PT18.332S"^^xsd:duration ;
+        tl:onTimeLine :timeline_ed00995cf5bb ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "bridge-2" .
+
+:segment_000008
+    event:time [
+        tl:beginsAt "PT1M21.829S"^^xsd:duration ;
+        tl:duration "PT23.334S"^^xsd:duration ;
+        tl:onTimeLine :timeline_ed00995cf5bb ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse" .
+
+:segment_000009
+    event:time [
+        tl:beginsAt "PT1M45.163S"^^xsd:duration ;
+        tl:duration "PT12.696S"^^xsd:duration ;
+        tl:onTimeLine :timeline_ed00995cf5bb ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "bridge-1" .
+
+:segment_000010
+    event:time [
+        tl:beginsAt "PT1M57.859S"^^xsd:duration ;
+        tl:duration "PT13.668S"^^xsd:duration ;
+        tl:onTimeLine :timeline_ed00995cf5bb ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse" .
+
+:segment_000011
+    event:time [
+        tl:beginsAt "PT2M11.527S"^^xsd:duration ;
+        tl:duration "PT7.216S"^^xsd:duration ;
+        tl:onTimeLine :timeline_ed00995cf5bb ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "outro" .
+
+:segment_000012
+    event:time [
+        tl:beginsAt "PT2M18.743S"^^xsd:duration ;
+        tl:duration "PT1.804S"^^xsd:duration ;
+        tl:onTimeLine :timeline_ed00995cf5bb ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "silence" .
+
+:timeline_ed00995cf5bb
+    a tl:Timeline .
+
+:track_610b9cb56499
+    dc:title "I'll Be Back" ;
+    mo:available_as <file:The%20Beatles/A%20Hard%20Day's%20Night/13_-_I'll_Be_Back.wav> ;
+    a mo:Track ;
+    foaf:maker :maker_156e378be80e .
+
+<file:The%20Beatles/A%20Hard%20Day's%20Night/13_-_I'll_Be_Back.wav>
+    mo:encodes [
+        mo:time [
+            tl:onTimeLine :timeline_ed00995cf5bb ;
+            a tl:Interval
+        ] ;
+        a mo:Signal
+    ] ;
+    a mo:AudioFile .
+

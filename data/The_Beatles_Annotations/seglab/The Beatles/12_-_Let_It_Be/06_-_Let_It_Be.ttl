@@ -1,0 +1,189 @@
+@base <#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix : <> .
+@prefix af: <http://purl.org/ontology/af/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix event: <http://purl.org/NET/c4dm/event.owl#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix mo: <http://purl.org/ontology/mo/> .
+@prefix ov: <http://open.vocab.org/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix tl: <http://purl.org/NET/c4dm/timeline.owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<>
+    ov:confidence "0.6" ;
+    ov:versionnumber "1.0" ;
+    dc:created "2009-10-20" ;
+    a foaf:Document .
+
+:maker_855fc9b9b5db
+    a mo:MusicArtist ;
+    foaf:name "The Beatles" .
+
+:record_44622e2da585
+    dc:title "Let It Be" ;
+    mo:release_type mo:album ;
+    mo:track :track_9a795e6fc194 ;
+    a mo:Record ;
+    foaf:maker :maker_855fc9b9b5db .
+
+:segment_000001
+    event:time [
+        tl:beginsAt "PT0S"^^xsd:duration ;
+        tl:duration "PT13.392S"^^xsd:duration ;
+        tl:onTimeLine :timeline_9d3efe81d175 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "intro" .
+
+:segment_000002
+    event:time [
+        tl:beginsAt "PT13.392S"^^xsd:duration ;
+        tl:duration "PT25.429S"^^xsd:duration ;
+        tl:onTimeLine :timeline_9d3efe81d175 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse" .
+
+:segment_000003
+    event:time [
+        tl:beginsAt "PT38.821S"^^xsd:duration ;
+        tl:duration "PT13.227S"^^xsd:duration ;
+        tl:onTimeLine :timeline_9d3efe81d175 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "refrain" .
+
+:segment_000004
+    event:time [
+        tl:beginsAt "PT52.048S"^^xsd:duration ;
+        tl:duration "PT26.437S"^^xsd:duration ;
+        tl:onTimeLine :timeline_9d3efe81d175 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse" .
+
+:segment_000005
+    event:time [
+        tl:beginsAt "PT1M18.485S"^^xsd:duration ;
+        tl:duration "PT13.457S"^^xsd:duration ;
+        tl:onTimeLine :timeline_9d3efe81d175 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "refrain" .
+
+:segment_000006
+    event:time [
+        tl:beginsAt "PT1M31.942S"^^xsd:duration ;
+        tl:duration "PT13.275S"^^xsd:duration ;
+        tl:onTimeLine :timeline_9d3efe81d175 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "refrain" .
+
+:segment_000007
+    event:time [
+        tl:beginsAt "PT1M45.217S"^^xsd:duration ;
+        tl:duration "PT13.975S"^^xsd:duration ;
+        tl:onTimeLine :timeline_9d3efe81d175 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "coda" .
+
+:segment_000008
+    event:time [
+        tl:beginsAt "PT1M59.192S"^^xsd:duration ;
+        tl:duration "PT27.532S"^^xsd:duration ;
+        tl:onTimeLine :timeline_9d3efe81d175 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse_(instrumental)" .
+
+:segment_000009
+    event:time [
+        tl:beginsAt "PT2M26.724S"^^xsd:duration ;
+        tl:duration "PT14.178S"^^xsd:duration ;
+        tl:onTimeLine :timeline_9d3efe81d175 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "refrain" .
+
+:segment_000010
+    event:time [
+        tl:beginsAt "PT2M40.902S"^^xsd:duration ;
+        tl:duration "PT27.823S"^^xsd:duration ;
+        tl:onTimeLine :timeline_9d3efe81d175 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse" .
+
+:segment_000011
+    event:time [
+        tl:beginsAt "PT3M8.725S"^^xsd:duration ;
+        tl:duration "PT13.873S"^^xsd:duration ;
+        tl:onTimeLine :timeline_9d3efe81d175 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "refrain" .
+
+:segment_000012
+    event:time [
+        tl:beginsAt "PT3M22.598S"^^xsd:duration ;
+        tl:duration "PT13.951S"^^xsd:duration ;
+        tl:onTimeLine :timeline_9d3efe81d175 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "refrain" .
+
+:segment_000013
+    event:time [
+        tl:beginsAt "PT3M36.549S"^^xsd:duration ;
+        tl:duration "PT24.951S"^^xsd:duration ;
+        tl:onTimeLine :timeline_9d3efe81d175 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "coda/outro" .
+
+:segment_000014
+    event:time [
+        tl:beginsAt "PT4M1.5S"^^xsd:duration ;
+        tl:duration "PT1.807S"^^xsd:duration ;
+        tl:onTimeLine :timeline_9d3efe81d175 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "silence" .
+
+:timeline_9d3efe81d175
+    a tl:Timeline .
+
+:track_9a795e6fc194
+    dc:title "Let It Be" ;
+    mo:available_as <file:The%20Beatles/Let%20It%20Be/06_-_Let_It_Be.wav> ;
+    a mo:Track ;
+    foaf:maker :maker_855fc9b9b5db .
+
+<file:The%20Beatles/Let%20It%20Be/06_-_Let_It_Be.wav>
+    mo:encodes [
+        mo:time [
+            tl:onTimeLine :timeline_9d3efe81d175 ;
+            a tl:Interval
+        ] ;
+        a mo:Signal
+    ] ;
+    a mo:AudioFile .
+

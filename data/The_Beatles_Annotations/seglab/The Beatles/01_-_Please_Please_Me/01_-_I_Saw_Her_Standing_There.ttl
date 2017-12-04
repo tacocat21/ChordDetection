@@ -1,0 +1,189 @@
+@base <#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix : <> .
+@prefix af: <http://purl.org/ontology/af/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix event: <http://purl.org/NET/c4dm/event.owl#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix mo: <http://purl.org/ontology/mo/> .
+@prefix ov: <http://open.vocab.org/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix tl: <http://purl.org/NET/c4dm/timeline.owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<>
+    ov:confidence "0.6" ;
+    ov:versionnumber "1.0" ;
+    dc:created "2009-10-20" ;
+    a foaf:Document .
+
+:maker_62542e666fac
+    a mo:MusicArtist ;
+    foaf:name "The Beatles" .
+
+:record_92ace8b7164d
+    dc:title "Please Please Me" ;
+    mo:release_type mo:album ;
+    mo:track :track_e0e2e6a101ed ;
+    a mo:Record ;
+    foaf:maker :maker_62542e666fac .
+
+:segment_000001
+    event:time [
+        tl:beginsAt "PT0S"^^xsd:duration ;
+        tl:duration "PT2.612S"^^xsd:duration ;
+        tl:onTimeLine :timeline_d4acabbcc994 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "silence" .
+
+:segment_000002
+    event:time [
+        tl:beginsAt "PT2.612S"^^xsd:duration ;
+        tl:duration "PT5.812S"^^xsd:duration ;
+        tl:onTimeLine :timeline_d4acabbcc994 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "intro" .
+
+:segment_000003
+    event:time [
+        tl:beginsAt "PT8.424S"^^xsd:duration ;
+        tl:duration "PT11.986S"^^xsd:duration ;
+        tl:onTimeLine :timeline_d4acabbcc994 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "versea" .
+
+:segment_000004
+    event:time [
+        tl:beginsAt "PT20.41S"^^xsd:duration ;
+        tl:duration "PT11.982S"^^xsd:duration ;
+        tl:onTimeLine :timeline_d4acabbcc994 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verseb" .
+
+:segment_000005
+    event:time [
+        tl:beginsAt "PT32.392S"^^xsd:duration ;
+        tl:duration "PT11.854S"^^xsd:duration ;
+        tl:onTimeLine :timeline_d4acabbcc994 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "versea" .
+
+:segment_000006
+    event:time [
+        tl:beginsAt "PT44.246S"^^xsd:duration ;
+        tl:duration "PT11.865S"^^xsd:duration ;
+        tl:onTimeLine :timeline_d4acabbcc994 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verseb" .
+
+:segment_000007
+    event:time [
+        tl:beginsAt "PT56.111S"^^xsd:duration ;
+        tl:duration "PT15.081S"^^xsd:duration ;
+        tl:onTimeLine :timeline_d4acabbcc994 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "bridge" .
+
+:segment_000008
+    event:time [
+        tl:beginsAt "PT1M11.192S"^^xsd:duration ;
+        tl:duration "PT12.017S"^^xsd:duration ;
+        tl:onTimeLine :timeline_d4acabbcc994 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "versea" .
+
+:segment_000009
+    event:time [
+        tl:beginsAt "PT1M23.209S"^^xsd:duration ;
+        tl:duration "PT11.844S"^^xsd:duration ;
+        tl:onTimeLine :timeline_d4acabbcc994 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verseb" .
+
+:segment_000010
+    event:time [
+        tl:beginsAt "PT1M35.053S"^^xsd:duration ;
+        tl:duration "PT23.984S"^^xsd:duration ;
+        tl:onTimeLine :timeline_d4acabbcc994 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verseguitar" .
+
+:segment_000011
+    event:time [
+        tl:beginsAt "PT1M59.037S"^^xsd:duration ;
+        tl:duration "PT15S"^^xsd:duration ;
+        tl:onTimeLine :timeline_d4acabbcc994 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "bridge" .
+
+:segment_000012
+    event:time [
+        tl:beginsAt "PT2M14.037S"^^xsd:duration ;
+        tl:duration "PT12.005S"^^xsd:duration ;
+        tl:onTimeLine :timeline_d4acabbcc994 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "versea" .
+
+:segment_000013
+    event:time [
+        tl:beginsAt "PT2M26.042S"^^xsd:duration ;
+        tl:duration "PT26.02S"^^xsd:duration ;
+        tl:onTimeLine :timeline_d4acabbcc994 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verseb" .
+
+:segment_000014
+    event:time [
+        tl:beginsAt "PT2M52.062S"^^xsd:duration ;
+        tl:duration "PT3.738S"^^xsd:duration ;
+        tl:onTimeLine :timeline_d4acabbcc994 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "silence" .
+
+:timeline_d4acabbcc994
+    a tl:Timeline .
+
+:track_e0e2e6a101ed
+    dc:title "I Saw Her Standing There" ;
+    mo:available_as <file:The%20Beatles/Please%20Please%20Me/01_-_I_Saw_Her_Standing_There.wav> ;
+    a mo:Track ;
+    foaf:maker :maker_62542e666fac .
+
+<file:The%20Beatles/Please%20Please%20Me/01_-_I_Saw_Her_Standing_There.wav>
+    mo:encodes [
+        mo:time [
+            tl:onTimeLine :timeline_d4acabbcc994 ;
+            a tl:Interval
+        ] ;
+        a mo:Signal
+    ] ;
+    a mo:AudioFile .
+

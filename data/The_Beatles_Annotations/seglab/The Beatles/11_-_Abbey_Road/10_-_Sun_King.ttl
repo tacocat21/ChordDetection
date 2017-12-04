@@ -1,0 +1,119 @@
+@base <#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix : <> .
+@prefix af: <http://purl.org/ontology/af/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix event: <http://purl.org/NET/c4dm/event.owl#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix mo: <http://purl.org/ontology/mo/> .
+@prefix ov: <http://open.vocab.org/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix tl: <http://purl.org/NET/c4dm/timeline.owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<>
+    ov:confidence "0.6" ;
+    ov:versionnumber "1.0" ;
+    dc:created "2009-10-20" ;
+    a foaf:Document .
+
+:maker_cec2f2a38ed7
+    a mo:MusicArtist ;
+    foaf:name "The Beatles" .
+
+:record_c59e2c3b22ec
+    dc:title "Abbey Road" ;
+    mo:release_type mo:album ;
+    mo:track :track_d17948da5c17 ;
+    a mo:Record ;
+    foaf:maker :maker_cec2f2a38ed7 .
+
+:segment_000001
+    event:time [
+        tl:beginsAt "PT0S"^^xsd:duration ;
+        tl:duration "PT14.303S"^^xsd:duration ;
+        tl:onTimeLine :timeline_604406dc5754 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "intro" .
+
+:segment_000002
+    event:time [
+        tl:beginsAt "PT14.303S"^^xsd:duration ;
+        tl:duration "PT44.578S"^^xsd:duration ;
+        tl:onTimeLine :timeline_604406dc5754 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse_(instrumental)" .
+
+:segment_000003
+    event:time [
+        tl:beginsAt "PT58.881S"^^xsd:duration ;
+        tl:duration "PT25.449S"^^xsd:duration ;
+        tl:onTimeLine :timeline_604406dc5754 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "refrain" .
+
+:segment_000004
+    event:time [
+        tl:beginsAt "PT1M24.33S"^^xsd:duration ;
+        tl:duration "PT12.83S"^^xsd:duration ;
+        tl:onTimeLine :timeline_604406dc5754 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "bridge" .
+
+:segment_000005
+    event:time [
+        tl:beginsAt "PT1M37.16S"^^xsd:duration ;
+        tl:duration "PT12.8S"^^xsd:duration ;
+        tl:onTimeLine :timeline_604406dc5754 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "refrain'" .
+
+:segment_000006
+    event:time [
+        tl:beginsAt "PT1M49.96S"^^xsd:duration ;
+        tl:duration "PT36.35S"^^xsd:duration ;
+        tl:onTimeLine :timeline_604406dc5754 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "verse_(sung)" .
+
+:segment_000007
+    event:time [
+        tl:beginsAt "PT2M26.31S"^^xsd:duration ;
+        tl:duration "PT23H59M59.997S"^^xsd:duration ;
+        tl:onTimeLine :timeline_604406dc5754 ;
+        a tl:Interval
+    ] ;
+    a af:StructuralSegment ;
+    rdfs:label "silence" .
+
+:timeline_604406dc5754
+    a tl:Timeline .
+
+:track_d17948da5c17
+    dc:title "Sun King" ;
+    mo:available_as <file:The%20Beatles/Abbey%20Road/10_-_Sun_King.wav> ;
+    a mo:Track ;
+    foaf:maker :maker_cec2f2a38ed7 .
+
+<file:The%20Beatles/Abbey%20Road/10_-_Sun_King.wav>
+    mo:encodes [
+        mo:time [
+            tl:onTimeLine :timeline_604406dc5754 ;
+            a tl:Interval
+        ] ;
+        a mo:Signal
+    ] ;
+    a mo:AudioFile .
+
