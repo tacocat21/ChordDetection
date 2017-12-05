@@ -19,5 +19,7 @@ Each dictionary will have the following keys:
 Sources:
 http://www.mattmcvicar.com/wp-content/uploads/2014/02/thesis.pdf
 https://github.com/tmc323/Chord-Annotations
+http://isophonics.net/content/reference-annotations-beatles
+
 
 
