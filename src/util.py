@@ -4,11 +4,38 @@ CHORDS = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B', 'N'] 
 CHORD_IDX = {}
 for idx, chord in enumerate(CHORDS):
     CHORD_IDX[chord] = idx
+FLAT_EQUIL = {'Db': 'C#', 'Eb':'D#', 'Gb':'F#', 'Ab':'G#', 'Bb':'A#'}
 NUM_CHORDS = len(CHORDS)
+CHROMAGRAM_SIZE = 12
 SRC_DIR = os.path.dirname(os.path.realpath(__file__))
+DATA_DIR = os.path.join(SRC_DIR, '..', 'data')
 BEATLES_DIR = os.path.join(SRC_DIR, '..', 'data', 'The_Beatles_Annotations')
 BEATLES_CHORD = os.path.join(BEATLES_DIR, 'chordlab', 'The_Beatles')
 BEATLES_SONG = os.path.join(BEATLES_DIR, 'song')
+BEATLES_DATA_JSON = os.path.join(DATA_DIR, 'beatle_data.json')
+
+def get_base_chord(c):
+    """
+    
+    :param c: chord string
+    :return: base chord i.e. A/2 -> A
+    """
+    if c in CHORD_IDX:
+        return c
+    if c in FLAT_EQUIL:
+        return FLAT_EQUIL[c]
+    try:
+        colon_idx = c.index(':')
+        return get_base_chord(c[:colon_idx])
+    except ValueError:
+        pass
+    try:
+        slash_idx = c.index('/')
+        return get_base_chord(c[:slash_idx])
+    except ValueError:
+        pass
+    raise Exception('Could not parse base chord {}'.format(c))
+
 
 def split_data(input_data, test_ratio):
     """

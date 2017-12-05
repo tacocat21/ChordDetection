@@ -1,6 +1,7 @@
 from pathlib import Path
 from glob import glob
 import numpy as np
+import audiotools
 # np.set_printoptions(threshold=np.inf)
 
 import matplotlib.pyplot as plt
@@ -26,10 +27,12 @@ def print_data(data):
 """ 
 Creates a chromagram for a file
 """
-def chroma(file_name, file_sr=22050):
+def chroma(file_name):
     # An 11 kHz sample rate is used because it was suggested in the paper.
     eprint('Processing file: {}'.format(file_name))
-    y, sr = librosa.load(file_name, sr=file_sr)
+    song = audiotools.open(file_name)
+    sr = song.sample_rate()
+    y, sr = librosa.load(file_name, sr=sr)
 
     # Set the hop length
     hop_length = 512
