@@ -3,7 +3,7 @@ import collections
 import os
 import numpy as np
 import ipdb
-CHORDS = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B', 'N'] # N is for no chord
+CHORDS = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B', 'N', 'Cmin', 'C#min', 'Dmin', 'D#min', 'Emin', 'Fmin', 'F#min', 'Gmin', 'G#min', 'Amin', 'A#min', 'Bmin'] # N is for no chord
 CHORD_IDX = {}
 for idx, chord in enumerate(CHORDS):
     CHORD_IDX[chord] = idx
@@ -28,8 +28,20 @@ def get_base_chord(c):
     if c in FLAT_EQUIL:
         return FLAT_EQUIL[c]
     try:
+        min_idx = c.index(':min')
+        base = c[:min_idx]
+        if base in FLAT_EQUIL:
+            base = FLAT_EQUIL[base]
+        return base + 'min'
+    except ValueError:
+        pass
+
+    try:
         colon_idx = c.index(':')
-        return get_base_chord(c[:colon_idx])
+        base = c[:colon_idx]
+        if base in FLAT_EQUIL:
+            base = FLAT_EQUIL[base]
+        return base
     except ValueError:
         pass
     try:
@@ -56,6 +68,12 @@ def split_data(input_data, test_ratio):
     return test, train
 
 def match_frame(label, annotated):
+    """
+    match each frame in annotated with a label
+    :param label: 
+    :param annotated: 
+    :return: 
+    """
     assert(len(label) == len(annotated))
     res = []
     for i in range(len(label)):
