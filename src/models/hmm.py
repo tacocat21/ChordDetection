@@ -6,35 +6,27 @@ import ipdb
 from sklearn.preprocessing import normalize
 import collections
 
-def mean_matrix(labels, annotated_chroma):
+def mean_matrix(sorted_dict):
     """
 
-    :param chromagram_data: np.matrix with song x chromagram x frame
-    :return: mean matrix of training data. Shape: (chromagram,)
+    :param sorted_dict: dictionary output from util.bucket_sort
+    :return: mean matrix of training data. Shape: (classes, chromagram)
     """
-    count_dict = collections.defaultdict(list)
-    for i in range(len(labels)):
-        label = labels[i]
-        annotation = annotated_chroma[i]
-        assert(len(label) == len(annotation))
-        for l_idx in range(len(label)):
-            curr_label = util.get_base_chord(label[l_idx])
-            count_dict[curr_label].append(annotation[l_idx])
     res = []
     for c in util.CHORDS:
-        num_frames = sum([a.shape[1] for a in count_dict[c]])
-        total = np.zeros(util.CHROMAGRAM_SIZE)
-        for frames in count_dict[c]:
-            total+= frames.sum(axis=1)
-        res.append(total/num_frames)
+        res.append(np.mean(sorted_dict[c], axis=1))
     return np.array(res)
-def cov_matrix(chromagram_data):
+
+def cov_matrix(sorted_dict):
     """
 
-    :param chromagram_data: np.matrix with song x chromagram x frame
-    :return: covariance matrix of training data. Shape: (chromagram, chromagram)
+    :param sorted_dict: dictionary output from util.bucket_sort
+    :return: covariance matrix of training data. Shape: (classes, chromagram, chromagram)
     """
-    return np.cov(chromagram_data)
+    res = []
+    for c in util.CHORDS:
+        res.append(np.cov(sorted_dict[c]))
+    return np.array(res)
 
 def initial_distribution(labels):
     """
@@ -70,19 +62,21 @@ def transition_matrix(labels, annotated_chroma):
     return normalize(result, axis=1, norm='l1')
 
 def train(chromagram_data):
+    sorted_label = util.bucket_sort(chromagram_data['labels'], chromagram_data['annotated_chromas'])
     model = hmm.GaussianHMM(n_components=util.NUM_CHORDS, covariance_type='full')
-    model.means_ = mean_matrix(chromagram_data)
-    model.covars_ = cov_matrix(chromagram_data)
+    model.means_ = mean_matrix(sorted_label)
+    model.covars_ = cov_matrix(sorted_label)
     model.startprob_ = initial_distribution(chromagram_data['labels'])
-    model.transmat_ = transition_matrix(chromagram_data)
+    model.transmat_ = transition_matrix(chromagram_data['labels'], chromagram_data['annotated_chromas'])
     return model
 
 if __name__ == "__main__":
-    ipdb.set_trace()
     chromagram_data = beatles_annotated_chroma.load_data()
-    mean = mean_matrix(chromagram_data['labels'], chromagram_data['annotated_chromas'])
-    cov = cov_matrix()
-    initial = initial_distribution(chromagram_data['labels'])
-    transition = transition_matrix(chromagram_data['labels'], chromagram_data['annotated_chromas'])
-    print(transition)
-    print(initial)
+    del chromagram_data['err']
+    unique_labels = util.count_unique_labels(chromagram_data['labels'])
+    print(unique_labels)
+    print(len(unique_labels))
+    # test_data, train_data = util.split_data(chromagram_data, 0.15)
+    # model = train(chromagram_data=train_data)
+    # evaluation = util.evaluate(model, test_data)
+    # print(evaluation)
