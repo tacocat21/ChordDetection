@@ -1,0 +1,9 @@
+**/__pycache__
+.idea
+data/The_Beatles_Annotations/song/
+data/beatle_data_complete.json
+data/McGill-Billboard/
+data/chroma_arrays/
+data/gc14ux-jamendo-by-nc-sa-subset.zip
+data/maps/
+data/music/
