@@ -5,7 +5,8 @@ import rosa_chroma as ish_chroma
 import ipdb
 import util
 import json
-
+import librosa.display
+import matplotlib.pyplot as plt
 
 """
 chromagram - 12xN. A chroma per frame (corr to spectrogram). N > M
@@ -45,7 +46,7 @@ def read_chordlab(chord_file):
     # Read in the space-delimited chord label file
     return [line.rstrip('\n').split(' ') for line in open(chord_file)]
 
-def map_beatles_dataset():
+def map_beatles_dataset(type_='cqt'):
     """
     Map the whole beatles data set and save the output to a JSON
     :return: 
@@ -74,7 +75,7 @@ def map_beatles_dataset():
         assert(len(song_files) == len(chord_files))
         for i in range(len(song_files)):
             chord_lab = read_chordlab(os.path.join(util.BEATLES_CHORD, song_f, chord_files[i]))
-            chromagram, beat_chroma, beat_frames, beat_t, sr = ish_chroma.chroma(os.path.join(util.BEATLES_SONG, song_f, song_files[i]))
+            chromagram, beat_chroma, beat_frames, beat_t, sr = ish_chroma.chroma(os.path.join(util.BEATLES_SONG, song_f, song_files[i]), type_)
             try:
                 anno_chromas, labels = map_chroma(chromagram, sr, hopsize, chord_lab)
             except AssertionError:
@@ -188,16 +189,23 @@ def load_data():
     assert_load(res)
     return res
 
+def compare_song_chroma(song_folder, song_title):
+    cqt_chromagram, _, _, _, _ = ish_chroma.chroma(os.path.join(util.BEATLES_SONG, song_folder, song_title), 'cqt')
+    stft_chromagram, _, _, _, _ = ish_chroma.chroma(os.path.join(util.BEATLES_SONG, song_folder, song_title), 'stft')
+    ish_chroma.compare_cqt_stft(cqt_chromagram, stft_chromagram)
+
 if __name__ == "__main__":
-#    album = "10CD1_-_The_Beatles"
-#    song_title = "05 - Wild Honey Pie.flac"
+    album = "10CD1_-_The_Beatles"
+    song_title = "05 - Wild Honey Pie.flac"
 #    chord_title = "CD1_-_05_-_Wild_Honey_Pie"
 #    test(album, song_title, chord_title)
-#    res = map_beatles_dataset()
+
 #    jsonify(res)
-    ipdb.set_trace()
-    dir = os.path.join(util.DATA_DIR, 'beatle_data_complete.json')
-#    save_json(dir, res)
+#     compare_song_chroma(album, song_title)
+#     ipdb.set_trace()
+    res = map_beatles_dataset('stft')
+    dir = os.path.join(util.DATA_DIR, 'beatle_data_stft.json')
+    save_json(dir, res)
 
     res = load_beatles(dir)
     assert_load(res)

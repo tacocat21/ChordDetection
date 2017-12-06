@@ -49,7 +49,7 @@ def split_data(input_data, test_ratio):
     """
     test = {}
     train = {}
-    test_idx = int(test_ratio*len(input_data['chromagram']))
+    test_idx = int((1-test_ratio)*len(input_data['chromagram']))
     for k in input_data:
         test[k] = input_data[k][:test_idx]
         train[k] = input_data[k][test_idx:]
@@ -134,3 +134,27 @@ def distance(prediction, correct_label):
     if prediction == correct_label:
         return 1
     return 0
+
+
+def mean_matrix(sorted_dict):
+    """
+
+    :param sorted_dict: dictionary output from util.bucket_sort
+    :return: mean matrix of training data. Shape: (classes, chromagram)
+    """
+    res = []
+    for c in CHORDS:
+        res.append(np.mean(sorted_dict[c], axis=1))
+    return np.array(res)
+
+
+def cov_matrix(sorted_dict):
+    """
+
+    :param sorted_dict: dictionary output from util.bucket_sort
+    :return: covariance matrix of training data. Shape: (classes, chromagram, chromagram)
+    """
+    res = []
+    for c in CHORDS:
+        res.append(np.cov(sorted_dict[c]))
+    return np.array(res)
