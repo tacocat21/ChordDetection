@@ -5,7 +5,7 @@ from sklearn.preprocessing import normalize
 import beatles_annotated_chroma
 import util
 from util import mean_matrix, cov_matrix
-
+import ipdb
 
 
 def initial_distribution(labels):
@@ -51,12 +51,14 @@ def train(chromagram_data):
     return model
 
 if __name__ == "__main__":
-    chromagram_data = beatles_annotated_chroma.load_data()
+    ipdb.set_trace()
+    chromagram_data = beatles_annotated_chroma.load_data('cqt_512_hop_2_tol')
     del chromagram_data['err']
-    unique_labels = util.count_unique_labels(chromagram_data['labels'])
-    print(unique_labels)
-    print(len(unique_labels))
-    # test_data, train_data = util.split_data(chromagram_data, 0.15)
-    # model = train(chromagram_data=train_data)
-    # evaluation = util.evaluate(model, test_data)
+
+    # unique_labels = util.count_unique_labels(chromagram_data['labels'])
+    # print(unique_labels)
+    # print(len(unique_labels))
+    test_data, train_data = util.split_data(chromagram_data, 0.15)
+    model = train(chromagram_data=train_data)
+    evaluation = util.evaluate(model, test_data)
     # print(evaluation)

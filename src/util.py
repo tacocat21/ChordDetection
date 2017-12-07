@@ -81,6 +81,7 @@ def evaluate(model, test_data):
         annotated = test_data['annotated_chromas'][i]
         chromagram = np.concatenate(test_data['annotated_chromas'][i], axis=1)
         stretched_label = match_frame(label, annotated)
+        # ipdb.set_trace()
         prediction = model.predict(chromagram.T).tolist()
         num_frames = chromagram.shape[1]
         total_frames += num_frames

@@ -27,15 +27,12 @@ def print_data(data):
 """ 
 Creates a chromagram for a file
 """
-def chroma(file_name, type_='cqt'):
+def chroma(file_name, hop_length=512, type_='cqt', tol=0.0):
     # An 11 kHz sample rate is used because it was suggested in the paper.
     eprint('Processing file: {}'.format(file_name))
     song = audiotools.open(file_name)
     sr = song.sample_rate()
     y, sr = librosa.load(file_name, sr=sr)
-
-    # Set the hop length
-    hop_length = 512
 
     # Separate harmonics and percussives into two waveforms
     y_harmonic, y_percussive = librosa.effects.hpss(y)
@@ -45,9 +42,9 @@ def chroma(file_name, type_='cqt'):
     beat_t = librosa.frames_to_time(beat_frames, sr=sr)
     if type_ == 'cqt':
         # Compute chroma features from the harmonic signal
-        chromagram = librosa.feature.chroma_cqt(y=y_harmonic, sr=sr)
+        chromagram = librosa.feature.chroma_cqt(y=y_harmonic, sr=sr, hop_length=hop_length, threshold=tol)
     elif type_ == 'stft':
-        chromagram = librosa.feature.chroma_stft(y=y_harmonic, sr=sr)
+        chromagram = librosa.feature.chroma_stft(y=y_harmonic, sr=sr, hop_length=hop_length)
     else:
         raise Exception("Must specify chromagram type!")
     # Aggregate chroma features between beat events # The median feature is used instead
