@@ -47,7 +47,10 @@ def transition_matrix(labels, annotated_chroma):
     result = np.zeros((util.NUM_CHORDS, util.NUM_CHORDS))
     total = 0
     for i in range(len(labels)):
+
         label = labels[i]
+        print('Analyzing label: {}'.format(label))
+        ipdb.set_trace()
         prev = util.get_base_chord(label[0])
         prev_idx = util.CHORD_IDX[prev]
         result[prev_idx, prev_idx] += annotated_chroma[i][0].shape[1]
@@ -64,7 +67,7 @@ def transition_matrix(labels, annotated_chroma):
 def train(chromagram_data):
     sorted_label = util.bucket_sort(chromagram_data['labels'], chromagram_data['annotated_chromas'])
     #total = [np.concatenate(c, axis=1) for c in chromagram_data['annotated_chromas']]
-    ipdb.set_trace()
+    # ipdb.set_trace()
     model = hmm.GaussianHMM(n_components=util.NUM_CHORDS, covariance_type='full')
     model.means_ = mean_matrix(sorted_label)
     model.covars_ = cov_matrix(sorted_label)
@@ -95,7 +98,7 @@ def train_multi(chromagram_data):
 
 if __name__ == "__main__":
     # TODO: safe to assume Bb chord => A#chord
-    ipdb.set_trace()
+
     chromagram_data = beatles_annotated_chroma.load_data()
     del chromagram_data['err']
     # ipdb.set_trace()

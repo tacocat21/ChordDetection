@@ -2,7 +2,7 @@ import os
 import numpy as np
 import librosa as librosa
 import rosa_chroma as ish_chroma
-import ipdb
+# import ipdb
 import util
 import json
 
@@ -195,7 +195,6 @@ if __name__ == "__main__":
 #    test(album, song_title, chord_title)
 #    res = map_beatles_dataset()
 #    jsonify(res)
-    ipdb.set_trace()
     dir = os.path.join(util.DATA_DIR, 'beatle_data_complete.json')
 #    save_json(dir, res)
 
