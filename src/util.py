@@ -42,7 +42,7 @@ MAJOR CLASS:
 """
 
 # Programmatic filtration processing of the chord: SUS -> MIN -> MAJ -> UNKNOWN (assume MAJ)
-SUS_CLASS = ['sus']                 # sus2, sus4
+SUS_CLASS = ['sus2', 'sus4']        # sus2, sus4
 MIN_CLASS = ['min', 'dim', 'b3']    # 3: min, dim   7: min7, dim7, hdim7, minmaj7
 MAJ_CLASS = ['maj', 'aug', '7']     # 3: maj, aug   7: maj7, aug7, dom7
 
@@ -88,7 +88,8 @@ def get_base_chord(chord):
 
     if any(quality in chord_spec for quality in SUS_CLASS):
         SUS_SET.add(chord)
-        return chord_root + 'sus'
+        sus_n = SUS_CLASS[0] if SUS_CLASS[0] in chord_spec else SUS_CLASS[1] # append sus2 or sus4
+        return chord_root + sus_n
 
     if any(quality in chord_spec for quality in MIN_CLASS):
         MIN_SET.add(chord)
