@@ -56,7 +56,7 @@ def split_data(input_data, test_ratio):
     """
     test = {}
     train = {}
-    test_idx = int(test_ratio*len(input_data['chromagram']))
+    test_idx = int((test_ratio)*len(input_data['chromagram']))
     for k in input_data:
         test[k] = input_data[k][:test_idx]
         train[k] = input_data[k][test_idx:]
@@ -89,6 +89,7 @@ def evaluate(model, test_data):
         annotated = test_data['annotated_chromas'][i]
         chromagram = np.concatenate(test_data['annotated_chromas'][i], axis=1)
         stretched_label = match_frame(label, annotated)
+        # ipdb.set_trace()
         prediction = model.predict(chromagram.T).tolist()
         num_frames = chromagram.shape[1]
         total_frames += num_frames
@@ -115,14 +116,15 @@ def display_err_matrix(matrix, title='', file_name=''):
     ax = fig.add_subplot(111)
     cax = ax.matshow(matrix, interpolation='nearest')
     fig.colorbar(cax)
-
-    ax.set_xticklabels([''] + CHORDS)
-    ax.set_yticklabels([''] + CHORDS)
+    ax.xaxis.set_ticks(np.arange(0, NUM_CHORDS, 1))
+    ax.yaxis.set_ticks(np.arange(0, NUM_CHORDS, 1))
+    ax.set_xticklabels(CHORDS)
+    ax.set_yticklabels(CHORDS)
     plt.title('Error Matrix Expected vs. Model Prediction for ' + title)
-    plt.show()
     if file_name != '':
         plt.savefig(os.path.join(IMAGE_RESULT_DIR, file_name))
 
+    plt.show()
 
 
 
@@ -153,15 +155,14 @@ def count_unique_labels(labels):
     return unique
 
 def save_result(file_name, data):
-    with open(os.path.join(RESULT_DIR, file_name), 'w') as fp:
+    with open(os.path.join(JSON_RESULT_DIR, file_name), 'w') as fp:
         json.dump(jsonify(data), fp)
 
 def load_result(file_name):
-    with open(os.path.join(RESULT_DIR, file_name), 'r') as fp:
+    with open(os.path.join(JSON_RESULT_DIR, file_name), 'r') as fp:
         res = json.load(fp)
     res['err_matrix'] = np.array(res['err_matrix'])
     return res
-
 
 def jsonify(data):
     # code from https://stackoverflow.com/questions/26646362/numpy-array-is-not-json-serializable
@@ -177,3 +178,26 @@ def jsonify(data):
             value = value.tolist()
         json_data[key] = value
     return json_data
+
+def mean_matrix(sorted_dict):
+    """
+
+    :param sorted_dict: dictionary output from util.bucket_sort
+    :return: mean matrix of training data. Shape: (classes, chromagram)
+    """
+    res = []
+    for c in CHORDS:
+        res.append(np.mean(sorted_dict[c], axis=1))
+    return np.array(res)
+
+
+def cov_matrix(sorted_dict):
+    """
+
+    :param sorted_dict: dictionary output from util.bucket_sort
+    :return: covariance matrix of training data. Shape: (classes, chromagram, chromagram)
+    """
+    res = []
+    for c in CHORDS:
+        res.append(np.cov(sorted_dict[c]))
+    return np.array(res)

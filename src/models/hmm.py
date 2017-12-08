@@ -1,32 +1,12 @@
-from hmmlearn import hmm
-import util
 import numpy as np
-import beatles_annotated_chroma
-import ipdb
+from hmmlearn import hmm
 from sklearn.preprocessing import normalize
-import collections
 
-def mean_matrix(sorted_dict):
-    """
+import beatles_annotated_chroma
+import util
+from util import mean_matrix, cov_matrix
+import ipdb
 
-    :param sorted_dict: dictionary output from util.bucket_sort
-    :return: mean matrix of training data. Shape: (classes, chromagram)
-    """
-    res = []
-    for c in util.CHORDS:
-        res.append(np.mean(sorted_dict[c], axis=1))
-    return np.array(res)
-
-def cov_matrix(sorted_dict):
-    """
-
-    :param sorted_dict: dictionary output from util.bucket_sort
-    :return: covariance matrix of training data. Shape: (classes, chromagram, chromagram)
-    """
-    res = []
-    for c in util.CHORDS:
-        res.append(np.cov(sorted_dict[c]))
-    return np.array(res)
 
 def initial_distribution(labels):
     """
@@ -71,14 +51,26 @@ def train(chromagram_data):
     return model
 
 if __name__ == "__main__":
-    chromagram_data = beatles_annotated_chroma.load_data()
-    del chromagram_data['err']
-    # unique_labels = util.count_unique_labels(chromagram_data['labels'])
-    # print(unique_labels)
-    # print(len(unique_labels))
-    test_data, train_data = util.split_data(chromagram_data, 0.15)
-    model = train(chromagram_data=train_data)
-    evaluation = util.evaluate(model, test_data)
-    util.save_result('cqt_512.json', evaluation)
-    print(evaluation)
-    util.display_err_matrix(matrix=evaluation['err_matrix'], title='HMM', file_name='cqt_512.png')
+    # ipdb.set_trace()
+    beatles_annotated_chroma.run_model_on_beatles(train, 'HMM', data_independent=False)
+    # files = ['cqt_512', 'stft', 'cqt_512_hop_2_tol', 'cqt_1024']
+    # for f in files:
+    #     type_ = ''
+    #     if 'cqt' in f:
+    #         type_ = 'CQT'
+    #     else:
+    #         type_ = 'STFT'
+    #     hop_length = 512
+    #     if '1024' in f:
+    #         hop_length = 1024
+    #     chromagram_data = beatles_annotated_chroma.load_data(f)
+    #     del chromagram_data['err']
+    #     # unique_labels = util.count_unique_labels(chromagram_data['labels'])
+    #     # print(unique_labels)
+    #     # print(len(unique_labels))
+    #     test_data, train_data = util.split_data(chromagram_data, 0.15)
+    #     model = train(chromagram_data=train_data)
+    #     evaluation = util.evaluate(model, test_data)
+    #     util.save_result(f + '.json', evaluation)
+    #     print(evaluation)
+    #     util.display_err_matrix(matrix=evaluation['err_matrix'], title='HMM w/ {} Chromagram Hop Length = {}'.format(type_, hop_length), file_name=f +'.png')
