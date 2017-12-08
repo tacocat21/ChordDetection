@@ -223,9 +223,13 @@ def run_model_on_beatles(train, model_name, data_independent=False):
         evaluation = util.evaluate(model, test_data)
         util.save_result('{}.json'.format(base_name), evaluation)
         print(evaluation)
-        util.display_err_matrix(matrix=evaluation['err_matrix'],
+        util.display_err_matrix(matrix=evaluation['strict']['err_matrix'],
                                 title=title,
-                                file_name='{}.png'.format(base_name))
+                                file_name='strict_{}.png'.format(base_name))
+        util.display_err_matrix(matrix=evaluation['relax']['err_matrix'],
+                                title=title,
+                                file_name='relax_{}.png'.format(base_name))
+
 
 
 if __name__ == "__main__":

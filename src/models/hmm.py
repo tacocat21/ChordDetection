@@ -55,7 +55,7 @@ def train(chromagram_data):
     model.means_ = mean_matrix(sorted_label)
     model.covars_ = cov_matrix(sorted_label)
     model.startprob_ = initial_distribution(chromagram_data['labels'])
-    ipdb.set_trace()
+    # ipdb.set_trace()
     model.transmat_ = transition_matrix(chromagram_data['labels'], chromagram_data['annotated_chromas'])
     # model.fit(total)
     return model
@@ -81,7 +81,7 @@ def train_multi(chromagram_data):
 
 
 if __name__ == "__main__":
-    # ipdb.set_trace()
+    ipdb.set_trace()
     beatles_annotated_chroma.run_model_on_beatles(train, 'HMM maj&min', data_independent=False)
     # files = ['cqt_512', 'stft', 'cqt_512_hop_2_tol', 'cqt_1024']
     # for f in files:

@@ -6,7 +6,11 @@ import numpy as np
 import ipdb
 import matplotlib.pyplot as plt
 
-# CHORDS = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B', 'N'] # N is for no chord
+BASE_CHORDS = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B', 'N'] # N is for no chord
+BASE_CHORD_IDX = {}
+for idx, chord in enumerate(BASE_CHORDS):
+    BASE_CHORD_IDX[chord] = idx
+NUM_BASE_CHORDS = len(BASE_CHORDS)
 # N is for no chord
 CHORDS = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B', 'N',
           'Cmin', 'C#min', 'Dmin', 'D#min', 'Emin', 'Fmin', 'F#min', 'Gmin', 'G#min', 'Amin', 'A#min', 'Bmin',
@@ -74,6 +78,27 @@ def output_chord_classes(chord_set, chord_file):
     """
     for c in sorted(chord_set):
         chord_file.write(c + '\n')
+
+def relax_chord(chord):
+    """
+    convert a chord from CHORDS to BASE_CHORDS
+    :param chord: 
+    :return: 
+    """
+    if chord in BASE_CHORD_IDX:
+        return chord
+    try:
+        i = chord.index('sus')
+        return chord[:i]
+    except ValueError:
+        pass
+
+    try:
+        i = chord.index('min')
+        return chord[:i]
+    except ValueError:
+        pass
+    raise Exception('Could not convert {} to a chord in BASE_CHORD'.format(chord))
 
 def get_base_chord(chord):
     """
@@ -155,8 +180,11 @@ def evaluate(model, test_data):
     total_frames = 0
     total_correct_frames = 0
     arco_sum = 0
+    relaxed_arco_sum = 0
+    total_relaxed_correct_frames = 0
     num_songs = len(test_data['labels'])
     error_matrix = np.zeros((NUM_CHORDS, NUM_CHORDS)) # correct -> prediction
+    relax_error_matrix = np.zeros((NUM_BASE_CHORDS, NUM_BASE_CHORDS))
     for i in range(num_songs): # for each song
         label = test_data['labels'][i]
         annotated = test_data['annotated_chromas'][i]
@@ -166,15 +194,24 @@ def evaluate(model, test_data):
         num_frames = chromagram.shape[1]
         total_frames += num_frames
         curr_song_correct = 0
+        curr_relaxed_song_correct = 0
         for i in range(len(prediction)):
             if (int(prediction[i]) == int(stretched_label[i])):
                 curr_song_correct += 1
                 total_correct_frames += 1
             else:
                 error_matrix[int(stretched_label[i]), int(prediction[i])] += 1
+            relax_stretched_label = relax_chord(CHORDS[int(stretched_label[i])])
+            relax_prediction = relax_chord(CHORDS[int(prediction[i])])
+            if relax_stretched_label == relax_prediction:
+                curr_relaxed_song_correct += 1
+                total_relaxed_correct_frames += 1
+            else:
+                relax_error_matrix[BASE_CHORD_IDX[relax_stretched_label], BASE_CHORD_IDX[relax_prediction]] += 1
 #        total_correct_frames += curr_song_correct
         print(curr_song_correct/num_frames)
         arco_sum += curr_song_correct/num_frames
+        relaxed_arco_sum += curr_relaxed_song_correct/num_frames
 
     # Output chord classification info
     for i in range(len(CHORD_SETS)):
@@ -182,10 +219,19 @@ def evaluate(model, test_data):
 
     result = {}
     print("Correct: {}/{} = {}".format(total_correct_frames, total_frames, total_correct_frames/total_frames))
-    result['TRCO'] = total_correct_frames/total_frames
-    result['ARCO'] = arco_sum/num_songs
-    result['err_matrix'] = error_matrix
-    print('TRCO: {}\nARCO: {}'.format(result['TRCO'], result['ARCO']))
+    print("Relax correct: {}/{} = {}".format(total_relaxed_correct_frames, total_frames, total_relaxed_correct_frames/total_frames))
+    result['strict'] = {
+        'TRCO' : total_correct_frames / total_frames,
+        'ARCO' : arco_sum / num_songs,
+        'err_matrix' : error_matrix
+    }
+    result['relax'] = {
+        'ARCO' : relaxed_arco_sum/num_songs,
+        'TRCO' : total_relaxed_correct_frames/total_frames,
+        'err_matrix' : relax_error_matrix
+    }
+    print('TRCO: {}\nARCO: {}'.format(result['strict']['TRCO'], result['strict']['ARCO']))
+    print('rTRCO: {}\nrARCO: {}'.format(result['relax']['TRCO'], result['relax']['ARCO']))
     return result
 
 def display_err_matrix(matrix, title='', file_name=''):
@@ -193,10 +239,16 @@ def display_err_matrix(matrix, title='', file_name=''):
     ax = fig.add_subplot(111)
     cax = ax.matshow(matrix, interpolation='nearest')
     fig.colorbar(cax)
-    ax.xaxis.set_ticks(np.arange(0, NUM_CHORDS, 1))
-    ax.yaxis.set_ticks(np.arange(0, NUM_CHORDS, 1))
-    ax.set_xticklabels(CHORDS)
-    ax.set_yticklabels(CHORDS)
+    assert(matrix.shape[0] == matrix.shape[1])
+    ax.xaxis.set_ticks(np.arange(0, matrix.shape[0], 1))
+    ax.yaxis.set_ticks(np.arange(0, matrix.shape[1], 1))
+    if matrix.shape[0] == NUM_CHORDS:
+        ax.set_xticklabels(CHORDS)
+        ax.set_yticklabels(CHORDS)
+    if matrix.shape[0] == NUM_BASE_CHORDS:
+        ax.set_xticklabels(BASE_CHORDS)
+        ax.set_yticklabels(BASE_CHORDS)
+
     plt.title('Error Matrix Expected vs. Model Prediction for ' + title)
     if file_name != '':
         plt.savefig(os.path.join(IMAGE_RESULT_DIR, file_name))
@@ -238,7 +290,8 @@ def save_result(file_name, data):
 def load_result(file_name):
     with open(os.path.join(JSON_RESULT_DIR, file_name), 'r') as fp:
         res = json.load(fp)
-    res['err_matrix'] = np.array(res['err_matrix'])
+    res['strict']['err_matrix'] = np.array(res['strict']['err_matrix'])
+    res['relax']['err_matrix'] = np.array(res['relax']['err_matrix'])
     return res
 
 def jsonify(data):
