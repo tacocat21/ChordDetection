@@ -79,6 +79,6 @@ if __name__ == "__main__":
     test_data, train_data = util.split_data(chromagram_data, 0.15)
     model = train(chromagram_data=train_data)
     evaluation = util.evaluate(model, test_data)
-    util.save_result('cqt_512', evaluation)
+    util.save_result('cqt_512.json', evaluation)
     print(evaluation)
     util.display_err_matrix(matrix=evaluation['err_matrix'], title='HMM', file_name='cqt_512.png')
