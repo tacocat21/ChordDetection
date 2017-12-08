@@ -1,11 +1,13 @@
-import os
-import numpy as np
-import librosa as librosa
-import rosa_chroma as ish_chroma
-import ipdb
-import util
 import json
+import os
 
+import ipdb
+import librosa as librosa
+import numpy as np
+
+import rosa_chroma as ish_chroma
+import util
+from util import jsonify
 
 """
 chromagram - 12xN. A chroma per frame (corr to spectrogram). N > M
@@ -134,20 +136,6 @@ def assert_load(res):
             print(i)
             print('ASSERTION')
 
-def jsonify(data):
-    # code from https://stackoverflow.com/questions/26646362/numpy-array-is-not-json-serializable
-    json_data = dict()
-    for key, value in data.items():
-        if isinstance(value, list):  # for lists
-            value = [jsonify(item) if isinstance(item, dict) else item for item in value]
-        if isinstance(value, dict):  # for nested lists
-            value = jsonify(value)
-        if isinstance(key, int):  # if key is integer: > to string
-            key = str(key)
-        if type(value).__module__ == 'numpy':  # if value is numpy.*: > to python list
-            value = value.tolist()
-        json_data[key] = value
-    return json_data
 
 def remove_song_without_ext(files, ext):
     res = []
@@ -183,7 +171,7 @@ def test(album, song_title, chord_title):
         print(a.shape)
 
 def load_data():
-    dir = os.path.join(util.DATA_DIR, 'beatle_data_complete.json')
+    dir = os.path.join(util.DATA_DIR, 'beatle_data_cqt_512.json')
     res = load_beatles(dir)
     assert_load(res)
     return res
@@ -196,7 +184,7 @@ if __name__ == "__main__":
 #    res = map_beatles_dataset()
 #    jsonify(res)
     ipdb.set_trace()
-    dir = os.path.join(util.DATA_DIR, 'beatle_data_complete.json')
+    dir = os.path.join(util.DATA_DIR, 'beatle_data_cqt_512.json')
 #    save_json(dir, res)
 
     res = load_beatles(dir)
