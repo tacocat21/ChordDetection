@@ -27,15 +27,12 @@ def print_data(data):
 """ 
 Creates a chromagram for a file
 """
-def chroma(file_name):
+def chroma(file_name, hop_length=512, type_='cqt', tol=0.0):
     # An 11 kHz sample rate is used because it was suggested in the paper.
     eprint('Processing file: {}'.format(file_name))
     song = audiotools.open(file_name)
     sr = song.sample_rate()
     y, sr = librosa.load(file_name, sr=sr)
-
-    # Set the hop length
-    hop_length = 512
 
     # Separate harmonics and percussives into two waveforms
     y_harmonic, y_percussive = librosa.effects.hpss(y)
@@ -43,10 +40,13 @@ def chroma(file_name):
     # Beat track on the percussive signal
     tempo, beat_frames = librosa.beat.beat_track(y=y_percussive, sr=sr)
     beat_t = librosa.frames_to_time(beat_frames, sr=sr)
-
-    # Compute chroma features from the harmonic signal
-    chromagram = librosa.feature.chroma_cqt(y=y_harmonic, sr=sr)
-
+    if type_ == 'cqt':
+        # Compute chroma features from the harmonic signal
+        chromagram = librosa.feature.chroma_cqt(y=y_harmonic, sr=sr, hop_length=hop_length, threshold=tol)
+    elif type_ == 'stft':
+        chromagram = librosa.feature.chroma_stft(y=y_harmonic, sr=sr, hop_length=hop_length)
+    else:
+        raise Exception("Must specify chromagram type!")
     # Aggregate chroma features between beat events # The median feature is used instead
     beat_chroma = librosa.util.sync(chromagram, beat_frames, aggregate=np.median)
 
@@ -97,9 +97,19 @@ def save_chroma_pics(chromagram, beat_chroma, beat_frames, beat_t, sr, target_fi
 
     plt.suptitle(target_file)
     # plt.colorbar()
+
     plt.savefig(target_image_file)
     eprint('Done Processing: {}'.format(target_file))
     eprint('')
+
+def compare_cqt_stft(cqt_chroma, stft_chroma):
+    ax1 = plt.subplot(2, 1, 1)
+    librosa.display.specshow(cqt_chroma, y_axis='chroma', x_axis='time')
+    plt.title('CQT Chroma (linear time)')
+    ax2 = plt.subplot(2, 1, 2, sharex=ax1)
+    librosa.display.specshow(stft_chroma, y_axis='chroma', x_axis='time')
+    plt.title('STFT Chroma (beat time)')
+    plt.show()
 
 def file_exists(file_name):
     song_title_cutoff = 11
