@@ -6,6 +6,8 @@ import librosa as librosa
 import numpy as np
 
 import rosa_chroma as ish_chroma
+
+# import ipdb
 import util
 from util import jsonify
 import json
@@ -192,8 +194,6 @@ def compare_song_chroma(song_folder, song_title):
     cqt_chromagram, _, _, _, _ = ish_chroma.chroma(os.path.join(util.BEATLES_SONG, song_folder, song_title), 'cqt')
     stft_chromagram, _, _, _, _ = ish_chroma.chroma(os.path.join(util.BEATLES_SONG, song_folder, song_title), 'stft')
     ish_chroma.compare_cqt_stft(cqt_chromagram, stft_chromagram)
-
-
 
 def run_model_on_beatles(train, model_name, data_independent=False):
     files = ['cqt_512', 'stft', 'cqt_512_hop_2_tol', 'cqt_1024']

@@ -53,7 +53,7 @@ def train(chromagram_data):
     return Template()
 
 if __name__ == '__main__':
-    beatles_annotated_chroma.run_model_on_beatles(train, 'Template_model', data_independent=True)
+    beatles_annotated_chroma.run_model_on_beatles(train, 'Template_model maj&min', data_independent=True)
     # files = ['cqt_512', 'stft', 'cqt_512_hop_2_tol', 'cqt_1024']
     # for f in files:
     #     type_ = ''

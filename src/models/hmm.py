@@ -16,7 +16,7 @@ def initial_distribution(labels):
     result = np.zeros(util.NUM_CHORDS)
     for l in labels:
         result[util.CHORD_IDX[util.get_base_chord(l[0])]] += 1
-    return result/len(labels)
+    return np.concatenate(normalize([result], axis=1, norm='l1'))
 
 
 def transition_matrix(labels, annotated_chroma):
@@ -25,9 +25,15 @@ def transition_matrix(labels, annotated_chroma):
         :return: count of the chord transition of every song in training data. Shape: (NUM_CHORDS, NUM_CHORDS)
     """
     result = np.zeros((util.NUM_CHORDS, util.NUM_CHORDS))
+    for i in range(util.NUM_CHORDS):
+        result[i][12] = 1
+    assert util.CHORDS[12] == 'N'
     total = 0
     for i in range(len(labels)):
+
         label = labels[i]
+        print('Analyzing label: {}'.format(label))
+        # ipdb.set_trace()
         prev = util.get_base_chord(label[0])
         prev_idx = util.CHORD_IDX[prev]
         result[prev_idx, prev_idx] += annotated_chroma[i][0].shape[1]
@@ -43,16 +49,40 @@ def transition_matrix(labels, annotated_chroma):
 
 def train(chromagram_data):
     sorted_label = util.bucket_sort(chromagram_data['labels'], chromagram_data['annotated_chromas'])
+    #total = [np.concatenate(c, axis=1) for c in chromagram_data['annotated_chromas']]
+    # ipdb.set_trace()
     model = hmm.GaussianHMM(n_components=util.NUM_CHORDS, covariance_type='full')
     model.means_ = mean_matrix(sorted_label)
     model.covars_ = cov_matrix(sorted_label)
     model.startprob_ = initial_distribution(chromagram_data['labels'])
+    ipdb.set_trace()
     model.transmat_ = transition_matrix(chromagram_data['labels'], chromagram_data['annotated_chromas'])
+    # model.fit(total)
     return model
+
+def train_multi(chromagram_data):
+    sorted_label = util.bucket_sort(chromagram_data['labels'], chromagram_data['annotated_chromas'])
+    total = np.concatenate([np.array(util.match_frame(chromagram_data['labels'][i], chromagram_data['annotated_chromas'][i])).T for i in range(len(chromagram_data['labels']))])
+    # total = [[util.CHORD_IDX[util.l] for l in label] for label in chromagram_data['labels']]
+    lengths = []
+    curr = 0
+    for l in chromagram_data['labels']:
+        lengths.append(curr)
+        curr += len(l)
+    #total = np.concatenate(total, axis=1)
+    initial_dist = initial_distribution(chromagram_data['labels'])
+    trans_matrix = transition_matrix(chromagram_data['labels'], chromagram_data['annotated_chromas'])
+    model = hmm.GaussianHMM(n_components=util.NUM_CHORDS)
+    model.startprob_ = initial_dist
+    model.transmat_ = trans_matrix
+    model.emissionprob_ = normalize(mean_matrix(sorted_label), axis=1)
+    model.fit([total.T], lengths)
+    return model
+
 
 if __name__ == "__main__":
     # ipdb.set_trace()
-    beatles_annotated_chroma.run_model_on_beatles(train, 'HMM', data_independent=False)
+    beatles_annotated_chroma.run_model_on_beatles(train, 'HMM maj&min', data_independent=False)
     # files = ['cqt_512', 'stft', 'cqt_512_hop_2_tol', 'cqt_1024']
     # for f in files:
     #     type_ = ''

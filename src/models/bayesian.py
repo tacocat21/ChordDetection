@@ -35,6 +35,7 @@ def quadratic_decision(mean, covariance):
     return (Wi, wi, w)
 
 def train(chromagram_data):
+    # ipdb.set_trace()
     sorted_label = util.bucket_sort(chromagram_data['labels'], chromagram_data['annotated_chromas'])
     mean = util.mean_matrix(sorted_label)
     covar = util.cov_matrix(sorted_label)
@@ -48,4 +49,4 @@ ARCO: 0.44113839017957357
 """
 if __name__ == '__main__':
     # ipdb.set_trace()
-    beatles_annotated_chroma.run_model_on_beatles(train, 'Bayes', data_independent=False)
+    beatles_annotated_chroma.run_model_on_beatles(train, 'Bayes maj&min', data_independent=False)
