@@ -22,6 +22,7 @@ BEATLES_DIR = os.path.join(SRC_DIR, '..', 'data', 'The_Beatles_Annotations')
 BEATLES_CHORD = os.path.join(BEATLES_DIR, 'chordlab', 'The_Beatles')
 BEATLES_SONG = os.path.join(BEATLES_DIR, 'song')
 BEATLES_DATA_JSON = os.path.join(DATA_DIR, 'beatle_data.json')
+PROCESSED_DATA = os.path.join(DATA_DIR, 'processed_data')
 
 def get_base_chord(c):
     """

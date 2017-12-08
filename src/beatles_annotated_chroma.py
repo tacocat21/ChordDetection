@@ -97,11 +97,11 @@ def map_beatles_dataset():
     return res
 
 def save_json(file_name, json_dict):
-    with open(file_name, 'w') as fp:
+    with open(os.path.join(util.PROCESSED_DATA, file_name), 'w') as fp:
         json.dump(jsonify(json_dict), fp)
 
 def load_beatles(file_name):
-    with open(file_name, 'r') as fp:
+    with open(os.path.join(util.PROCESSED_DATA, file_name), 'r') as fp:
         res = json.load(fp)
         chromagram = []
         # convert this back to a dictionary of numpy arrays
@@ -171,7 +171,7 @@ def test(album, song_title, chord_title):
         print(a.shape)
 
 def load_data():
-    dir = os.path.join(util.DATA_DIR, 'beatle_data_cqt_512.json')
+    dir = os.path.join(util.PROCESSED_DATA, 'beatle_data_cqt_512.json')
     res = load_beatles(dir)
     assert_load(res)
     return res
@@ -184,10 +184,10 @@ if __name__ == "__main__":
 #    res = map_beatles_dataset()
 #    jsonify(res)
     ipdb.set_trace()
-    dir = os.path.join(util.DATA_DIR, 'beatle_data_cqt_512.json')
-#    save_json(dir, res)
+    file_name = 'beatle_data_cqt_512.json'
+#    save_json(file_name, res)
 
-    res = load_beatles(dir)
+    res = load_beatles(file_name)
     assert_load(res)
 
 
