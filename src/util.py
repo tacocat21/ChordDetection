@@ -5,7 +5,11 @@ import os
 import numpy as np
 import ipdb
 import matplotlib.pyplot as plt
+import matplotlib.colors as mplc
+from matplotlib.ticker import MaxNLocator
+import matplotlib.cm as cm
 
+CHROMAGRAM_BASE = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B']
 CHORDS = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B', 'N'] # N is for no chord
 CHORD_IDX = {}
 for idx, chord in enumerate(CHORDS):
@@ -22,6 +26,7 @@ BEATLES_DIR = os.path.join(SRC_DIR, '..', 'data', 'The_Beatles_Annotations')
 BEATLES_CHORD = os.path.join(BEATLES_DIR, 'chordlab', 'The_Beatles')
 BEATLES_SONG = os.path.join(BEATLES_DIR, 'song')
 BEATLES_DATA_JSON = os.path.join(DATA_DIR, 'beatle_data.json')
+CHORD_MEAN_COV_DIR = os.path.join(RESULT_DIR, 'chord_mean_cov_images')
 PROCESSED_DATA = os.path.join(DATA_DIR, 'processed_data')
 
 def get_base_chord(c):
@@ -178,6 +183,43 @@ def jsonify(data):
             value = value.tolist()
         json_data[key] = value
     return json_data
+
+def display_mean_cov_for_chord(chord_name, mean, cov, file_name=''):
+    fig = plt.figure()
+    a1 = plt.subplot2grid((4,4), (0,0), rowspan=1, colspan=3)
+    a1c = plt.subplot2grid((4,4), (0,3), rowspan=1, colspan=1)
+    ax = plt.subplot2grid((4,4), (1,0), rowspan=3, colspan=3)
+    axc = plt.subplot2grid((4,4), (1,3), rowspan=3, colspan=1)
+
+    # norm = mplc.Normalize(vmin=0.0, vmax=1.)
+    # ipdb.set_trace()
+    ca1 = a1.matshow(np.array([mean]), interpolation='nearest')
+    cbar = plt.colorbar(ca1, cax=a1c)
+    # cbar.set_clim(0, 1.0)
+    # cbar.yaxis.set_ticks(['0', '0.5', '1'])
+    # cbar.ax.set_yticklabels()
+    # cbar.set_label(np.arange(0,1,0.2).tolist())
+    # cbar.set_ticks(np.arange(0,1,0.2))
+    # cbar.locator = MaxNLocator(nbins=5)
+
+    a1.xaxis.set_ticks(np.arange(0, CHROMAGRAM_SIZE, 1))
+    a1.set_xticklabels(CHROMAGRAM_BASE)
+    a1.yaxis.set_ticks_position('none')
+    a1.yaxis.set_visible(False)
+
+    cax = ax.matshow(cov, interpolation='nearest')
+    cbarx = plt.colorbar(cax, cax=axc)
+    # cbarx.set_clim(0, 2)
+    ax.xaxis.set_ticks(np.arange(0, CHROMAGRAM_SIZE, 1))
+    ax.yaxis.set_ticks(np.arange(0, CHROMAGRAM_SIZE, 1))
+    ax.set_xticklabels(CHROMAGRAM_BASE)
+    ax.set_yticklabels(CHROMAGRAM_BASE)
+    plt.suptitle('Mean and covariance for {} chord'.format(chord_name))
+    if file_name != '':
+        plt.savefig(os.path.join(CHORD_MEAN_COV_DIR, file_name))
+
+    # plt.show()
+
 
 def mean_matrix(sorted_dict):
     """
