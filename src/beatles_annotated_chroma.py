@@ -1,6 +1,5 @@
 import json
 import os
-
 import ipdb
 import librosa as librosa
 import numpy as np
@@ -11,6 +10,7 @@ from util import jsonify
 import json
 import librosa.display
 import matplotlib.pyplot as plt
+import concurrent.futures
 
 """
 chromagram - 12xN. A chroma per frame (corr to spectrogram). N > M
@@ -66,6 +66,8 @@ def map_beatles_dataset(hopsize=512, type_='cqt', tol=0.0, apply_log=False, powe
     song_names = []
     chord_name = []
     err = []
+    song_chord_pairs = []
+    future_list = []
     for song_f in song_folders:
         if song_f not in chord_folders:
             continue
@@ -77,28 +79,51 @@ def map_beatles_dataset(hopsize=512, type_='cqt', tol=0.0, apply_log=False, powe
         chord_files = remove_song_without_ext(chord_files, chord_ext)
         assert(len(song_files) == len(chord_files))
         for i in range(len(song_files)):
-            chord_lab = read_chordlab(os.path.join(util.BEATLES_CHORD, song_f, chord_files[i]))
-            if not apply_log:
-                chromagram, beat_chroma, beat_frames, beat_t, sr = ish_chroma.chroma(os.path.join(util.BEATLES_SONG, song_f, song_files[i]), hop_length=hopsize, type_=type_, tol=tol)
+            chord_file = os.path.join(util.BEATLES_CHORD, song_f, chord_files[i])
+            song_file = os.path.join(util.BEATLES_SONG, song_f, song_files[i])
+            song_chord_pairs.append((song_file, chord_file))
+            break
+    with concurrent.futures.ThreadPoolExecutor(max_workers=8) as executor:
+        for song_file, chord_file in song_chord_pairs:
+            future_list.append(executor.submit(fn=process_song, song_file=song_file, chord_file=chord_file, hopsize=hopsize, type_=type_, tol=tol, apply_log=apply_log, power=power))
+        for future in concurrent.futures.as_completed(future_list):
+            res = future.result()
+            if 'err' in res:
+                err.append(res['err'])
             else:
-                chromagram, beat_chroma, beat_frames, beat_t, sr = ish_chroma.log_chroma(os.path.join(util.BEATLES_SONG, song_f, song_files[i]), hop_length=hopsize, power=power)
-            try:
-                anno_chromas, labels = map_chroma(chromagram, sr, hopsize, chord_lab)
-            except AssertionError:
-                print('ASSERTION FAILED: {}'.format(os.path.join(util.BEATLES_SONG, song_f, song_files[i])))
-                err.append(os.path.join(song_f, song_files[i]))
-                continue
-            chromagrams.append(chromagram.tolist())
-            annotated_chromagram.append(anno_chromas)
-            label_list.append(labels)
-            song_names.append(os.path.join(song_f, song_files[i]))
-            chord_name.append(os.path.join(song_f, chord_files[i]))
+                chromagrams.append(res['chromagram'])
+                annotated_chromagram.append(res['annotated_chromagram'])
+                label_list.append(res['label_list'])
+                song_names.append(res['song_name'])
+                chord_name.append(res['chord_name'])
     res['chromagram'] = chromagrams
     res['annotated_chromas'] = annotated_chromagram
     res['labels'] = label_list
     res['song_names'] = song_names
     res['chord_name'] = chord_name
     res['err'] = err
+    return res
+
+def process_song(song_file, chord_file, hopsize=512, type_='cqt', tol=0.0, apply_log=False, power=2):
+    res = {}
+    chord_lab = read_chordlab(chord_file)
+    if not apply_log:
+        chromagram, beat_chroma, beat_frames, beat_t, sr = ish_chroma.chroma(
+            song_file, hop_length=hopsize, type_=type_, tol=tol)
+    else:
+        chromagram, beat_chroma, beat_frames, beat_t, sr = ish_chroma.log_chroma(
+            song_file, hop_length=hopsize, power=power)
+    try:
+        anno_chromas, labels = map_chroma(chromagram, sr, hopsize, chord_lab)
+    except AssertionError:
+        print('ASSERTION FAILED: {}'.format(song_file))
+        res['err'] = song_file
+        return res
+    res['chromagram'] = chromagram.tolist()
+    res['annotated_chromagram'] = anno_chromas
+    res['label_list'] = labels
+    res['song_name'] = song_file
+    res['chord_name'] = chord_file
     return res
 
 def save_json(file_name, json_dict):
@@ -250,7 +275,6 @@ def run_model_on_beatles(train, model_name, files=None, data_independent=False):
                                 title=title,
                                 file_name='{}.png'.format(base_name))
 
-
 if __name__ == "__main__":
     album = "10CD1_-_The_Beatles"
     song_title = "05 - Wild Honey Pie.flac"
@@ -263,19 +287,23 @@ if __name__ == "__main__":
 #     save_json(file_name, res)
 #     compare_song_chroma(album, song_title)
     powers = [0.5]
+    ipdb.set_trace()
     for p in powers:
         res = map_beatles_dataset(type_='cqt', tol=0.0, apply_log=True, power=p)
-        file_name = 'beatle_data_stft_{}_pow.json'.format(p)
+        # file_name = 'beatle_data_stft_{}_pow.json'.format(p)
+        file_name = 'test.json'
         save_json(file_name, res)
-    files = ['cqt_512', 'stft', 'stft_0.5_pow', 'stft_1.5_pow', 'stft_2_pow', 'cqt_512_hop_2_tol', 'cqt_1024']
-    for f in files:
-        chromagram_data = load_data(f)
-        sorted_label = util.bucket_sort(chromagram_data['labels'], chromagram_data['annotated_chromas'])
-        mean_matrix = util.mean_matrix(sorted_label)
-        cov_matrix = util.cov_matrix(sorted_label)
-    # ipdb.set_trace()
-        for c in util.CHORD_IDX:
-            util.display_mean_cov_for_chord(c, mean=mean_matrix[util.CHORD_IDX[c]], cov=cov_matrix[util.CHORD_IDX[c]], file_name='{}_chord_{}.png'.format(f, c))
+        res = load_beatles(file_name)
+        assert_load(res)
+    # files = ['cqt_512', 'stft', 'stft_0.5_pow', 'stft_1.5_pow', 'stft_2_pow', 'cqt_512_hop_2_tol', 'cqt_1024']
+    # for f in files:
+    #     chromagram_data = load_data(f)
+    #     sorted_label = util.bucket_sort(chromagram_data['labels'], chromagram_data['annotated_chromas'])
+    #     mean_matrix = util.mean_matrix(sorted_label)
+    #     cov_matrix = util.cov_matrix(sorted_label)
+    # # ipdb.set_trace()
+    #     for c in util.CHORD_IDX:
+    #         util.display_mean_cov_for_chord(c, mean=mean_matrix[util.CHORD_IDX[c]], cov=cov_matrix[util.CHORD_IDX[c]], file_name='{}_chord_{}.png'.format(f, c))
 
         # res = load_beatles(file_name)
         # assert_load(res)
