@@ -25,25 +25,28 @@ beat_t - 1xM - 1D array of times (sec) that the beats (chroma and frames) occur
 def map_chroma(chromagram, sr, hopsize, chordlab):
     chroma_times = librosa.core.frames_to_time(np.arange(chromagram.shape[1] + 1), sr=sr, hop_length=hopsize)
 
+    # Slice off everything after the last time in the chord labels
+    last_chroma_idx = np.searchsorted(chroma_times, float(chordlab[-1][1]), side='left')
+    chroma_time_sliced = chroma_times[:last_chroma_idx]
+    chromagram_sliced = chromagram[:, 0:last_chroma_idx]
+
     anno_chroma = []
     labels = []
     for line in range(len(chordlab)):
         c = chordlab[line]
 
-        # commenting these out because silence can still be part of a song
-        #if c[2] == 'N':
-        #    continue
         labels.append(c[2])
         start   = float(c[0])
         end     = float(c[1])
 
-        chroma_range = np.searchsorted(chroma_times, [start, end], side='left')
-        #print('Line: {} - [{} {}] = chromas: [{} {}]'.format(line, start, end, chroma_range[0], chroma_range[1]))
-        chromas = chromagram[:, chroma_range[0]:chroma_range[1]]
-        anno_chroma.append(chromas.tolist())
-    # TODO: fix the missing frames problem
+        chroma_range = np.searchsorted(chroma_time_sliced, [start, end], side='left')
+        # print('Line: {} - [{} {}] = chromas: [{} {}]'.format(line, start, end, chroma_range[0], chroma_range[1]))
+        chromas = chromagram_sliced[:, chroma_range[0]:chroma_range[1]]
+        anno_chroma.append(chromas)
+
     sum_val = sum([len(n[0]) for n in anno_chroma])
-    assert(sum_val <= chromagram.shape[1] *1.01 and sum_val >= chromagram.shape[1]*0.99)
+    print("Sum/99%/Actual: {} - {} - {}".format(sum_val, chromagram_sliced.shape[1] * 0.99, chromagram_sliced.shape[1]))
+    assert(sum_val <= chromagram_sliced.shape[1] *1.01 and sum_val >= chromagram_sliced.shape[1]*0.99)
     return anno_chroma, labels
 
 def read_chordlab(chord_file):
@@ -66,10 +69,14 @@ def map_beatles_dataset(hopsize=512, type_='cqt', tol=0.0, apply_log=False, powe
     song_names = []
     chord_name = []
     err = []
+
     for song_f in song_folders:
         if song_f not in chord_folders:
             continue
-        print('Found: {}'.format(song_f))
+
+        if song_f != "12_-_Let_It_Be":
+            continue
+
         song_files = os.listdir(os.path.join(util.BEATLES_SONG, song_f))
         chord_files = os.listdir(os.path.join(util.BEATLES_CHORD, song_f))
         # assuming that song order for chord and songs are the same
@@ -84,6 +91,7 @@ def map_beatles_dataset(hopsize=512, type_='cqt', tol=0.0, apply_log=False, powe
                 chromagram, beat_chroma, beat_frames, beat_t, sr = ish_chroma.log_chroma(os.path.join(util.BEATLES_SONG, song_f, song_files[i]), hop_length=hopsize, power=power)
             try:
                 anno_chromas, labels = map_chroma(chromagram, sr, hopsize, chord_lab)
+                # print("{} - {} / {}".format(song_files[i], len(anno_chromas), len(chromagram)))
             except AssertionError:
                 print('ASSERTION FAILED: {}'.format(os.path.join(util.BEATLES_SONG, song_f, song_files[i])))
                 err.append(os.path.join(song_f, song_files[i]))
