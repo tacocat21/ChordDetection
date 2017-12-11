@@ -48,4 +48,5 @@ ARCO: 0.44113839017957357
 """
 if __name__ == '__main__':
     # ipdb.set_trace()
-    beatles_annotated_chroma.run_model_on_beatles(train, 'Bayes', data_independent=False)
+    files = ['stft_2_pow', 'stft_1.5_pow']
+    beatles_annotated_chroma.run_model_on_beatles(train, 'Bayes', files=files, data_independent=False)

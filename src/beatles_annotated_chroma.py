@@ -53,7 +53,7 @@ def read_chordlab(chord_file):
     # Read in the space-delimited chord label file
     return [line.rstrip('\n').split(' ') for line in open(chord_file)]
 
-def map_beatles_dataset(hopsize=512, type_='cqt', tol=0.0):
+def map_beatles_dataset(hopsize=512, type_='cqt', tol=0.0, apply_log=False, power=2):
     """
     Map the whole beatles data set and save the output to a JSON
     :return: 
@@ -85,7 +85,10 @@ def map_beatles_dataset(hopsize=512, type_='cqt', tol=0.0):
         assert(len(song_files) == len(chord_files))
         for i in range(len(song_files)):
             chord_lab = read_chordlab(os.path.join(util.BEATLES_CHORD, song_f, chord_files[i]))
-            chromagram, beat_chroma, beat_frames, beat_t, sr = ish_chroma.chroma(os.path.join(util.BEATLES_SONG, song_f, song_files[i]), hop_length=hopsize, type_=type_, tol=tol)
+            if not apply_log:
+                chromagram, beat_chroma, beat_frames, beat_t, sr = ish_chroma.chroma(os.path.join(util.BEATLES_SONG, song_f, song_files[i]), hop_length=hopsize, type_=type_, tol=tol)
+            else:
+                chromagram, beat_chroma, beat_frames, beat_t, sr = ish_chroma.log_chroma(os.path.join(util.BEATLES_SONG, song_f, song_files[i]), hop_length=hopsize, power=power)
             try:
                 anno_chromas, labels = map_chroma(chromagram, sr, hopsize, chord_lab)
                 # print("{} - {} / {}".format(song_files[i], len(anno_chromas), len(chromagram)))
@@ -184,6 +187,12 @@ def test(album, song_title, chord_title):
 def load_data(type_='cqt_512'):
     if(type_ == 'stft'):
         file_name = 'beatle_data_stft.json'
+    elif(type_ == 'stft_0.5_pow'):
+        file_name = 'beatle_data_stft_0.5_pow.json'
+    elif(type_ == 'stft_1.5_pow'):
+        file_name = 'beatle_data_stft_1.5_pow.json'
+    elif(type_ == 'stft_2_pow'):
+        file_name = 'beatle_data_stft_2_pow.json'
     elif(type_ == 'cqt_1024'):
         file_name = 'beatle_data_cqt_1024_hop.json'
     elif(type_ == 'cqt_512_hop_2_tol'):
@@ -197,14 +206,20 @@ def load_data(type_='cqt_512'):
     return res
 
 def compare_song_chroma(song_folder, song_title):
-    cqt_chromagram, _, _, _, _ = ish_chroma.chroma(os.path.join(util.BEATLES_SONG, song_folder, song_title), 'cqt')
-    stft_chromagram, _, _, _, _ = ish_chroma.chroma(os.path.join(util.BEATLES_SONG, song_folder, song_title), 'stft')
+    cqt_chromagram, _, _, _, _ = ish_chroma.chroma(os.path.join(util.BEATLES_SONG, song_folder, song_title), type_='cqt')
+    stft_chromagram, _, _, _, _ = ish_chroma.chroma(os.path.join(util.BEATLES_SONG, song_folder, song_title), type_='stft')
     ish_chroma.compare_cqt_stft(cqt_chromagram, stft_chromagram)
 
+def compare_log(song_folder, song_title):
+    cqt_chromagram, _, _, _, _ = ish_chroma.chroma(file_name=os.path.join(util.BEATLES_SONG, song_folder, song_title), type_='cqt')
+    log_chromagram, _, _, _, _ = ish_chroma.log_chroma(os.path.join(util.BEATLES_SONG, song_folder, song_title))
+    ish_chroma.compare_cqt_stft(cqt_chromagram, log_chromagram)
 
 
-def run_model_on_beatles(train, model_name, data_independent=False):
-    files = ['cqt_512', 'stft', 'cqt_512_hop_2_tol', 'cqt_1024']
+
+def run_model_on_beatles(train, model_name, files=None, data_independent=False):
+    if files is None:
+        files = ['cqt_512', 'stft', 'stft_0.5_pow', 'stft_1.5_pow', 'stft_2_pow', 'cqt_512_hop_2_tol', 'cqt_1024']
     for f in files:
         type_ = ''
         if 'cqt' in f:
@@ -220,6 +235,14 @@ def run_model_on_beatles(train, model_name, data_independent=False):
             idx = f.index('_tol')
             base_name = base_name + '_' + str(f[idx-1]) + '_tol'
             title = title + ' 0.{} Tolerance'.format(f[idx-1])
+        if 'pow' in f:
+            idx = f.index('_pow')
+            try:
+                num = float(f[idx-3:idx])
+            except Exception:
+                num = float(f[idx-1])
+            base_name = base_name + '_' + str(num) + '_pow'
+            title = title + ' {} power'.format(num)
         chromagram_data = load_data(f)
         del chromagram_data['err']
         if not data_independent:
@@ -239,19 +262,31 @@ def run_model_on_beatles(train, model_name, data_independent=False):
 if __name__ == "__main__":
     album = "10CD1_-_The_Beatles"
     song_title = "05 - Wild Honey Pie.flac"
+    # ipdb.set_trace()
+    # compare_log(album, song_title)
 #     chord_title = "CD1_-_05_-_Wild_Honey_Pie"
 #     test(album, song_title, chord_title)
 
 #     jsonify(res)
 #     save_json(file_name, res)
 #     compare_song_chroma(album, song_title)
-#     ipdb.set_trace()
-#     res = map_beatles_dataset(type_='cqt', tol=0.2)
-    file_name = 'beatle_data_cqt_512_hop_2_tol.json'
-    # save_json(file_name, res)
+    powers = [0.5]
+    for p in powers:
+        res = map_beatles_dataset(type_='cqt', tol=0.0, apply_log=True, power=p)
+        file_name = 'beatle_data_stft_{}_pow.json'.format(p)
+        save_json(file_name, res)
+    files = ['cqt_512', 'stft', 'stft_0.5_pow', 'stft_1.5_pow', 'stft_2_pow', 'cqt_512_hop_2_tol', 'cqt_1024']
+    for f in files:
+        chromagram_data = load_data(f)
+        sorted_label = util.bucket_sort(chromagram_data['labels'], chromagram_data['annotated_chromas'])
+        mean_matrix = util.mean_matrix(sorted_label)
+        cov_matrix = util.cov_matrix(sorted_label)
+    # ipdb.set_trace()
+        for c in util.CHORD_IDX:
+            util.display_mean_cov_for_chord(c, mean=mean_matrix[util.CHORD_IDX[c]], cov=cov_matrix[util.CHORD_IDX[c]], file_name='{}_chord_{}.png'.format(f, c))
 
-    res = load_beatles(file_name)
-    assert_load(res)
+        # res = load_beatles(file_name)
+        # assert_load(res)
 
 
 

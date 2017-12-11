@@ -52,7 +52,8 @@ def train(chromagram_data):
 
 if __name__ == "__main__":
     # ipdb.set_trace()
-    beatles_annotated_chroma.run_model_on_beatles(train, 'HMM', data_independent=False)
+    files = ['stft_0.5_pow']
+    beatles_annotated_chroma.run_model_on_beatles(train, 'HMM', files=files, data_independent=False)
     # files = ['cqt_512', 'stft', 'cqt_512_hop_2_tol', 'cqt_1024']
     # for f in files:
     #     type_ = ''

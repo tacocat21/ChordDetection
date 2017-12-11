@@ -3,9 +3,11 @@ from glob import glob
 import numpy as np
 import audiotools
 # np.set_printoptions(threshold=np.inf)
-
+import librosa.core
 import matplotlib.pyplot as plt
 import librosa.display
+import librosa.util
+import librosa.decompose
 import librosa
 import sys
 
@@ -55,6 +57,32 @@ def chroma(file_name, hop_length=512, type_='cqt', tol=0.0):
     # save_chroma_pics(chromagram, beat_chroma, beat_frames, beat_t, sr, "Please Please Me", "Please Please Me")
 
     return chromagram, beat_chroma, beat_frames, beat_t, sr
+
+def log_chroma(file_name, hop_length=512, power=2):
+    song = audiotools.open(file_name)
+    sr = song.sample_rate()
+    y, sr = librosa.load(file_name, sr=sr)
+    # Compute the STFT matrix
+    stft = librosa.core.stft(y)
+
+    # Decompose into harmonic and percussives
+    stft_harm, stft_perc = librosa.decompose.hpss(stft)
+    stft_harm = np.abs(stft_harm)**power
+    # stft_perc = np.log(np.abs(stft_perc))
+
+    # Invert the STFTs.  Adjust length to match the input.
+    # y_harmonic = librosa.util.fix_length(librosa.core.istft(stft_harm, dtype=y.dtype), len(y))
+    y_percussive = librosa.util.fix_length(librosa.core.istft(stft_perc, dtype=y.dtype), len(y))
+    chromagram = librosa.feature.chroma_stft(S=stft_harm, sr=sr, hop_length=int(hop_length))
+
+    tempo, beat_frames = librosa.beat.beat_track(y=y_percussive, sr=sr)
+    beat_t = librosa.frames_to_time(beat_frames, sr=sr)
+
+    # Aggregate chroma features between beat events # The median feature is used instead
+    beat_chroma = librosa.util.sync(chromagram, beat_frames, aggregate=np.median)
+    return chromagram, beat_chroma, beat_frames, beat_t, sr
+
+
 """ 
 Writes the chroma and beat arrays
 """
