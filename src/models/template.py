@@ -6,8 +6,7 @@ import beatles_annotated_chroma
 class Template:
     def __init__(self):
         self.weights = [create_templates(i) for i in range(util.CHROMAGRAM_SIZE)]
-        # self.weights.append([np.zeros(util.CHROMAGRAM_SIZE)])
-        self.weights.append([np.array([0.1]*util.CHROMAGRAM_SIZE)])
+        self.weights.append([np.array([0.2]*util.CHROMAGRAM_SIZE)])
 
     def predict_frame(self, frame):
         res = []
@@ -53,23 +52,5 @@ def train(chromagram_data):
     return Template()
 
 if __name__ == '__main__':
-    files = ['stft_2_pow', 'stft_1.5_pow']
+    files = ['cqt_8192_complete']
     beatles_annotated_chroma.run_model_on_beatles(train, 'Template_model', files=files, data_independent=True)
-    # files = ['cqt_512', 'stft', 'cqt_512_hop_2_tol', 'cqt_1024']
-    # for f in files:
-    #     type_ = ''
-    #     if 'cqt' in f:
-    #         type_ = 'CQT'
-    #     else:
-    #         type_ = 'STFT'
-    #     hop_length = 512
-    #     if '1024' in f:
-    #         hop_length = 1024
-    #     data = beatles_annotated_chroma.load_data(f)
-    #     model = Template()
-    #     evaluation = util.evaluate(model, data)
-    #     util.save_result('template.json', evaluation)
-    #     print(evaluation)
-    #     util.display_err_matrix(matrix=evaluation['err_matrix'],
-    #                             title='Template-based Model w/ {} Chromagram Hop Length = {}'.format(type_, hop_length),
-    #                             file_name='template.png')

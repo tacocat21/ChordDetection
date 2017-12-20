@@ -1,13 +1,8 @@
-import random
 import json
 import collections
 import os
 import numpy as np
-import ipdb
 import matplotlib.pyplot as plt
-import matplotlib.colors as mplc
-from matplotlib.ticker import MaxNLocator
-import matplotlib.cm as cm
 
 CHROMAGRAM_BASE = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B']
 CHORDS = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B', 'N'] # N is for no chord
@@ -94,7 +89,6 @@ def evaluate(model, test_data):
         annotated = test_data['annotated_chromas'][i]
         chromagram = np.concatenate(test_data['annotated_chromas'][i], axis=1)
         stretched_label = match_frame(label, annotated)
-        # ipdb.set_trace()
         prediction = model.predict(chromagram.T).tolist()
         num_frames = chromagram.shape[1]
         total_frames += num_frames
@@ -105,8 +99,6 @@ def evaluate(model, test_data):
                 total_correct_frames += 1
             else:
                 error_matrix[int(stretched_label[i]), int(prediction[i])] += 1
-#        total_correct_frames += curr_song_correct
-        print(curr_song_correct/num_frames)
         arco_sum += curr_song_correct/num_frames
     result = {}
     print("Correct: {}/{} = {}".format(total_correct_frames, total_frames, total_correct_frames/total_frames))
@@ -117,15 +109,25 @@ def evaluate(model, test_data):
     return result
 
 def display_err_matrix(matrix, title='', file_name=''):
+    """
+    Display the error matrix
+    :param matrix: matrix to display
+    :param title: title of the image
+    :param file_name: name of the file to save the error matrix
+    :return: None
+    """
     fig = plt.figure()
     ax = fig.add_subplot(111)
     cax = ax.matshow(matrix, interpolation='nearest')
     fig.colorbar(cax)
     ax.xaxis.set_ticks(np.arange(0, NUM_CHORDS, 1))
+    ax.xaxis.tick_bottom()
     ax.yaxis.set_ticks(np.arange(0, NUM_CHORDS, 1))
     ax.set_xticklabels(CHORDS)
     ax.set_yticklabels(CHORDS)
-    plt.title('Error Matrix Expected vs. Model Prediction for ' + title)
+    ax.set_xlabel('Predicted chord')
+    ax.set_ylabel('Expected chord')
+    plt.suptitle('Error Matrix Expected vs. Model Prediction for ' + title)
     if file_name != '':
         plt.savefig(os.path.join(IMAGE_RESULT_DIR, file_name))
 
@@ -154,16 +156,32 @@ def bucket_sort(labels, annotated_chroma):
     return res
 
 def count_unique_labels(labels):
+    """
+    
+    :param labels: Labels to count
+    :return: set containing all of the unique labels in the data
+    """
     unique = set()
     for label in labels:
         unique |= set(label)
     return unique
 
 def save_result(file_name, data):
+    """
+    
+    :param file_name: name of the result file
+    :param data: data to save to file
+    :return: None
+    """
     with open(os.path.join(JSON_RESULT_DIR, file_name), 'w') as fp:
         json.dump(jsonify(data), fp)
 
 def load_result(file_name):
+    """
+    
+    :param file_name: name of the result file
+    :return: Loaded file to dictionary
+    """
     with open(os.path.join(JSON_RESULT_DIR, file_name), 'r') as fp:
         res = json.load(fp)
     res['err_matrix'] = np.array(res['err_matrix'])
@@ -191,16 +209,8 @@ def display_mean_cov_for_chord(chord_name, mean, cov, file_name=''):
     ax = plt.subplot2grid((4,4), (1,0), rowspan=3, colspan=3)
     axc = plt.subplot2grid((4,4), (1,3), rowspan=3, colspan=1)
 
-    # norm = mplc.Normalize(vmin=0.0, vmax=1.)
-    # ipdb.set_trace()
     ca1 = a1.matshow(np.array([mean]), interpolation='nearest')
     cbar = plt.colorbar(ca1, cax=a1c)
-    # cbar.set_clim(0, 1.0)
-    # cbar.yaxis.set_ticks(['0', '0.5', '1'])
-    # cbar.ax.set_yticklabels()
-    # cbar.set_label(np.arange(0,1,0.2).tolist())
-    # cbar.set_ticks(np.arange(0,1,0.2))
-    # cbar.locator = MaxNLocator(nbins=5)
 
     a1.xaxis.set_ticks(np.arange(0, CHROMAGRAM_SIZE, 1))
     a1.set_xticklabels(CHROMAGRAM_BASE)
@@ -209,17 +219,34 @@ def display_mean_cov_for_chord(chord_name, mean, cov, file_name=''):
 
     cax = ax.matshow(cov, interpolation='nearest')
     cbarx = plt.colorbar(cax, cax=axc)
-    # cbarx.set_clim(0, 2)
     ax.xaxis.set_ticks(np.arange(0, CHROMAGRAM_SIZE, 1))
     ax.yaxis.set_ticks(np.arange(0, CHROMAGRAM_SIZE, 1))
     ax.set_xticklabels(CHROMAGRAM_BASE)
     ax.set_yticklabels(CHROMAGRAM_BASE)
     plt.suptitle('Mean and covariance for {} chord'.format(chord_name))
+    a1.set_title('Mean Vector')
+    ax.set_title('Covariance Matrix', y=0.98)
+    a1.xaxis.tick_bottom()
+    ax.xaxis.tick_bottom()
     if file_name != '':
         plt.savefig(os.path.join(CHORD_MEAN_COV_DIR, file_name))
+    plt.show()
 
-    # plt.show()
-
+def remove_song(name_list, data):
+    name_idx = []
+    for name in name_list:
+        try:
+            name_idx.append(data['song_names'].index(name))
+        except ValueError:
+            continue
+    name_idx.sort(reverse=True)
+    for idx in name_idx:
+        del data['chromagram'][idx]
+        del data['annotated_chromas'][idx]
+        del data['labels'][idx]
+        del data['song_names'][idx]
+        del data['chord_name'][idx]
+    return data
 
 def mean_matrix(sorted_dict):
     """
@@ -243,3 +270,4 @@ def cov_matrix(sorted_dict):
     for c in CHORDS:
         res.append(np.cov(sorted_dict[c]))
     return np.array(res)
+

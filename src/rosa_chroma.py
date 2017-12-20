@@ -58,12 +58,12 @@ def chroma(file_name, hop_length=512, type_='cqt', tol=0.0):
 
     return chromagram, beat_chroma, beat_frames, beat_t, sr
 
-def log_chroma(file_name, hop_length=512, power=2):
+def power_chroma(file_name, hop_length=512, power=2):
     song = audiotools.open(file_name)
     sr = song.sample_rate()
     y, sr = librosa.load(file_name, sr=sr)
     # Compute the STFT matrix
-    stft = librosa.core.stft(y)
+    stft = librosa.core.stft(y, n_fft=4096, hop_length=int(hop_length))
 
     # Decompose into harmonic and percussives
     stft_harm, stft_perc = librosa.decompose.hpss(stft)
@@ -72,11 +72,11 @@ def log_chroma(file_name, hop_length=512, power=2):
 
     # Invert the STFTs.  Adjust length to match the input.
     # y_harmonic = librosa.util.fix_length(librosa.core.istft(stft_harm, dtype=y.dtype), len(y))
-    y_percussive = librosa.util.fix_length(librosa.core.istft(stft_perc, dtype=y.dtype), len(y))
+    y_percussive = librosa.util.fix_length(librosa.core.istft(stft_perc, dtype=y.dtype, hop_length=int(hop_length)), len(y))
     chromagram = librosa.feature.chroma_stft(S=stft_harm, sr=sr, hop_length=int(hop_length))
 
-    tempo, beat_frames = librosa.beat.beat_track(y=y_percussive, sr=sr)
-    beat_t = librosa.frames_to_time(beat_frames, sr=sr)
+    tempo, beat_frames = librosa.beat.beat_track(y=y_percussive, sr=sr, hop_length=hop_length)
+    beat_t = librosa.frames_to_time(beat_frames, sr=sr, hop_length=hop_length)
 
     # Aggregate chroma features between beat events # The median feature is used instead
     beat_chroma = librosa.util.sync(chromagram, beat_frames, aggregate=np.median)

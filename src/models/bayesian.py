@@ -31,7 +31,7 @@ def quadratic_decision(mean, covariance):
     inv_cov = np.linalg.inv(covariance)
     Wi = -0.5* inv_cov
     wi = inv_cov @ mean
-    w = -0.5 * mean.T @ inv_cov @ mean - 0.5*math.log(np.linalg.det(covariance), 2) + math.log(0.5, 2)
+    w = -0.5 * mean.T @ inv_cov @ mean - 0.5*math.log(np.linalg.det(covariance), 2) + math.log(1/util.NUM_CHORDS, 2)
     return (Wi, wi, w)
 
 def train(chromagram_data):
@@ -41,12 +41,6 @@ def train(chromagram_data):
     bayes = Bayes(mean, covar)
     return bayes
 
-"""
-Correct: 66025/152532 = 0.4328599900348779
-TRCO: 0.4328599900348779
-ARCO: 0.44113839017957357
-"""
 if __name__ == '__main__':
-    # ipdb.set_trace()
-    files = ['stft_2_pow', 'stft_1.5_pow']
-    beatles_annotated_chroma.run_model_on_beatles(train, 'Bayes', files=files, data_independent=False)
+    files = ['cqt_8192_complete']
+    beatles_annotated_chroma.run_model_on_beatles(train, 'Naive-Bayes', files=files, data_independent=False)
