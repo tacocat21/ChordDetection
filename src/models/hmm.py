@@ -51,9 +51,23 @@ def train(chromagram_data):
     return model
 
 if __name__ == "__main__":
+    # hoplengths = [8192]
+    # for hoplength in hoplengths:
+    #     chromagram_data = beatles_annotated_chroma.load_data('stft_0.5_pow_{}'.format(hoplength))
+    #     del chromagram_data['err']
+    #     chromagram_data = util.remove_song(['10CD1_-_The_Beatles/06 - The Continuing Story of Bungalow Bill.flac', '10CD1_-_The_Beatles/05 - Wild Honey Pie.flac'], chromagram_data)
+    #     test_data, train_data = util.split_data(chromagram_data, 0.15)
+    #     model = train(chromagram_data=train_data)
+    #     evaluation = util.evaluate(model, test_data)
+    #     # ipdb.set_trace()
+    #     util.save_result('HMM_STFT_0.5_{}'.format(hoplength) + '.json', evaluation)
+    #     util.display_err_matrix(matrix=evaluation['err_matrix'],
+    #                             title='HMM w/ {} Chromagram Hop Length = {}'.format('CQT', hoplength),
+    #                             )
     # ipdb.set_trace()
-    files = ['stft_0.5_pow']
-    beatles_annotated_chroma.run_model_on_beatles(train, 'HMM', files=files, data_independent=False)
+    # files = ['stft_0.5_pow', 'stft', 'stft_1.5_pow', 'stft_2_pow']
+    files = ['cqt_8192_complete']
+    beatles_annotated_chroma.run_model_on_beatles(train, 'HMM', chords=True, files=files, data_independent=False)
     # files = ['cqt_512', 'stft', 'cqt_512_hop_2_tol', 'cqt_1024']
     # for f in files:
     #     type_ = ''

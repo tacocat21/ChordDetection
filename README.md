@@ -16,10 +16,14 @@ Each dictionary will have the following keys:
   * `id`: The song's youtube id.
   * `annotations`: The song's annotations. Contains the contents of its corresponding annotation
     file in one string.
-Sources:
+
+The beatles dataset was not added in this repository because of copyright issues. 
+
+References:
 http://www.mattmcvicar.com/wp-content/uploads/2014/02/thesis.pdf
 https://github.com/tmc323/Chord-Annotations
 http://isophonics.net/content/reference-annotations-beatles
+https://web.stanford.edu/~jurafsky/slp3/9.pdf
 
 
 
